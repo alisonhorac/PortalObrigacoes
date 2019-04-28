@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace AHAS.PO.LOGIC.DOMAIN.Entities
+{
+    public class Usuario
+    {
+        public Usuario()
+        {
+            Id = Guid.NewGuid().ToString();
+            ResponsaveisDocumentos = new HashSet<ResponsavelDocumento>();
+        }
+
+        public string Id { get; set; }
+
+        public virtual string Email { get; set; }
+
+        public virtual bool EmailConfirmed { get; set; }
+
+        public virtual string PasswordHash { get; set; }
+
+        public virtual string SecurityStamp { get; set; }
+
+        public virtual string PhoneNumber { get; set; }
+
+        public virtual bool PhoneNumberConfirmed { get; set; }
+
+        public virtual bool TwoFactorEnabled { get; set; }
+
+        public virtual DateTime? LockoutEndDateUtc { get; set; }
+
+        public virtual bool LockoutEnabled { get; set; }
+
+        public virtual int AccessFailedCount { get; set; }
+
+        public virtual string UserName { get; set; }
+
+        //RELACIONAMENTOS
+        public virtual ICollection<ResponsavelDocumento> ResponsaveisDocumentos { get; set; }
+
+        public virtual Agendamento Agendamento { get; set; }
+    }
+}
