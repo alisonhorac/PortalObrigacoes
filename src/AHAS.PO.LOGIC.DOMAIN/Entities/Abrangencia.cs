@@ -4,7 +4,12 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
 {
     public class Abrangencia
     {
-        public int IDAbrangencia { get; set; }
+        public Abrangencia()
+        {
+            IDAbrangencia = Guid.NewGuid();
+        }
+
+        public Guid IDAbrangencia { get; set; }
 
         public string Descricao { get; set; }
 

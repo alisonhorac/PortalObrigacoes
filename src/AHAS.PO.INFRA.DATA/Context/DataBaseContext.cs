@@ -5,9 +5,9 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace AHAS.PO.INFRA.DATA.Context
 {
-    public class BDContext : DbContext
+    public class DataBaseContext : DbContext
     {
-        public BDContext() : base("DBConexao")
+        public DataBaseContext() : base("name=DataBaseConnection")
         {
         }
 

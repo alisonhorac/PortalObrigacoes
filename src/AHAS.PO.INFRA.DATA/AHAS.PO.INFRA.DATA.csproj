@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="EntityConfig\AbrangeciaConfig.cs" />
     <Compile Include="EntityConfig\AgendamentoConfig.cs" />
-    <Compile Include="Context\BDContext.cs" />
+    <Compile Include="Context\DataBaseContext.cs" />
     <Compile Include="EntityConfig\StatusConfig.cs" />
     <Compile Include="EntityConfig\FeriadoConfig.cs" />
     <Compile Include="EntityConfig\OrigemConfig.cs" />
@@ -61,6 +61,17 @@
     <Compile Include="EntityConfig\UsuarioConfig.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AbrangenciaRepository.cs" />
+    <Compile Include="Repository\AgendamentoRepository.cs" />
+    <Compile Include="Repository\DocumentoRepository.cs" />
+    <Compile Include="Repository\FeriadoRepository.cs" />
+    <Compile Include="Repository\OrigemRepository.cs" />
+    <Compile Include="Repository\PeriodicidadeRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\ResponsavelDocumentoRepository.cs" />
+    <Compile Include="Repository\StatusRepository.cs" />
+    <Compile Include="Repository\UnidadeRepository.cs" />
+    <Compile Include="Repository\UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

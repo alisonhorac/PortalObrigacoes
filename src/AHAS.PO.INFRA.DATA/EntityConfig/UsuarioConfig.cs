@@ -7,23 +7,28 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
     {
         public UsuarioConfig()
         {
-            HasKey(u => u.Id);
+            HasKey(x => x.Id);
 
-            Property(u => u.Id)
+            Property(x => x.Id)
                 .IsRequired()
                 .HasMaxLength(128);
 
-            Property(u => u.Email)
+            Property(x => x.Email)
                 .IsRequired()
                 .HasMaxLength(256);
 
-            Property(u => u.UserName)
+            Property(x => x.UserName)
                 .IsRequired()
                 .HasMaxLength(256);
 
             //FK - 1 : 1
             HasRequired(x => x.Agendamento)
                 .WithRequiredPrincipal(x => x.Usuario)
+                .Map(m => m.MapKey("Id"));
+
+            //FK - 1 : 1
+            HasOptional(x => x.ResponsavelDocumento)
+                .WithOptionalPrincipal(x => x.Usuario)
                 .Map(m => m.MapKey("Id"));
 
             ToTable("AspNetUsers");

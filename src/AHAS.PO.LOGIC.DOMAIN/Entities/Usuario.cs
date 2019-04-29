@@ -8,7 +8,6 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
         public Usuario()
         {
             Id = Guid.NewGuid().ToString();
-            ResponsaveisDocumentos = new HashSet<ResponsavelDocumento>();
         }
 
         public string Id { get; set; }
@@ -35,8 +34,10 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
 
         public virtual string UserName { get; set; }
 
+        public virtual bool FlagAtivo { get; set; }
+
         //RELACIONAMENTOS
-        public virtual ICollection<ResponsavelDocumento> ResponsaveisDocumentos { get; set; }
+        public virtual ResponsavelDocumento ResponsavelDocumento { get; set; }
 
         public virtual Agendamento Agendamento { get; set; }
     }

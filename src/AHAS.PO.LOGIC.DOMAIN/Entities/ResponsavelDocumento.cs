@@ -23,7 +23,6 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
         public Guid IDDocumento { get; set; }
         public virtual Documento Documento { get; set; }
 
-        public string Id { get; set; }
         public virtual Usuario Usuario { get; set; }
     }
 }

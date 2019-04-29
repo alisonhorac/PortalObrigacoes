@@ -10,10 +10,7 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
         {
             ToTable("tbPeriodicidade");
 
-            //AUTOINCREMENTO
-            HasKey(x => x.IDPeriodicidade)
-                .Property(x => x.IDPeriodicidade)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasKey(x => x.IDPeriodicidade);
 
             Property(x => x.Descricao)
                 .IsRequired()

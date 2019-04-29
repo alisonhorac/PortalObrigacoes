@@ -10,7 +10,7 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
             ToTable("tbResponsavelDocumento");
 
             //PK CHAVE COMPOSTA
-            HasKey(x => new { x.IDUnidade, x.IDDocumento, x.Id });
+            HasKey(x => new { x.IDUnidade, x.IDDocumento });
 
             Property(x => x.FlagDiasUteisVencimento)
                 .IsRequired();
@@ -29,9 +29,6 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
             Property(x => x.DataCadastro)
                 .IsRequired();
 
-            //HasRequired(e => e.Agendamento)
-            //    .WithRequiredPrincipal(e => e.ResponsavelDocumento);
-
             //FK - GERADA DEVIDO UM RELACIONAMENTO N : M E A TABELA POSSUIR OUTROS CAMPOS
             HasRequired(x => x.Documento)
                 .WithMany(x => x.ResponsaveisDocumentos)
@@ -41,11 +38,6 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
             HasRequired(x => x.Unidade)
                 .WithMany(x => x.ResponsaveisDocumentos)
                 .HasForeignKey(x => x.IDUnidade)
-                .WillCascadeOnDelete(false);
-
-            HasRequired(x => x.Usuario)
-                .WithMany(x => x.ResponsaveisDocumentos)
-                .HasForeignKey(x => x.Id)
                 .WillCascadeOnDelete(false);
         }
     }

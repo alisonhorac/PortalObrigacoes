@@ -51,7 +51,37 @@
     <Compile Include="Entities\Status.cs" />
     <Compile Include="Entities\Unidade.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Interfaces\Repository\IAbrangenciaRepository.cs" />
+    <Compile Include="Interfaces\Repository\IAgendamentoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IDocumentoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IFeriadoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IOrigemRepository.cs" />
+    <Compile Include="Interfaces\Repository\IPeriodicidadeRepository.cs" />
+    <Compile Include="Interfaces\Repository\IRepository.cs" />
+    <Compile Include="Interfaces\Repository\IResponsavelDocumentoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IStatusRepository.cs" />
+    <Compile Include="Interfaces\Repository\IUnidadeRepository.cs" />
+    <Compile Include="Interfaces\Repository\IUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Service\IAbrangenciaService.cs" />
+    <Compile Include="Interfaces\Service\IAgendamentoService.cs" />
+    <Compile Include="Interfaces\Service\IDocumentoService.cs" />
+    <Compile Include="Interfaces\Service\IFeriadoService.cs" />
+    <Compile Include="Interfaces\Service\IOrigemService.cs" />
+    <Compile Include="Interfaces\Service\IPeriodicidadeService.cs" />
+    <Compile Include="Interfaces\Service\IResponsavelDocumentoService.cs" />
+    <Compile Include="Interfaces\Service\IStatusService.cs" />
+    <Compile Include="Interfaces\Service\IUnidadeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AbrangenciaService.cs" />
+    <Compile Include="Services\AgendamentoService.cs" />
+    <Compile Include="Services\DocumentoService.cs" />
+    <Compile Include="Services\FeriadoService.cs" />
+    <Compile Include="Services\OrigemService.cs" />
+    <Compile Include="Services\PeriodicidadeService.cs" />
+    <Compile Include="Services\ResponsavelDocumentoService.cs" />
+    <Compile Include="Services\StatusService.cs" />
+    <Compile Include="Services\UnidadeService.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

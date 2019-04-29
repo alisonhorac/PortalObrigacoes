@@ -10,10 +10,7 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
         {
             ToTable("tbStatus");
 
-            //AUTOINCREMENTO
-            HasKey(x => x.IDStatus)
-                .Property(x => x.IDStatus)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasKey(x => x.IDStatus);
 
             Property(x => x.Descricao)
                 .IsRequired()
