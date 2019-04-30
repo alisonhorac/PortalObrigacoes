@@ -2,6 +2,8 @@
 using AHAS.PO.LOGIC.DOMAIN.Entities;
 using AHAS.PO.LOGIC.DOMAIN.Interfaces.Repository;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AHAS.PO.INFRA.DATA.Repository
 {
@@ -11,13 +13,27 @@ namespace AHAS.PO.INFRA.DATA.Repository
         {
         }
 
+        public Usuario ObterPorId(string id)
+        {
+            return DataBase.TbUsuario.Find(id);
+        }
+
+        public IEnumerable<Usuario> ObterTodos()
+        {
+            return DataBase.TbUsuario.ToList();
+        }
+        public void DesativarLock(string id)
+        {
+            DataBase.TbUsuario.Find(id).LockoutEnabled = false;
+            DataBase.SaveChanges();
+        }
+
         public bool Desativar(Guid id)
         {
-            var obj = base.Consultar(id);
-            obj.FlagAtivo = false;
-            base.Alterar(obj);
+            DataBase.TbUsuario.Find(id).FlagAtivo = false;
+            DataBase.SaveChanges();
 
-            return !obj.FlagAtivo;
+            return true;
         }
     }
 }

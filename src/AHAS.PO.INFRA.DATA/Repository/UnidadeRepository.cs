@@ -13,11 +13,10 @@ namespace AHAS.PO.INFRA.DATA.Repository
 
         public bool Desativar(Guid id)
         {
-            var obj = base.Consultar(id);
-            obj.FlagAtivo = false;
-            base.Alterar(obj);
+            DataBase.TbUnidade.Find(id).FlagAtivo = false;
+            DataBase.SaveChanges();
 
-            return !obj.FlagAtivo;
+            return true;
         }
     }
 }
