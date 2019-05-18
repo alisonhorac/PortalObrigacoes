@@ -1,33 +1,33 @@
-﻿using System.Web.Mvc;
-using AHAS.PO.LOGIC.DOMAIN.Interfaces.Repository;
+﻿using AHAS.PO.SERVICE.APPLICATION.Interface;
+using System.Web.Mvc;
 
 namespace AHAS.PO.UI.SITE.Controllers
 {
     [Authorize]
     public class UsuariosController : Controller
     {
-        private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IUsuarioAppService _usuarioAppService;
 
-        public UsuariosController(IUsuarioRepository usuarioRepository)
+        public UsuariosController(IUsuarioAppService usuarioAppService)
         {
-            _usuarioRepository = usuarioRepository;
+            _usuarioAppService = usuarioAppService;
         }
 
         // GET: Usuarios
         public ActionResult Index()
         {
-            return View(_usuarioRepository.ObterTodos());
+            return View(_usuarioAppService.ObterTodos());
         }
 
         // GET: Usuarios/Details/5
         public ActionResult Details(string id)
         {
-            return View(_usuarioRepository.ObterPorId(id));
+            return View(_usuarioAppService.ObterPorId(id));
         }
 
         public ActionResult DesativarLock(string id)
         {
-            _usuarioRepository.DesativarLock(id);
+            _usuarioAppService.DesativarLock(id);
             return RedirectToAction("Index");
         }
     }

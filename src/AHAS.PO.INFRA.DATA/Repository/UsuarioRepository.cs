@@ -22,6 +22,7 @@ namespace AHAS.PO.INFRA.DATA.Repository
         {
             return DataBase.TbUsuario.ToList();
         }
+
         public void DesativarLock(string id)
         {
             DataBase.TbUsuario.Find(id).LockoutEnabled = false;

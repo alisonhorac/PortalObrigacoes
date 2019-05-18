@@ -310,6 +310,10 @@
       <Project>{7663448F-7E24-44B1-8A17-158A9C7B2987}</Project>
       <Name>AHAS.PO.LOGIC.DOMAIN</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AHAS.PO.SERVICE.APPLICATION\AHAS.PO.SERVICE.APPLICATION.csproj">
+      <Project>{DE22C579-2EFE-412A-A7F9-1115A2379A28}</Project>
+      <Name>AHAS.PO.SERVICE.APPLICATION</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

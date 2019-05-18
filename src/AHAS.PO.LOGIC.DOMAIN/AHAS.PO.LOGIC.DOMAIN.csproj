@@ -71,6 +71,7 @@
     <Compile Include="Interfaces\Service\IResponsavelDocumentoService.cs" />
     <Compile Include="Interfaces\Service\IStatusService.cs" />
     <Compile Include="Interfaces\Service\IUnidadeService.cs" />
+    <Compile Include="Interfaces\Service\IUsuarioService.cs" />
     <Compile Include="Interfaces\UnitOfWork\IUnitOfWorkRepository.cs" />
     <Compile Include="Interfaces\UnitOfWork\IUnitOfWorkService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Services\StatusService.cs" />
     <Compile Include="Services\UnidadeService.cs" />
     <Compile Include="Services\UnitOfWorkService.cs" />
+    <Compile Include="Services\UsuarioService.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

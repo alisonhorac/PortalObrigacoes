@@ -8,6 +8,8 @@ using AHAS.PO.LOGIC.DOMAIN.Interfaces.Repository;
 using AHAS.PO.LOGIC.DOMAIN.Interfaces.Service;
 using AHAS.PO.LOGIC.DOMAIN.Interfaces.UnitOfWork;
 using AHAS.PO.LOGIC.DOMAIN.Services;
+using AHAS.PO.SERVICE.APPLICATION.AppService;
+using AHAS.PO.SERVICE.APPLICATION.Interface;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using SimpleInjector;
@@ -27,6 +29,7 @@ namespace AHAS.PO.INFRA.CROSS.DIP
             container.Register<ApplicationSignInManager>(Lifestyle.Scoped);
 
             //APPLICATION
+            container.Register<IUsuarioAppService, UsuarioAppService>(Lifestyle.Scoped);
 
             //DOMAIN
             container.Register<IUnidadeService, UnidadeService>(Lifestyle.Scoped);
@@ -39,6 +42,7 @@ namespace AHAS.PO.INFRA.CROSS.DIP
             container.Register<IAgendamentoService, AgendamentoService>(Lifestyle.Scoped);
             container.Register<IAbrangenciaService, AbrangenciaService>(Lifestyle.Scoped);
             container.Register<IUnitOfWorkService, UnitOfWorkService>(Lifestyle.Scoped);
+            container.Register<IUsuarioService, UsuarioService>(Lifestyle.Scoped);
 
             //DADOS
             container.Register<IUsuarioRepository, UsuarioRepository>(Lifestyle.Scoped);
@@ -54,7 +58,7 @@ namespace AHAS.PO.INFRA.CROSS.DIP
             container.Register<IUnitOfWorkRepository, UnitOfWork>(Lifestyle.Scoped);
 
             //Context
-            //container.Register<DataBaseContext>(Lifestyle.Scoped);
+            container.Register<DataBaseContext>(Lifestyle.Scoped);
         }
     }
 }
