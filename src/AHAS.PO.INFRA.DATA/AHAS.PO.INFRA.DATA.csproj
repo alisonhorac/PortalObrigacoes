@@ -67,11 +67,12 @@
     <Compile Include="Repository\FeriadoRepository.cs" />
     <Compile Include="Repository\OrigemRepository.cs" />
     <Compile Include="Repository\PeriodicidadeRepository.cs" />
-    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\AbaseRepository.cs" />
     <Compile Include="Repository\ResponsavelDocumentoRepository.cs" />
     <Compile Include="Repository\StatusRepository.cs" />
     <Compile Include="Repository\UnidadeRepository.cs" />
     <Compile Include="Repository\UsuarioRepository.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

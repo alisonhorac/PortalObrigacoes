@@ -11,15 +11,8 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
 
             Property(x => x.Id)
                 .IsRequired()
-                .HasMaxLength(128);
-
-            Property(x => x.Email)
-                .IsRequired()
-                .HasMaxLength(256);
-
-            Property(x => x.UserName)
-                .IsRequired()
-                .HasMaxLength(256);
+                .HasMaxLength(128)
+                .HasColumnType("NVARCHAR");
 
             //FK - 1 : 1
             HasRequired(x => x.Agendamento)

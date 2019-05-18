@@ -15,7 +15,7 @@ namespace AHAS.PO.INFRA.CROSS.IDENTITY.Configuration
 
         public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options,IOwinContext context)
         {
-            return new ApplicationRoleManager(new RoleStore<IdentityRole>(context.Get<DataBaseContext>()));
+            return new ApplicationRoleManager(new RoleStore<IdentityRole>(context.Get<DataBaseIdentityContext>()));
         }
     }
 }
