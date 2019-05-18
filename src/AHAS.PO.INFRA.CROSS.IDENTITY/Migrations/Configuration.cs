@@ -5,14 +5,14 @@ namespace AHAS.PO.INFRA.CROSS.IDENTITY.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<AHAS.PO.INFRA.CROSS.IDENTITY.Context.DataBaseIdentityContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Context.DataBaseIdentityContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(AHAS.PO.INFRA.CROSS.IDENTITY.Context.DataBaseIdentityContext context)
+        protected override void Seed(Context.DataBaseIdentityContext context)
         {
             //  This method will be called after migrating to the latest version.
 
