@@ -23,9 +23,9 @@
                 <div class="card-header">
                     <h3>PORTAL</h3>
                     <div class="d-flex justify-content-end social_icon">
-                        <span><i class="fab fa-facebook-square"></i></span>
-                        <span><i class="fab fa-google-plus-square"></i></span>
-                        <span><i class="fab fa-twitter-square"></i></span>
+                        <span class="effect-facebook"><i class="fab fa-facebook-square"></i></span>
+                        <span class="effect-google-p"><i class="fab fa-google-plus-square"></i></span>
+                        <span class="effect-twitter"><i class="fab fa-twitter-square"></i></span>
                     </div>
                 </div>
                 <div class="card-body">
@@ -39,7 +39,7 @@
                                 </div>
                                 @Html.TextBoxFor(model => model.Email, new { id = "Email", @class = "form-control", @placeholder = "e-mail", @autocomplete = "off" })
                             </div>
-                            @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-white", @style = "font-style: italic; font-size:12px" })
+                            @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
                         </div>
 
                         <div class="form-group">
@@ -49,7 +49,7 @@
                                 </div>
                                 @Html.PasswordFor(model => model.Password, new { id = "Senha", @class = "form-control", @placeholder = "senha", @autocomplete = "off" })
                             </div>
-                            @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-white", @style = "font-style: italic; font-size:12px" })
+                            @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
                         </div>
 
                         <div class="row align-items-center remember">
@@ -63,19 +63,19 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Você não possui acesso?<a href="#">Crie Aqui</a>
+                        Você não possui acesso?@Html.ActionLink("Crie Aqui", "Register")
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="#">Esqueci minha senha?</a>
+                        @Html.ActionLink("Esqueci minha senha!", "ForgotPassword")
                     </div>
                 </div>
                 <span class="help-block">
-                    @Html.ValidationSummary(true, null, new { @class = "text-center text-danger", @style = "font-style:italic; font-size:12px; font-align:left" })
+                    @Html.ValidationSummary(true, null, new { @class = "text-center text-danger", @style = "font-style:italic; font-size:12px" })
                 </span>
             </div>
-            
+
         </div>
-        
+
     </div>
     <link href="~/Content/css/login/page.css" rel="stylesheet" />
 </body>

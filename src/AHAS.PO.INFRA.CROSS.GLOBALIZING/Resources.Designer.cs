@@ -61,6 +61,24 @@ namespace AHAS.PO.INFRA.CROSS.GLOBALIZING {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Necessário aceitar o campo {0}..
+        /// </summary>
+        public static string Global_Checkbox {
+            get {
+                return ResourceManager.GetString("Global_Checkbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to As senhas não conferem..
+        /// </summary>
+        public static string Global_Compare {
+            get {
+                return ResourceManager.GetString("Global_Compare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} no formato inválido..
         /// </summary>
         public static string Global_Date {
@@ -75,6 +93,15 @@ namespace AHAS.PO.INFRA.CROSS.GLOBALIZING {
         public static string Global_Email_Validator {
             get {
                 return ResourceManager.GetString("Global_Email_Validator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo {0} precisa ter no mínimo {2} caracteres e no máximo {1} caracteres..
+        /// </summary>
+        public static string Global_Lenght {
+            get {
+                return ResourceManager.GetString("Global_Lenght", resourceCulture);
             }
         }
         

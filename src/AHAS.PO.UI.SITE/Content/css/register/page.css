@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html, body {
-    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/92.jpg');
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -29,16 +29,8 @@ html, body {
     color: #1a91f9;
 }
 
-    .social_icon span.effect-facebook:hover {
-        color: #405D9D;
-        cursor: pointer;
-    }
-    .social_icon span.effect-google-p:hover {
-        color: #dd4b39;
-        cursor: pointer;
-    }
-    .social_icon span.effect-twitter:hover {
-        color: #42AEEC;
+    .social_icon span:hover {
+        color: white;
         cursor: pointer;
     }
 
@@ -64,24 +56,24 @@ input:focus {
     box-shadow: 0 0 0 0 !important;
 }
 
-.remember {
+.terms {
     color: white;
 }
 
-    .remember input {
+    .terms input {
         width: 20px;
         height: 20px;
         margin-left: 15px;
         margin-right: 5px;
     }
 
-.login_btn {
+.register_btn {
     color: black;
     background-color: #1a91f9;
     width: 100px;
 }
 
-    .login_btn:hover {
+    .register_btn:hover {
         color: black;
         background-color: white;
     }
@@ -98,4 +90,19 @@ input:focus {
     margin: 0px;
     list-style-type: none;
     margin-left: -40px;
+}
+
+.btn-facebook {
+    background-color: #405D9D;
+    color: #fff;
+}
+
+.btn-google {
+    background-color: #dd4b39;
+    color: #fff;
+}
+
+.btn-twitter {
+    background-color: #42AEEC;
+    color: #fff;
 }

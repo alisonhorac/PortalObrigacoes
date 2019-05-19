@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Global_Checkbox" xml:space="preserve">
+    <value>Necessário aceitar o campo {0}.</value>
+  </data>
+  <data name="Global_Compare" xml:space="preserve">
+    <value>As senhas não conferem.</value>
+  </data>
   <data name="Global_Date" xml:space="preserve">
     <value>{0} no formato inválido.</value>
   </data>
   <data name="Global_Email_Validator" xml:space="preserve">
     <value>{0} no formato inválido.</value>
+  </data>
+  <data name="Global_Lenght" xml:space="preserve">
+    <value>O campo {0} precisa ter no mínimo {2} caracteres e no máximo {1} caracteres.</value>
   </data>
   <data name="Global_MaxLenght" xml:space="preserve">
     <value>O campo {0} pode possuir no máximo {1} caracteres.</value>

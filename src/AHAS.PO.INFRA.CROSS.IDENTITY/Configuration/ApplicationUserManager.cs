@@ -18,7 +18,7 @@ namespace AHAS.PO.INFRA.CROSS.IDENTITY.Configuration
 
             PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 6,
+                RequiredLength = 4,
                 RequireNonLetterOrDigit = false,
                 RequireDigit = false,
                 RequireLowercase = false,
