@@ -22,8 +22,6 @@ namespace AHAS.PO.UI.SITE.Controllers
             _signInManager = signInManager;
         }
 
-
-        //
         // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
@@ -32,7 +30,6 @@ namespace AHAS.PO.UI.SITE.Controllers
             return View();
         }
 
-        //
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
@@ -44,8 +41,6 @@ namespace AHAS.PO.UI.SITE.Controllers
                 return View(model);
             }
 
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: true);
             switch (result)
             {
@@ -57,17 +52,16 @@ namespace AHAS.PO.UI.SITE.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Login ou Senha incorretos.");
+                    ModelState.AddModelError("", "E-mail ou Senha inválidos.");
                     return View(model);
             }
         }
 
-        //
         // GET: /Account/VerifyCode
+        [HttpGet]
         [AllowAnonymous]
         public async Task<ActionResult> VerifyCode(string provider, string returnUrl, bool rememberMe)
         {
-            // Require that the user has already logged in via username/password or external login
             if (!await _signInManager.HasBeenVerifiedAsync())
             {
                 return View("Error");
@@ -81,7 +75,6 @@ namespace AHAS.PO.UI.SITE.Controllers
             return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
         // POST: /Account/VerifyCode
         [HttpPost]
         [AllowAnonymous]
@@ -107,15 +100,14 @@ namespace AHAS.PO.UI.SITE.Controllers
             }
         }
 
-        //
         // GET: /Account/Register
+        [HttpGet]
         [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
         }
 
-        //
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
@@ -139,12 +131,11 @@ namespace AHAS.PO.UI.SITE.Controllers
                 AddErrors(result);
             }
 
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 
-        //
         // GET: /Account/ConfirmEmail
+        [HttpGet]
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
@@ -156,15 +147,14 @@ namespace AHAS.PO.UI.SITE.Controllers
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 
-        //
         // GET: /Account/ForgotPassword
+        [HttpGet]
         [AllowAnonymous]
         public ActionResult ForgotPassword()
         {
             return View();
         }
 
-        //
         // POST: /Account/ForgotPassword
         [HttpPost]
         [AllowAnonymous]
@@ -189,27 +179,25 @@ namespace AHAS.PO.UI.SITE.Controllers
                 return View("ForgotPasswordConfirmation");
             }
 
-            // No caso de falha, reexibir a view. 
             return View(model);
         }
 
-        //
         // GET: /Account/ForgotPasswordConfirmation
+        [HttpGet]
         [AllowAnonymous]
         public ActionResult ForgotPasswordConfirmation()
         {
             return View();
         }
 
-        //
         // GET: /Account/ResetPassword
+        [HttpGet]
         [AllowAnonymous]
         public ActionResult ResetPassword(string code)
         {
             return code == null ? View("Error") : View();
         }
 
-        //
         // POST: /Account/ResetPassword
         [HttpPost]
         [AllowAnonymous]
@@ -223,7 +211,6 @@ namespace AHAS.PO.UI.SITE.Controllers
             var user = await _userManager.FindByNameAsync(model.Email);
             if (user == null)
             {
-                // Não revelar se o usuario nao existe ou nao esta confirmado
                 return RedirectToAction("ResetPasswordConfirmation", "Account");
             }
             var result = await _userManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
@@ -235,27 +222,25 @@ namespace AHAS.PO.UI.SITE.Controllers
             return View();
         }
 
-        //
         // GET: /Account/ResetPasswordConfirmation
+        [HttpGet]
         [AllowAnonymous]
         public ActionResult ResetPasswordConfirmation()
         {
             return View();
         }
 
-        //
         // POST: /Account/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
-            // Request a redirect to the external login provider
             return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
         }
 
-        //
         // GET: /Account/SendCode
+        [HttpGet]
         [AllowAnonymous]
         public async Task<ActionResult> SendCode(string returnUrl, bool rememberMe)
         {
@@ -269,7 +254,6 @@ namespace AHAS.PO.UI.SITE.Controllers
             return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
         // POST: /Account/SendCode
         [HttpPost]
         [AllowAnonymous]
@@ -281,7 +265,6 @@ namespace AHAS.PO.UI.SITE.Controllers
                 return View();
             }
 
-            // Generate the token and send it
             if (!await _signInManager.SendTwoFactorCodeAsync(model.SelectedProvider))
             {
                 return View("Error");
@@ -289,8 +272,8 @@ namespace AHAS.PO.UI.SITE.Controllers
             return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
 
-        //
         // GET: /Account/ExternalLoginCallback
+        [HttpGet]
         [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
@@ -300,7 +283,6 @@ namespace AHAS.PO.UI.SITE.Controllers
                 return RedirectToAction("Login");
             }
 
-            // Sign in the user with this external login provider if the user already has a login
             var result = await _signInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
             switch (result)
             {
@@ -312,14 +294,12 @@ namespace AHAS.PO.UI.SITE.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
                 case SignInStatus.Failure:
                 default:
-                    // Se ele nao tem uma conta solicite que crie uma
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
                     return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
             }
         }
 
-        //
         // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
@@ -333,7 +313,6 @@ namespace AHAS.PO.UI.SITE.Controllers
 
             if (ModelState.IsValid)
             {
-                // Pegar a informação do login externo.
                 var info = await AuthenticationManager.GetExternalLoginInfoAsync();
                 if (info == null)
                 {
@@ -357,7 +336,6 @@ namespace AHAS.PO.UI.SITE.Controllers
             return View(model);
         }
 
-        //
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -367,8 +345,8 @@ namespace AHAS.PO.UI.SITE.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        //
         // GET: /Account/ExternalLoginFailure
+        [HttpGet]
         [AllowAnonymous]
         public ActionResult ExternalLoginFailure()
         {

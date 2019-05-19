@@ -45,10 +45,9 @@
     <Compile Include="AppService\UsuarioAppService.cs" />
     <Compile Include="Interface\IUsuarioAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\DocumentoViewModel.cs" />
-    <Compile Include="ViewModel\FeriadoViewModel.cs" />
-    <Compile Include="ViewModel\UnidadeViewModel.cs" />
-    <Compile Include="ViewModel\UsuarioViewModel.cs" />
+    <Compile Include="Model\DocumentoViewModel.cs" />
+    <Compile Include="Model\FeriadoViewModel.cs" />
+    <Compile Include="Model\UnidadeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AutoMapper\" />

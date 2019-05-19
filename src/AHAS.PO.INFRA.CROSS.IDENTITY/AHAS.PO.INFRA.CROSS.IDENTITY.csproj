@@ -92,5 +92,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AHAS.PO.INFRA.CROSS.GLOBALIZING\AHAS.PO.INFRA.CROSS.GLOBALIZING.csproj">
+      <Project>{AEF00C4D-945F-4F65-9505-71B58B5D53D3}</Project>
+      <Name>AHAS.PO.INFRA.CROSS.GLOBALIZING</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
