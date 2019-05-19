@@ -1,7 +1,7 @@
 ﻿@model AHAS.PO.INFRA.CROSS.IDENTITY.Model.LoginViewModel
 @{
     Layout = null;
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Login";
 }
 
 <!DOCTYPE html>
@@ -9,59 +9,74 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>WebApplication</title>
+    <title>Portal de Obrigações | @ViewBag.Title</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    @Styles.Render("~/Content/bootstrap/css")
-    @Styles.Render("~/Content/plugins/font-awesome/css")
-    @Styles.Render("~/Content/plugins/ionicons/css")
-    @Styles.Render("~/Content/dist/css")
-    @Styles.Render("~/Content/plugins/icheck/css/sqare/blue")
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
 </head>
 <body class="hold-transition login-page">
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="@Url.Action("Index", "Home")">Bem Vindo ao <b><br />Portal das Obrigações!</b></a>
-        </div>
-        <div class="login-box-body">
-            <p class="login-box-msg">Forneça seus dados para acesso</p>
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group has-feedback">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email", placeholder = "E-mail" })
-                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3>PORTAL</h3>
+                    <div class="d-flex justify-content-end social_icon">
+                        <span><i class="fab fa-facebook-square"></i></span>
+                        <span><i class="fab fa-google-plus-square"></i></span>
+                        <span><i class="fab fa-twitter-square"></i></span>
+                    </div>
                 </div>
-                <div class="form-group has-feedback">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", type = "password", placeholder = "Senha" })
-                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                </div>
-                <div class="row">
-                    <div class="col-xs-8">
-                        <div class="checkbox icheck" style="margin-top:7px">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
+                <div class="card-body">
+                    @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                @Html.TextBoxFor(model => model.Email, new { id = "Email", @class = "form-control", @placeholder = "e-mail", @autocomplete = "off" })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-white", @style = "font-style: italic; font-size:12px" })
                         </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                @Html.TextBoxFor(model => model.Password, new { id = "Senha", @class = "form-control", @placeholder = "senha", @autocomplete = "off" })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-white", @style = "font-style: italic; font-size:12px" })
+                        </div>
+
+                        <div class="row align-items-center remember">
+                            @Html.CheckBoxFor(model => model.RememberMe, new { id = "Relembre", @class = "form-control" })
+                            Lembrar-me?
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Entrar" class="btn float-right login_btn">
+                        </div>
+                    }
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        Você não possui acesso?<a href="#">Crie Aqui</a>
                     </div>
-                    <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                    <div class="d-flex justify-content-center">
+                        <a href="#">Esqueci minha senha?</a>
                     </div>
                 </div>
-            }
-            <a href="#">Eu esqueci a senha.</a><br>
-            <a href="@Url.Action("Register", "Account")" class="text-center">Registrar um novo usuário.</a>
+                <span class="help-block">
+                    @Html.ValidationSummary(true, null, new { @class = "text-center text-danger", @style = "font-style:italic; font-size:12px; font-align:left" })
+                </span>
+            </div>
+            
         </div>
+        
     </div>
-
-    @Scripts.Render("~/Content/plugins/jquery/js")
-    @Scripts.Render("~/Content/bootstrap/js")
-    @Scripts.Render("~/Content/plugins/icheck/js")
-    @Scripts.Render("~/Content/plugins/jquery-validate/js")
-    @Scripts.Render("~/Scripts/Account/Login")
-
+    <link href="~/Content/css/login/page.css" rel="stylesheet" />
 </body>
 </html>
