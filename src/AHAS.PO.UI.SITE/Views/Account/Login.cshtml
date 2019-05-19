@@ -1,62 +1,67 @@
-﻿@using AHAS.PO.INFRA.CROSS.IDENTITY.Model
-@model AHAS.PO.INFRA.CROSS.IDENTITY.Model.LoginViewModel
+﻿@model AHAS.PO.INFRA.CROSS.IDENTITY.Model.LoginViewModel
 @{
-    ViewBag.Title = "Login";
+    Layout = null;
+    ViewBag.Title = "Log in";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WebApplication</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    @Styles.Render("~/Content/bootstrap/css")
+    @Styles.Render("~/Content/plugins/font-awesome/css")
+    @Styles.Render("~/Content/plugins/ionicons/css")
+    @Styles.Render("~/Content/dist/css")
+    @Styles.Render("~/Content/plugins/icheck/css/sqare/blue")
+
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="@Url.Action("Index", "Home")">Bem Vindo ao <b><br />Portal das Obrigações!</b></a>
+        </div>
+        <div class="login-box-body">
+            <p class="login-box-msg">Forneça seus dados para acesso</p>
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4>Utilize uma conta local para login.</h4>
-                <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                    </div>
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email", placeholder = "E-mail" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    </div>
+                <div class="form-group has-feedback">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", type = "password", placeholder = "Senha" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck" style="margin-top:7px">
                             @Html.CheckBoxFor(m => m.RememberMe)
                             @Html.LabelFor(m => m.RememberMe)
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Login" class="btn btn-default" />
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
                     </div>
                 </div>
-                <p>
-                    @Html.ActionLink("Registrar uma nova conta?", "Register")
-                </p>
-                <p>
-                    @Html.ActionLink("Esqueceu sua senha?", "ForgotPassword")
-                </p>
             }
-        </section>
+            <a href="#">Eu esqueci a senha.</a><br>
+            <a href="@Url.Action("Register", "Account")" class="text-center">Registrar um novo usuário.</a>
+        </div>
     </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
-</div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    @Scripts.Render("~/Content/plugins/jquery/js")
+    @Scripts.Render("~/Content/bootstrap/js")
+    @Scripts.Render("~/Content/plugins/icheck/js")
+    @Scripts.Render("~/Content/plugins/jquery-validate/js")
+    @Scripts.Render("~/Scripts/Account/Login")
+
+</body>
+</html>
