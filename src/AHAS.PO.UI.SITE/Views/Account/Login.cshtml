@@ -47,7 +47,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-                                @Html.TextBoxFor(model => model.Password, new { id = "Senha", @class = "form-control", @placeholder = "senha", @autocomplete = "off" })
+                                @Html.PasswordFor(model => model.Password, new { id = "Senha", @class = "form-control", @placeholder = "senha", @autocomplete = "off" })
                             </div>
                             @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-white", @style = "font-style: italic; font-size:12px" })
                         </div>
