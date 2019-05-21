@@ -187,7 +187,9 @@
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\bootstrap\js\bootstrap.js" />
     <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\css\forgot\page.css" />
     <Content Include="Content\css\login\page.css" />
+    <Content Include="Content\css\recovered\page.css" />
     <Content Include="Content\css\register\page.css" />
     <Content Include="Content\dist\css\admin-lte.css" />
     <Content Include="Content\dist\css\admin-lte.min.css" />

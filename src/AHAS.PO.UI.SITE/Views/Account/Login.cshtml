@@ -37,7 +37,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                 </div>
-                                @Html.TextBoxFor(model => model.Email, new { id = "Email", @class = "form-control", @placeholder = "e-mail", @autocomplete = "off" })
+                                @Html.TextBoxFor(model => model.Email, new { id = "Email", @class = "form-control", @placeholder = "E-mail", @autocomplete = "off" })
                             </div>
                             @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
                         </div>
@@ -47,7 +47,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-                                @Html.PasswordFor(model => model.Password, new { id = "Senha", @class = "form-control", @placeholder = "senha", @autocomplete = "off" })
+                                @Html.PasswordFor(model => model.Password, new { id = "Senha", @class = "form-control", @placeholder = "Senha", @autocomplete = "off" })
                             </div>
                             @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
                         </div>
