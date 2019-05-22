@@ -172,7 +172,7 @@ namespace AHAS.PO.UI.SITE.Controllers
 
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                await _userManager.SendEmailAsync(user.Id, "Esqueci minha senha", "Por favor altere sua senha clicando aqui: <a href='" + callbackUrl + "'></a>");
+                await _userManager.SendEmailAsync(user.Id, "Esqueci minha senha", "Por favor altere sua senha clicando aqui: " +  callbackUrl);
                 ViewBag.Link = callbackUrl;
                 ViewBag.Status = "DEMO: Caso o link não chegue: ";
                 ViewBag.LinkAcesso = callbackUrl;

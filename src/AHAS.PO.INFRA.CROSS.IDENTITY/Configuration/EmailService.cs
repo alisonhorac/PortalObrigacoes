@@ -1,11 +1,9 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Net;
-using System.Net.Mail;
-using System.Net.Mime;
 using System.Threading.Tasks;
-using System.Web;
 using Microsoft.AspNet.Identity;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace AHAS.PO.INFRA.CROSS.IDENTITY.Configuration
 {
@@ -13,23 +11,18 @@ namespace AHAS.PO.INFRA.CROSS.IDENTITY.Configuration
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // TO DO:
-            //var text = HttpUtility.HtmlEncode(message.Body);
+            return SendGridAsync(message);
+        }
 
-            //var msg = new MailMessage {From = new MailAddress("teste@teste.com", "Teste")};
-
-            //msg.To.Add(new MailAddress(message.Destination));
-            //msg.Subject = message.Subject;
-            //msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
-            //msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Html));
-
-            //var smtpClient = new SmtpClient("smtp.provedor.com", Convert.ToInt32(587));
-            //var credentials = new NetworkCredential(ConfigurationManager.AppSettings["Conta"], ConfigurationManager.AppSettings["Senha"]);
-            //smtpClient.Credentials = credentials;
-            //smtpClient.EnableSsl = true;
-            //smtpClient.Send(msg);
-
-            return Task.FromResult(0);
+        private async Task SendGridAsync(IdentityMessage message)
+        {
+            var emailMessage = new SendGridMessage();
+            emailMessage.AddTo(message.Destination);
+            emailMessage.From = new EmailAddress("naoresponda@portalobrigacao.com.br", "Admin");
+            emailMessage.Subject = message.Subject;
+            emailMessage.HtmlContent = message.Body;
+            var transportWeb = new SendGridClient(ConfigurationManager.AppSettings["keyAccount"]);
+            var result = await transportWeb.SendEmailAsync(emailMessage);
         }
     }
 }

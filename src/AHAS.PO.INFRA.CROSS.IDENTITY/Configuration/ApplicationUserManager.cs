@@ -29,8 +29,16 @@ namespace AHAS.PO.INFRA.CROSS.IDENTITY.Configuration
             DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
             MaxFailedAccessAttemptsBeforeLockout = 5;
 
+            RegisterTwoFactorProvider("Código via E-mail", new EmailTokenProvider<ApplicationUser>
+            {
+                Subject = "Código de Segurança",
+                BodyFormat = "Seu código de segurança é: {0}"
+            });
+
+            EmailService = new EmailService();
+
             var provider = new DpapiDataProtectionProvider("AHAS");
-            var dataProtector = provider.Create("Portal Obrigações");
+            var dataProtector = provider.Create("PortalObrigacoes");
 
             UserTokenProvider = new DataProtectorTokenProvider<ApplicationUser>(dataProtector);
 
