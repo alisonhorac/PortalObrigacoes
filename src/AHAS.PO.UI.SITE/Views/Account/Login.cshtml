@@ -1,0 +1,82 @@
+﻿@model AHAS.PO.INFRA.CROSS.IDENTITY.Model.LoginViewModel
+@{
+    Layout = null;
+    ViewBag.Title = "Login";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portal de Obrigações | @ViewBag.Title</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+</head>
+<body class="hold-transition login-page">
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3>PORTAL</h3>
+                    <div class="d-flex justify-content-end social_icon">
+                        <span class="effect-facebook"><i class="fab fa-facebook-square"></i></span>
+                        <span class="effect-google-p"><i class="fab fa-google-plus-square"></i></span>
+                        <span class="effect-twitter"><i class="fab fa-twitter-square"></i></span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                @Html.TextBoxFor(model => model.Email, new { id = "Email", @class = "form-control", @placeholder = "E-mail", @autocomplete = "off" })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                @Html.PasswordFor(model => model.Password, new { id = "Senha", @class = "form-control", @placeholder = "Senha", @autocomplete = "off" })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
+                        </div>
+
+                        <div class="row align-items-center remember">
+                            @Html.CheckBoxFor(model => model.RememberMe, new { id = "Relembre", @class = "form-control" })
+                            Lembrar-me?
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Entrar" class="btn float-right login_btn">
+                        </div>
+                    }
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        Você não possui acesso?@Html.ActionLink("Crie Aqui", "Register")
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        @Html.ActionLink("Esqueci minha senha!", "ForgotPassword")
+                    </div>
+                </div>
+                <span class="help-block">
+                    @Html.ValidationSummary(true, null, new { @class = "text-center text-danger", @style = "font-style:italic; font-size:12px" })
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+    <link href="~/Content/css/login/page.css" rel="stylesheet" />
+</body>
+</html>
