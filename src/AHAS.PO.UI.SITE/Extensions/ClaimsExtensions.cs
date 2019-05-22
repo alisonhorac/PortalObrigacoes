@@ -6,7 +6,6 @@ namespace AHAS.PO.UI.SITE.Extensions
 {
     public static class ClaimsExtensions
     {
-
         static string GetUserEmail(this ClaimsIdentity identity)
         {
             return identity.Claims?.FirstOrDefault(c => c.Type == "AHAS.PO.INFRA.CROSS.IDENTITY.Model.RegisterViewModel.Email")?.Value;
