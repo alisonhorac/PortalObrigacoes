@@ -1,5 +1,4 @@
 ﻿using System.Configuration;
-using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using SendGrid;
@@ -18,7 +17,7 @@ namespace AHAS.PO.INFRA.CROSS.IDENTITY.Configuration
         {
             var emailMessage = new SendGridMessage();
             emailMessage.AddTo(message.Destination);
-            emailMessage.From = new EmailAddress("naoresponda@portalobrigacao.com.br", "Admin");
+            emailMessage.From = new EmailAddress("naoresponda@portalobrigacao.com.br", "Portal de Obrigações");
             emailMessage.Subject = message.Subject;
             emailMessage.HtmlContent = message.Body;
             var transportWeb = new SendGridClient(ConfigurationManager.AppSettings["keyAccount"]);

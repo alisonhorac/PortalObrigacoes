@@ -140,6 +140,7 @@
     <Content Include="Content\css\login\page.css" />
     <Content Include="Content\css\recovered\page.css" />
     <Content Include="Content\css\register\page.css" />
+    <Content Include="Content\templates\confirmation.html" />
     <Content Include="Content\templates\recover.html" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
