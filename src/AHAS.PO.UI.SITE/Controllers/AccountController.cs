@@ -124,6 +124,7 @@ namespace AHAS.PO.UI.SITE.Controllers
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+
                     await _userManager.SendEmailAsync(user.Id, "Confirme sua Conta", "Por favor confirme sua conta clicando neste link: <a href='" + callbackUrl + "'></a>");
                     ViewBag.Link = callbackUrl;
                     return View("DisplayEmail");
@@ -164,18 +165,15 @@ namespace AHAS.PO.UI.SITE.Controllers
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByNameAsync(model.Email);
+
                 if (user == null || !(await _userManager.IsEmailConfirmedAsync(user.Id)))
-                {
-                    // Não revelar se o usuario nao existe ou nao esta confirmado
                     return View("ForgotPasswordConfirmation");
-                }
 
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user.Id);
-                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                await _userManager.SendEmailAsync(user.Id, "Esqueci minha senha", "Por favor altere sua senha clicando aqui: " +  callbackUrl);
-                ViewBag.Link = callbackUrl;
-                ViewBag.Status = "DEMO: Caso o link não chegue: ";
-                ViewBag.LinkAcesso = callbackUrl;
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code }, protocol: Request.Url.Scheme);
+                string body = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("../Content/templates/recover.html"));
+                string index = Url.Action("Login", "Account", null, Request.Url.Scheme, null);
+                await _userManager.SendEmailAsync(user.Id, "Esqueci minha senha", string.Format(body, user.UserName, callbackUrl, index));
                 return View("ForgotPasswordConfirmation");
             }
 
