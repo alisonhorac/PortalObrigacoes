@@ -1,13 +1,46 @@
-﻿<!DOCTYPE html>
+﻿@{
+    ViewBag.EmailTo = "alisonhorac@gmail.com";
+    ViewBag.Title = "Erro";
+    Layout = null;
+}
+
+<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portal de Obrigações | @ViewBag.Title</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="error-template">
+                    <h1>
+                        Oops!
+                    </h1>
+                    <h2>
+                       Ocorreu um Problema.
+                    </h2>
+                    <div class="error-details">
+                        Desculpe, uma inconsistência ocorreu durante o processamento da sua requisição.
+                    </div>
+                    <div class="error-actions">
+                        <a href="@Url.Action("Login", "Account")" class="btn home_btn btn-lg">
+                            <span class="fas fa-home"></span>
+                            Ir para a Home
+                        </a>
+                        <a href="mailto:@ViewBag.EmailTo" class="btn mail_btn btn-lg"><span class="fas fa-envelope"></span> Contatar o Suporte</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <link href="~/Content/css/shared/error/page.css" rel="stylesheet" />
 </body>
 </html>

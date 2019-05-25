@@ -138,10 +138,11 @@ namespace AHAS.PO.UI.SITE.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
-            if (userId == null || code == null)
-            {
+            var user = await _userManager.FindByIdAsync(userId);
+
+            if (userId == null || code == null || user == null)
                 return View("Error");
-            }
+
             var result = await _userManager.ConfirmEmailAsync(userId, code);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
