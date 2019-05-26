@@ -41,7 +41,17 @@ namespace AHAS.PO.UI.SITE.Controllers
                 return View(model);
             }
 
-            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: true);
+            var user = await _userManager.FindByEmailAsync(model.Email);
+
+            if (user == null)
+            { 
+                ModelState.AddModelError("", "E-mail ou Senha inválidos.");
+                return View(model);
+            }
+            else if (!await _userManager.IsEmailConfirmedAsync(user.Id))
+                return View("DisplayEmail");
+
+            var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, shouldLockout: true);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -73,7 +83,7 @@ namespace AHAS.PO.UI.SITE.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.NameIdentifier, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.NameIdentifier, Email = model.Email, TwoFactorEnabled = true };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

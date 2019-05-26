@@ -1,6 +1,10 @@
 ﻿using AHAS.PO.INFRA.CROSS.IDENTITY.Configuration;
 using AHAS.PO.INFRA.CROSS.IDENTITY.Context;
+using AHAS.PO.INFRA.CROSS.IDENTITY.External.SendGridEmail;
+using AHAS.PO.INFRA.CROSS.IDENTITY.External.TwilioSms;
+using AHAS.PO.INFRA.CROSS.IDENTITY.Intefaces.Service;
 using AHAS.PO.INFRA.CROSS.IDENTITY.Model;
+using AHAS.PO.INFRA.CROSS.IDENTITY.Services;
 using AHAS.PO.INFRA.DATA.Context;
 using AHAS.PO.INFRA.DATA.Repository;
 using AHAS.PO.INFRA.DATA.UnitOfWork;
@@ -59,6 +63,16 @@ namespace AHAS.PO.INFRA.CROSS.DIP
 
             //Context
             container.Register<DataBaseContext>(Lifestyle.Scoped);
+
+            //MailService/SmsService
+            container.Register<IEmailService, EmailService>(Lifestyle.Scoped);
+            container.Register<ISmsService, SmsService>(Lifestyle.Scoped);
+
+            //SendGrid
+            container.Register<ISendGridEmail, SendGridEmail>(Lifestyle.Scoped);
+
+            //Twilio
+            container.Register<ITwilioSms, TwilioSms>(Lifestyle.Scoped);
         }
     }
 }
