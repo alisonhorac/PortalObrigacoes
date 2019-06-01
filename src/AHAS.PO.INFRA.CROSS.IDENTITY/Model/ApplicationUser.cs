@@ -9,6 +9,10 @@ namespace AHAS.PO.INFRA.CROSS.IDENTITY.Model
     {
         public virtual bool FlagAtivo { get; set; }
 
+        public virtual string PhoneDDI { get; set; }
+
+        public virtual string PhoneDDD { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);

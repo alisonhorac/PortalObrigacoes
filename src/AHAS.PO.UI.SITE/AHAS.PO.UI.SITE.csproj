@@ -143,6 +143,7 @@
     <Content Include="Content\css\account\recovered\page.css" />
     <Content Include="Content\css\account\register\page.css" />
     <Content Include="Content\css\shared\error\page.css" />
+    <Content Include="Content\scripts\account\register\page.js" />
     <Content Include="Content\templates\confirmation.html" />
     <Content Include="Content\templates\recover.html" />
     <Content Include="Global.asax" />

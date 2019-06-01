@@ -106,6 +106,15 @@ namespace AHAS.PO.INFRA.CROSS.GLOBALIZING {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O campo {0} precisa ter {1} caracteres..
+        /// </summary>
+        public static string Global_Lenght_Equal {
+            get {
+                return ResourceManager.GetString("Global_Lenght_Equal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O campo {0} pode possuir no máximo {1} caracteres..
         /// </summary>
         public static string Global_MaxLenght {

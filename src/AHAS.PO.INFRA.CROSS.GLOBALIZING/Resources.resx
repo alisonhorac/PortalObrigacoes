@@ -132,6 +132,9 @@
   <data name="Global_Lenght" xml:space="preserve">
     <value>O campo {0} precisa ter no mínimo {2} caracteres e no máximo {1} caracteres.</value>
   </data>
+  <data name="Global_Lenght_Equal" xml:space="preserve">
+    <value>O campo {0} precisa ter {1} caracteres.</value>
+  </data>
   <data name="Global_MaxLenght" xml:space="preserve">
     <value>O campo {0} pode possuir no máximo {1} caracteres.</value>
   </data>

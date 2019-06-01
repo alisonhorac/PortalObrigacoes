@@ -159,6 +159,5 @@
       <Name>AHAS.PO.INFRA.CROSS.GLOBALIZING</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

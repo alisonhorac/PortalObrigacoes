@@ -59,10 +59,6 @@
     <Compile Include="EntityConfig\ResponsavelDocumentoConfig.cs" />
     <Compile Include="EntityConfig\UnidadeConfig.cs" />
     <Compile Include="EntityConfig\UsuarioConfig.cs" />
-    <Compile Include="Migrations\201905182016372_Initial_Catalog.cs" />
-    <Compile Include="Migrations\201905182016372_Initial_Catalog.Designer.cs">
-      <DependentUpon>201905182016372_Initial_Catalog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AbrangenciaRepository.cs" />
@@ -87,11 +83,6 @@
       <Project>{7663448F-7E24-44B1-8A17-158A9C7B2987}</Project>
       <Name>AHAS.PO.LOGIC.DOMAIN</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905182016372_Initial_Catalog.resx">
-      <DependentUpon>201905182016372_Initial_Catalog.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

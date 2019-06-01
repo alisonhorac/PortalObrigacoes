@@ -51,6 +51,21 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                </div>
+                                @Html.DropDownListFor(model => model.DDIPhone, new SelectList(new List<SelectListItem> {
+                                                                                              new SelectListItem { Text = "+55", Value = "+55"} }, "Value", "Text", "True"),
+                                                                                              new { id = "DDI", @class = "form-control", @style = "max-width: 70px;" })
+                                @Html.TextBoxFor(model => model.DDDPhone, new { id = "DDD", @class = "form-control", @style = "max-width: 60px;", @placeholder = "DDD", @autocomplete = "off" })
+                                @Html.TextBoxFor(model => model.Phone, new { id = "Fone", @class = "form-control", @placeholder = "Celular", @autocomplete = "off" })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.DDDPhone, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
+                            @Html.ValidationMessageFor(model => model.Phone, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
                                 @Html.PasswordFor(model => model.Password, new { id = "Senha", @class = "form-control", @placeholder = "Senha", @autocomplete = "off" })
@@ -100,76 +115,7 @@
         </div>
     </div>
     <link href="~/Content/css/account/register/page.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="~/Content/scripts/account/register/page.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-@*<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>WebApplication</title>
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    </head>
-    <body class="hold-transition register-page">
-        <div class="register-box">
-            <div class="register-logo">
-                <a href="">Welcome to <b>WebApplication!</b></a>
-            </div>
-            <div class="register-box-body">
-                <p class="login-box-msg">Register a new membership</p>
-                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { role = "form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    @Html.ValidationSummary("", new { @class = "text-danger" })
-                    <div class="form-group has-feedback">
-                        @Html.TextBoxFor(m => m.NameIdentifier, new { @class = "form-control" })
-                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-                        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-8">
-                            <div class="checkbox icheck">
-                                <label>
-                                    <input type="checkbox"> I agree to the <a href="#">terms</a>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
-                        </div>
-                    </div>
-                }
-                <div class="social-auth-links text-center">
-                    <p>- OR -</p>
-                    <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
-                        <i class="fa fa-facebook"></i> Sign up using
-                        Facebook
-                    </a>
-                    <a href="#" class="btn btn-block btn-social btn-google btn-flat">
-                        <i class="fa fa-google-plus"></i> Sign up using
-                        Google+
-                    </a>
-                    <a href="@Url.Action("Login", "Account")" class="text-center">I already have a membership</a>
-                </div>
-            </div>
-        </div>
-    </body>
-    </html>*@

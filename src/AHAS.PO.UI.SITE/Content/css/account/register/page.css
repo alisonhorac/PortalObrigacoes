@@ -3,7 +3,7 @@
 html, body {
     /*background-image: url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg');*/
     background-image: url('https://mdbootstrap.com/img/Photos/Others/images/92.jpg');
-    background-size: cover;
+    background-size: auto;
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
@@ -15,7 +15,7 @@ html, body {
 }
 
 .card {
-    margin-top: 5%;
+    margin-top: 9%;
     margin-bottom: auto;
     width: 400px;
     background-color: rgba(0,0,0,0.5) !important;
@@ -103,4 +103,8 @@ input:focus {
 .btn-twitter {
     background-color: #42AEEC;
     color: #fff;
+}
+
+.form-control {
+    background-clip: border-box;
 }

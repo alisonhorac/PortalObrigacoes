@@ -83,7 +83,7 @@ namespace AHAS.PO.UI.SITE.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.NameIdentifier, Email = model.Email, TwoFactorEnabled = true };
+                var user = new ApplicationUser { UserName = model.NameIdentifier, Email = model.Email, TwoFactorEnabled = true, PhoneDDI = model.DDIPhone, PhoneDDD = model.DDDPhone, PhoneNumber = model.Phone };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
