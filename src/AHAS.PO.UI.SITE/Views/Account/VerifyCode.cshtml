@@ -1,5 +1,98 @@
 ﻿@model AHAS.PO.INFRA.CROSS.IDENTITY.Model.VerifyCodeViewModel
 @{
+    ViewBag.Title = "Confirmação de Telefone";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portal de Obrigações | @ViewBag.Title</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+</head>
+<body class="hold-transition login-page">
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                @using (Html.BeginForm("VerifyCode", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("provider", "SMS")
+
+                    <div class="card-header">
+                        <h3>CONFIRMAÇÃO POR SMS</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="row align-items-center">
+                                <p>Estamos há um passo de liberar o seu acesso. Por favor informe abaixo o código que você recebeu no seu celular.</p>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-sms"></i></span>
+                                </div>
+                                @Html.TextBoxFor(model => model.Code, new { id = "Code", @class = "form-control", @placeholder = "Código", @autocomplete = "off" })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.Code, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
+                        </div>
+
+                        <div class="card-footer form-group">
+                            <div class="form-group">
+                                <a href="@Url.Action("Login", "Account")" class="btn float-left btn-link">Voltar</a>
+                                <input type="submit" value="Confirmar" class="btn float-right recover_btn">
+                            </div>
+                        </div>
+                        <span class="help-block">
+                            @Html.ValidationSummary(true, null, new { @class = "text-center text-danger", @style = "font-style:italic; font-size:12px" })
+                        </span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <link href="~/Content/css/account/verifysms/page.css" rel="stylesheet" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model AHAS.PO.INFRA.CROSS.IDENTITY.Model.VerifyCodeViewModel
+@{
     ViewBag.Title = "Verify";
 }
 
@@ -43,4 +136,4 @@
 
 @section Scripts {
     @Scripts.Render("~/Content/plugins/jquery-validate/js")
-}
+}*@

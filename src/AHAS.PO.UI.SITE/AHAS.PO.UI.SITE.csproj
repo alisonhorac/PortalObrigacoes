@@ -136,12 +136,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\account\confirmed\page.css" />
-    <Content Include="Content\css\account\forgot\page.css" />
+    <Content Include="Content\css\account\confirmedemail\page.css" />
+    <Content Include="Content\css\account\forgotpassword\page.css" />
     <Content Include="Content\css\account\login\page.css" />
-    <Content Include="Content\css\account\display\page.css" />
-    <Content Include="Content\css\account\recovered\page.css" />
+    <Content Include="Content\css\account\displayemail\page.css" />
+    <Content Include="Content\css\account\recoveredpassword\page.css" />
     <Content Include="Content\css\account\register\page.css" />
+    <Content Include="Content\css\account\verifysms\page.css" />
     <Content Include="Content\css\shared\error\page.css" />
     <Content Include="Content\scripts\account\register\page.js" />
     <Content Include="Content\templates\confirmation.html" />
@@ -173,7 +174,6 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

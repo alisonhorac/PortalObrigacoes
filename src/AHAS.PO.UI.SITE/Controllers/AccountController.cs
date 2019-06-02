@@ -59,7 +59,7 @@ namespace AHAS.PO.UI.SITE.Controllers
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                    return RedirectToAction("VerifyCode");
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "E-mail ou Senha inválidos.");
@@ -83,7 +83,11 @@ namespace AHAS.PO.UI.SITE.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.NameIdentifier, Email = model.Email, TwoFactorEnabled = true, PhoneDDI = model.DDIPhone, PhoneDDD = model.DDDPhone, PhoneNumber = model.Phone };
+                var user = new ApplicationUser { UserName = model.NameIdentifier, Email = model.Email,
+                                                TwoFactorEnabled = true, PhoneDDI = model.DDIPhone,
+                                                PhoneDDD = model.DDDPhone, CellPhone = model.Phone,
+                                                PhoneNumber = model.DDIPhone+ model.DDDPhone+ model.Phone};
+
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -162,37 +166,50 @@ namespace AHAS.PO.UI.SITE.Controllers
             return code == null ? View("Error") : View();
         }
 
-        // GET: /Account/SendCode
+        // GET: /Account/VerifyCode
         [HttpGet]
         [AllowAnonymous]
-        public async Task<ActionResult> SendCode(string returnUrl, bool rememberMe)
+        public async Task<ActionResult> VerifyCode()
         {
-            var userId = await _signInManager.GetVerifiedUserIdAsync();
-            if (userId == null)
+            if (!await _signInManager.HasBeenVerifiedAsync())
             {
                 return View("Error");
             }
-            var userFactors = await _userManager.GetValidTwoFactorProvidersAsync(userId);
-            var factorOptions = userFactors.Select(purpose => new SelectListItem { Text = purpose, Value = purpose }).ToList();
-            return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
+
+            if (!await _signInManager.SendTwoFactorCodeAsync("SMS"))
+            {
+                return View("Error");
+            }
+
+            return View();
         }
 
-        // POST: /Account/SendCode
+        // POST: /Account/VerifyCode
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SendCode(SendCodeViewModel model)
+        public async Task<ActionResult> VerifyCode(VerifyCodeViewModel model)
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(model);
             }
 
-            if (!await _signInManager.SendTwoFactorCodeAsync(model.SelectedProvider))
+            var result = await _signInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
+            switch (result)
             {
-                return View("Error");
+                case SignInStatus.Success:
+                    var user = await _userManager.FindByIdAsync(await _signInManager.GetVerifiedUserIdAsync());
+                    user.TwoFactorEnabled = false;
+                    _userManager.Update(user);
+                    return RedirectToLocal(model.ReturnUrl);
+                case SignInStatus.LockedOut:
+                    return View("Lockout");
+                case SignInStatus.Failure:
+                default:
+                    ModelState.AddModelError("", "Código Inválido.");
+                    return View(model);
             }
-            return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
 
         // POST: /Account/ResetPassword

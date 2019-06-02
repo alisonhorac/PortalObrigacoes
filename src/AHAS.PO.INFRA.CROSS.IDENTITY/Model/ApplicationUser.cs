@@ -13,6 +13,8 @@ namespace AHAS.PO.INFRA.CROSS.IDENTITY.Model
 
         public virtual string PhoneDDD { get; set; }
 
+        public virtual string CellPhone { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);

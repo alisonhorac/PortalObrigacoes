@@ -12,7 +12,7 @@ namespace AHAS.PO.INFRA.CROSS.IDENTITY.Model
         public string Code { get; set; }
         public string ReturnUrl { get; set; }
 
-        [Display(Name = "Remember this browser?")]
+        [Display(Name = "Relembrar deste navegador?")]
         public bool RememberBrowser { get; set; }
 
         public bool RememberMe { get; set; }

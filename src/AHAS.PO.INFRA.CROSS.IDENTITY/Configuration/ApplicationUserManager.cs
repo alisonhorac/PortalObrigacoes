@@ -30,12 +30,12 @@ namespace AHAS.PO.INFRA.CROSS.IDENTITY.Configuration
             DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
             MaxFailedAccessAttemptsBeforeLockout = 5;
 
-            RegisterTwoFactorProvider("Código via SMS", new PhoneNumberTokenProvider<ApplicationUser>
+            RegisterTwoFactorProvider("SMS", new PhoneNumberTokenProvider<ApplicationUser>
             {
                 MessageFormat = "Seu código de segurança é: {0}"
             });
 
-            RegisterTwoFactorProvider("Código via E-mail", new EmailTokenProvider<ApplicationUser>
+            RegisterTwoFactorProvider("Email", new EmailTokenProvider<ApplicationUser>
             {
                 Subject = "Código de Segurança",
                 BodyFormat = "Seu código de segurança é: {0}"
