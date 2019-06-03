@@ -1,6 +1,5 @@
-﻿@model AHAS.PO.INFRA.CROSS.IDENTITY.Model.ForgotPasswordViewModel
-@{
-    ViewBag.Title = "Recuperar Senha";
+﻿@{
+    ViewBag.Title = "Verificar E-mail";
     Layout = null;
 }
 
@@ -15,9 +14,8 @@
     <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <link type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet">
     <link type="text/css" href="~/Content/css/theme/theme.css" rel="stylesheet">
-    <link href="~/Content/css/account/forgotPassword/page.css" rel="stylesheet" />
+    <link href="~/Content/css/account/registerConfirm/page.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -33,10 +31,7 @@
                 <div class="nav-collapse collapse navbar-inverse-collapse">
                     <ul class="nav pull-right">
                         <li>
-                            @Html.ActionLink("Voltar", "Login")
-                        </li>
-                        <li>
-                            @Html.ActionLink("Criar conta", "Register")
+                            @Html.ActionLink("Esqueci minha senha!", "ForgotPassword")
                         </li>
                     </ul>
                 </div>
@@ -49,28 +44,22 @@
         <div class="container">
             <div class="row">
                 <div class="module module-login span4 offset4">
-                    @using (Html.BeginForm("ForgotPassword", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-vertical", role = "form" }))
+                    @using (Html.BeginForm("RegisterConfirm", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-vertical", role = "form" }))
                     {
-                        @Html.Hidden("provider", "SMS")
                         @Html.AntiForgeryToken()
-
                         <div class="module-head">
-                            <h3>Recuperar Senha</h3>
+                            <h3>Confirmação Enviada</h3>
                         </div>
 
                         <div class="module-body">
-                            <div class="control-group">
-                                <div class="controls row-fluid">
-                                    @Html.TextBoxFor(model => model.Email, new { id = "Email", @class = "span12", @placeholder = "Informe o e-mail da conta", @autocomplete = "off" })
-                                </div>
-                                @Html.ValidationMessageFor(model => model.Email, null, new { @style = "font-style: italic; font-size:11px" })
-                            </div>
+                            <p>Já enviamos um e-mail com as instruções para você completar o seu cadastro. Siga-as para concluir as próximas etapas e acessar o portal.</p>
+                            <p class="text-warning">Se não encontrá-lo na sua caixa de entrada nos próximos minutos, verifique a sua pasta de spam.</p>
                         </div>
 
                         <div class="module-foot">
                             <div class="control-group">
-                                <div class="controls clearfix">
-                                    <button type="submit" class="btn btn-primary pull-right">Recuperar</button>
+                                <div align="center">
+                                    <a href="@Url.Action("Login", "Account")" class="btn btn-link">Voltar</a>
                                 </div>
                                 <span class="help-block">
                                     @Html.ValidationSummary(true, null, new { @class = "text-center", @style = "font-style:italic; font-size:12px" })

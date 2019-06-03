@@ -7,114 +7,135 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Portal de Obrigações | @ViewBag.Title</title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.WebSite | @ViewBag.Title</title>
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet">
+    <link type="text/css" href="~/Content/css/theme/theme.css" rel="stylesheet">
+    <link href="~/Content/css/account/register/page.css" rel="stylesheet" />
 
 </head>
-<body class="hold-transition login-page">
-    <div class="container">
-        <div class="d-flex justify-content-center h-100">
-            <div class="card">
-                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "", role = "form" }))
-                {
-                    <div class="card-header">
-                        <h3>REGISTRO</h3>
-                    </div>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                    <i class="icon-reorder shaded"></i>
+                </a>
 
-                    <div class="card-body">
-                        @Html.AntiForgeryToken()
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                </div>
-                                @Html.TextBoxFor(model => model.NameIdentifier, new { id = "Nome", @class = "form-control", @placeholder = "Nome", @autocomplete = "off" })
-                            </div>
-                            @Html.ValidationMessageFor(model => model.NameIdentifier, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
-                        </div>
+                <a class="brand" href="@ViewBag.URLHome">@ViewBag.WebSite</a>
 
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                </div>
-                                @Html.TextBoxFor(model => model.Email, new { id = "Email", @class = "form-control", @placeholder = "E-mail", @autocomplete = "off" })
-                            </div>
-                            @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
-                        </div>
+                <div class="nav-collapse collapse navbar-inverse-collapse">
+                    <ul class="nav pull-right">
+                        <li>
+                            @Html.ActionLink("Voltar", "Login")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Esqueci minha senha!", "ForgotPassword")
+                        </li>
+                    </ul>
+                </div>
 
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                                </div>
-                                @Html.DropDownListFor(model => model.DDIPhone, new SelectList(new List<SelectListItem> {
-                                                                                              new SelectListItem { Text = "+55", Value = "+55"} }, "Value", "Text", "True"),
-                                                                                              new { id = "DDI", @class = "form-control", @style = "max-width: 70px;" })
-                                @Html.TextBoxFor(model => model.DDDPhone, new { id = "DDD", @class = "form-control", @style = "max-width: 60px;", @placeholder = "DDD", @autocomplete = "off" })
-                                @Html.TextBoxFor(model => model.Phone, new { id = "Fone", @class = "form-control", @placeholder = "Celular", @autocomplete = "off" })
-                            </div>
-                            @Html.ValidationMessageFor(model => model.DDDPhone, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
-                            @Html.ValidationMessageFor(model => model.Phone, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
-                        </div>
-
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
-                                </div>
-                                @Html.PasswordFor(model => model.Password, new { id = "Senha", @class = "form-control", @placeholder = "Senha", @autocomplete = "off" })
-                            </div>
-                            @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
-                        </div>
-
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-check-circle"></i></span>
-                                </div>
-                                @Html.PasswordFor(model => model.ConfirmPassword, new { id = "ConfirmaSenha", @class = "form-control", @placeholder = "Repita a senha", @autocomplete = "off" })
-                            </div>
-                            @Html.ValidationMessageFor(model => model.ConfirmPassword, null, new { @class = "text-white", @style = "font-style: italic; font-size:10px" })
-                        </div>
-
-                        <div>
-                            <div class="row align-items-center terms">
-                                @Html.CheckBoxFor(model => model.Terms, new { id = "Termo", @class = "form-control", @style = "margin-bottom:9px" })
-                                <label> Eu concordo com os <a href="#">termos</a></label>
-                            </div>
-                            @Html.ValidationMessageFor(model => model.Terms, null, new { @class = "text-center text-white", @style = "font-style: italic; font-size:10px" })
-                        </div>
-                    </div>
-
-                    <div class="card-footer form-group">
-                        <div class="form-group">
-                            <a href="@Url.Action("Login", "Account")" class="btn float-left btn-link">Voltar</a>
-                            <input type="submit" value="Registrar" class="btn float-right register_btn">
-                        </div>
-                    </div>
-
-                    <div class="card-footer">
-                        <p>
-                            <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Registro via facebook</a>
-                            <a href="" class="btn btn-block btn-google"> <i class="fab fa-google-plus-g"></i>   Registro via Google+</a>
-                            <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Registro via Twitter</a>
-                        </p>
-                    </div>
-
-                    <span class="help-block text-center">
-                        @Html.ValidationSummary(true, null, new { @class = "text-center text-danger", @style = "font-style:italic; font-size:12px" })
-                    </span>
-                }
             </div>
         </div>
     </div>
-    <link href="~/Content/css/account/register/page.css" rel="stylesheet" />
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="module module-login span4 offset4">
+                    @using (Html.BeginForm("Register", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-vertical", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="module-head">
+                            <h3>Nova Conta</h3>
+                        </div>
+                        <div class="module-body">
+
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    @Html.TextBoxFor(model => model.NameIdentifier, new { id = "Nome", @class = "span12", @placeholder = "Nome", @autocomplete = "off" })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.NameIdentifier, null, new { @style = "font-style: italic; font-size:11px" })
+                            </div>
+
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    @Html.TextBoxFor(model => model.Email, new { id = "Email", @class = "span12", @placeholder = "E-mail", @autocomplete = "off" })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Email, null, new { @style = "font-style: italic; font-size:11px" })
+                            </div>
+
+                            <div class="control-group">
+                                <div class="form-inline">
+                                    @Html.DropDownListFor(model => model.DDIPhone, new SelectList(new List<SelectListItem> {
+                                                                                              new SelectListItem { Text = "+55", Value = "+55"} }, "Value", "Text", "True"),
+                                                                                              new { id = "DDI", @class = "span8", @style = "max-width: 70px; margin-bottom: 0px" })
+                                    <span class="input-group-addon">-</span>
+                                    @Html.TextBoxFor(model => model.DDDPhone, new { id = "DDD", @class = "span12", @style = "max-width: 60px;", @placeholder = "DDD", @autocomplete = "off" })
+                                    <span class="input-group-addon">-</span>
+                                    @Html.TextBoxFor(model => model.Phone, new { id = "Fone", @class = "span12", @style = "max-width: 160px;", @placeholder = "Celular", @autocomplete = "off" })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.DDDPhone, null, new { @style = "font-style: italic; font-size:11px" })
+                                @Html.ValidationMessageFor(model => model.Phone, null, new { @style = "font-style: italic; font-size:11px" })
+                            </div>
+
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    @Html.PasswordFor(model => model.Password, new { id = "Senha", @class = "span12", @placeholder = "Senha", @autocomplete = "off" })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Password, null, new { @style = "font-style: italic; font-size:11px" })
+                            </div>
+
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    @Html.PasswordFor(model => model.ConfirmPassword, new { id = "ConfirmaSenha", @class = "span12", @placeholder = "Repita a senha", @autocomplete = "off" })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.ConfirmPassword, null, new { @style = "font-style: italic; font-size:11px" })
+                            </div>
+
+                        </div>
+                        <div class="module-foot">
+                            <div class="control-group">
+                                <div class="controls clearfix">
+                                    <button type="submit" class="btn btn-primary pull-right">Registrar</button>
+                                    <label class="checkbox">
+                                        @Html.CheckBoxFor(model => model.Terms, new { id = "Termo", @class = "form-control", @style = "margin-bottom:9px" })
+                                        <label> Eu concordo com os <a href="#">termos</a></label>
+                                    </label>
+                                    @Html.ValidationMessageFor(model => model.Terms, null, new { @style = "font-style: italic; font-size:11px" })
+                                </div>
+                                <span class="help-block">
+                                    @Html.ValidationSummary(true, null, new { @class = "text-center", @style = "font-style:italic; font-size:12px" })
+                                </span>
+                            </div>
+                        </div>
+                        <div class="module-foot">
+                            <p>
+                                <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Registro via facebook</a>
+                                <a href="" class="btn btn-block btn-google"> <i class="fab fa-google-plus-g"></i>   Registro via Google+</a>
+                                <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Registro via Twitter</a>
+                            </p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <b class="copyright">&copy; 2019 Portal de Obrigações - Alison Horacio </b>Todos os direitos reservados.
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
     <script src="~/Content/scripts/account/register/page.js"></script>
 </body>

@@ -20,6 +20,8 @@ namespace AHAS.PO.UI.SITE.Controllers
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            ViewBag.WebSite = "Portal de Obrigações";
+            ViewBag.URLHome = "../home/index";
         }
 
         // GET: /Account/Login
@@ -49,7 +51,7 @@ namespace AHAS.PO.UI.SITE.Controllers
                 return View(model);
             }
             else if (!await _userManager.IsEmailConfirmedAsync(user.Id))
-                return View("DisplayEmail");
+                return View("RegisterConfirm");
 
             var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, shouldLockout: true);
             switch (result)
@@ -96,7 +98,7 @@ namespace AHAS.PO.UI.SITE.Controllers
                     var urlToken = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = token }, protocol: Request.Url.Scheme);
                     string body = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("../Content/templates/confirmation.html"));
                     await _userManager.SendEmailAsync(user.Id, "Por favor confirme sua conta", string.Format(body, user.UserName, urlToken));
-                    return View("DisplayEmail");
+                    return View("RegisterConfirm");
                 }
                 AddErrors(result);
             }

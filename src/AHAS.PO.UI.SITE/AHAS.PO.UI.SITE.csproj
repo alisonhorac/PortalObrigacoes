@@ -136,14 +136,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\account\confirmedemail\page.css" />
-    <Content Include="Content\css\account\forgotpassword\page.css" />
+    <Content Include="Content\css\account\emailRegister\page.css" />
+    <Content Include="Content\css\account\forgotPassword\page.css" />
     <Content Include="Content\css\account\login\page.css" />
-    <Content Include="Content\css\account\displayemail\page.css" />
-    <Content Include="Content\css\account\recoveredpassword\page.css" />
+    <Content Include="Content\css\account\registerConfirm\page.css" />
+    <Content Include="Content\css\account\emailPassword\page.css" />
     <Content Include="Content\css\account\register\page.css" />
-    <Content Include="Content\css\account\verifysms\page.css" />
+    <Content Include="Content\css\account\verifyCode\page.css" />
     <Content Include="Content\css\shared\error\page.css" />
+    <Content Include="Content\css\theme\theme.css" />
+    <Content Include="Content\img\cbimage.jpg" />
     <Content Include="Content\scripts\account\register\page.js" />
     <Content Include="Content\templates\confirmation.html" />
     <Content Include="Content\templates\recover.html" />
@@ -158,6 +160,7 @@
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -167,17 +170,16 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\DisplayEmail.cshtml" />
+    <Content Include="Views\Account\RegisterConfirm.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
