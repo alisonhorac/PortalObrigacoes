@@ -144,11 +144,16 @@
     <Content Include="Content\css\account\register\page.css" />
     <Content Include="Content\css\account\verifyCode\page.css" />
     <Content Include="Content\css\shared\error\page.css" />
+    <Content Include="Content\css\shared\layout\black-menu.css" />
+    <Content Include="Content\css\shared\layout\gray-menu.css" />
     <Content Include="Content\css\theme\theme.css" />
     <Content Include="Content\img\cbimage.jpg" />
+    <Content Include="Content\img\noun_User_17241.png" />
     <Content Include="Content\scripts\account\register\page.js" />
+    <Content Include="Content\scripts\shared\page.js" />
     <Content Include="Content\templates\confirmation.html" />
     <Content Include="Content\templates\recover.html" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -201,6 +206,9 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
