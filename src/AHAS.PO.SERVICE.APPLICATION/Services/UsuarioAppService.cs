@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using AHAS.PO.LOGIC.DOMAIN.Entities;
 using AHAS.PO.LOGIC.DOMAIN.Interfaces.Service;
-using AHAS.PO.SERVICE.APPLICATION.Interface;
+using AHAS.PO.SERVICE.APPLICATION.Interfaces;
 
-namespace AHAS.PO.SERVICE.APPLICATION.AppService
+namespace AHAS.PO.SERVICE.APPLICATION.Services
 {
     public class UsuarioAppService : IUsuarioAppService
     {

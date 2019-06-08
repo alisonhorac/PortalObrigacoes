@@ -900,12 +900,12 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@topColor', end
 }
 .widget-menu .menu-icon {
 	 
-	margin-right: 10px;
+    margin-right: 10px;
 	 
-	color: #767676;
-	 -webkit-transition: all .2s ease-in-out;
--moz-transition: all .2s ease-in-out;
-transition: all .2s ease-in-out;
+    color: #767676;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 .widget-menu .label {
 	background: #888;
@@ -934,16 +934,16 @@ transition: all .2s ease-in-out;
 -moz-transition: all .2s ease-in-out;
 transition: all .2s ease-in-out;
 }
-.widget-menu>li>a .icon-chevron-up {
+.widget-menu>li>a .fa-angle-up {
 	display: block
 }
-.widget-menu>li>a .icon-chevron-down {
+.widget-menu>li>a .fa-angle-down {
 	display: none
 }
-.widget-menu>li>a.collapsed .icon-chevron-up {
+.widget-menu>li>a.collapsed .fa-angle-up {
 	display: none
 }
-.widget-menu>li>a.collapsed .icon-chevron-down {
+.widget-menu>li>a.collapsed .fa-angle-down {
 	display: block
 }
 .widget-menu>li>a:hover {
@@ -951,7 +951,9 @@ transition: all .2s ease-in-out;
 	color: #fafafa;
 }
 
-.widget-menu>li>a:hover .menu-icon { color:#fff;}
+.widget-menu > li > a:hover .menu-icon {
+    color: #fff;
+}
 
 .widget-menu>li ul li {
 	background: #eee;

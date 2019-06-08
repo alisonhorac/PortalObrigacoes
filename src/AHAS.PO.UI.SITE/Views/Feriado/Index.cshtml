@@ -1,0 +1,44 @@
+﻿@model IEnumerable<AHAS.PO.SERVICE.APPLICATION.ViewModel.FeriadoViewModel>
+@{
+    ViewBag.Title = "Feriados";
+}
+
+<h2>View</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlagFeriadoFixo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDAbrangencia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlagFeriadoFixo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDAbrangencia)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDFeriado }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDFeriado }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDFeriado })
+        </td>
+    </tr>
+}
+
+</table>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AHAS.PO.SERVICE.APPLICATION.Interface
+namespace AHAS.PO.SERVICE.APPLICATION.Interfaces
 {
     public interface IUsuarioAppService
     {

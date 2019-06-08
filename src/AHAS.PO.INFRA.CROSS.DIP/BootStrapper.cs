@@ -12,8 +12,8 @@ using AHAS.PO.LOGIC.DOMAIN.Interfaces.Repository;
 using AHAS.PO.LOGIC.DOMAIN.Interfaces.Service;
 using AHAS.PO.LOGIC.DOMAIN.Interfaces.UnitOfWork;
 using AHAS.PO.LOGIC.DOMAIN.Services;
-using AHAS.PO.SERVICE.APPLICATION.AppService;
-using AHAS.PO.SERVICE.APPLICATION.Interface;
+using AHAS.PO.SERVICE.APPLICATION.Services;
+using AHAS.PO.SERVICE.APPLICATION.Interfaces;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using SimpleInjector;
@@ -33,6 +33,7 @@ namespace AHAS.PO.INFRA.CROSS.DIP
             container.Register<ApplicationSignInManager>(Lifestyle.Scoped);
 
             //APPLICATION
+            container.Register<IFeriadoAppService, FeriadoAppService>(Lifestyle.Scoped);
             container.Register<IUsuarioAppService, UsuarioAppService>(Lifestyle.Scoped);
 
             //DOMAIN
