@@ -1698,5 +1698,5 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', end
 @media(max-width:767px){body{padding:0!important}.wrapper{padding:20px 15px}}
 
 .wrapper {
-    background-image: url(../../img/cbimage.jpg);
+    background-image: url(../../../Content/img/cbimage.jpg);
 }

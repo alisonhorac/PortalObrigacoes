@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AHAS.PO.INFRA.CROSS.DIP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,13 +13,39 @@ namespace AHAS.PO.UI.SITE.App_Start
         {
             bundles.UseCdn = true;
 
-            bundles.Add(new StyleBundle("~/bundles/cdn/font-awesome-old", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.0.2/css/font-awesome.min.css"));
-
-            bundles.Add(new ScriptBundle("~/bundles/cdn/jquery", "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"));
-            bundles.Add(new ScriptBundle("~/bundles/cdn/twitter-bootstrap", "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"));
-            bundles.Add(new ScriptBundle("~/bundles/content/jquery-dataTables").Include("~/Content/scripts/feriado/jquery.dataTables.js"));
+            RegisterShared(bundles);
+            RegisterFeriado(bundles);
+            RegisterError(bundles);
+            RegisterAccount(bundles);
 
             BundleTable.EnableOptimizations = true;
+        }
+
+        private static void RegisterError(BundleCollection bundles)
+        {
+            BundlesCSS.TwitterBootstrapNew(bundles);
+        }
+
+        private static void RegisterAccount(BundleCollection bundles)
+        {
+            BundlesJS.JquerySlim(bundles);
+        }
+
+        private static void RegisterShared(BundleCollection bundles)
+        {
+            BundlesCSS.TwitterBootstrap(bundles);
+            BundlesCSS.BootStrapResponsive(bundles);
+            BundlesCSS.FontAwesomeAll(bundles);
+            BundlesCSS.FontFamilyOpenSans(bundles);
+            BundlesCSS.Theme(bundles);
+            BundlesJS.Jquery(bundles);
+            BundlesJS.TwitterBootstrap(bundles);
+        }
+
+        private static void RegisterFeriado(BundleCollection bundles)
+        {
+            BundlesCSS.FontAwersomeOld(bundles);
+            BundlesJS.JqueryDataTable(bundles);
         }
     }
 }

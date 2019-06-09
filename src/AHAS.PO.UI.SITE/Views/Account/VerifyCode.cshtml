@@ -11,11 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.WebSite | @ViewBag.Title</title>
 
-    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.css" rel="stylesheet">
-    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-    <link type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-    <link type="text/css" href="~/Content/css/theme/theme.css" rel="stylesheet">
+    @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/twitter-bootstrap")
+    @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/bootstrap-responsive")
+    @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/font-awesome-all")
+    @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/family-opensans")
+    @System.Web.Optimization.Styles.Render("~/bundles/content/css/theme")
     <link href="~/Content/css/account/verifyCode/page.css" rel="stylesheet" />
 
 </head>
@@ -24,7 +24,7 @@
         <div class="navbar-inner">
             <div class="container">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                    <i class="icon-reorder shaded"></i>
+                    <i class="fas fa-bars shaded"></i>
                 </a>
 
                 <a class="brand" href="@ViewBag.URLHome">@ViewBag.WebSite</a>
@@ -93,7 +93,7 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
+    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/jquery")
+    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/twitter-bootstrap")
 </body>
 </html>

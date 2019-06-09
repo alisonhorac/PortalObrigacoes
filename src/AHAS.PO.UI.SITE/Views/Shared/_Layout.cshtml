@@ -7,11 +7,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal de Obrigações | @ViewBag.Title</title>
-    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.css" rel="stylesheet">
-    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet">
-    <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
-    <link type="text/css" href="~/Content/css/theme/theme.css" rel="stylesheet">
 
     @if (ViewBag.Theme == "black-theme")
     {
@@ -21,6 +16,12 @@
     {
         <link type="text/css" href="~/Content/css/shared/layout/gray-menu.css" rel="stylesheet" id="gray-theme">
     }
+
+    @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/twitter-bootstrap")
+    @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/bootstrap-responsive")
+    @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/font-awesome-all")
+    @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/family-opensans")
+    @System.Web.Optimization.Styles.Render("~/bundles/content/css/theme")
 
     @RenderSection("Styles", false)
 
@@ -51,8 +52,8 @@
     @Html.Partial("_MenuInferior")
 
     <!-- Section for main scripts render -->
-    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/jquery")
-    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/twitter-bootstrap")
+    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/jquery")
+    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/twitter-bootstrap")
     <script src="~/Content/scripts/shared/page.js" type="text/javascript"></script>
 
     <!-- Handler for local scripts -->
