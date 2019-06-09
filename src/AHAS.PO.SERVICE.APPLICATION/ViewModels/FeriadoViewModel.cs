@@ -11,13 +11,8 @@ namespace AHAS.PO.SERVICE.APPLICATION.ViewModel
 {
     public class FeriadoViewModel
     {
-        public FeriadoViewModel()
-        {
-            IDFeriado = Guid.NewGuid();
-        }
-
         [Key]
-        public Guid IDFeriado { get; set; }
+        public int IDFeriado { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Global_Required")]
         [MaxLength(200, ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Global_MaxLenght")]
@@ -30,6 +25,6 @@ namespace AHAS.PO.SERVICE.APPLICATION.ViewModel
 
         [Required(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Global_Required")]
         [DisplayName("Abrangência")]
-        public Guid IDAbrangencia { get; set; }
+        public int IDAbrangencia { get; set; }
     }
 }

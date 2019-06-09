@@ -13,9 +13,9 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
             HasKey(x => x.IDAbrangencia);
 
             //AUTOINCREMENTO
-            //HasKey(x => x.IDAbrangencia)
-            //    .Property(x => x.IDAbrangencia)
-            //    .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasKey(x => x.IDAbrangencia)
+                .Property(x => x.IDAbrangencia)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(x => x.Descricao)
                 .IsRequired()

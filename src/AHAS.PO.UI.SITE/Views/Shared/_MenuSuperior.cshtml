@@ -1,0 +1,45 @@
+﻿<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                <i class="icon-reorder shaded"></i>
+            </a>
+
+            <a class="brand" href="@Url.Action("Index", "Home")">Portal de Obrigações</a>
+
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <ul class="nav pull-right">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Opções Gerais
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-header">Personalização</li>
+                            <li><a href="#" onclick="setTheme('gray-theme')"><i class="fas fa-palette"></i>&nbsp;&nbsp;Cores do Menu</a></li>
+                            <li><a href="#"><i class="far fa-image"></i>&nbsp;&nbsp;Plano de Fundo</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Ajuda </a></li>
+
+                    <li class="nav-user dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="~/Content/img/noun_User_17241.png" class="nav-avatar" />
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fas fa-id-card-alt"></i>&nbsp;&nbsp;Meu Perfil</a></li>
+                            <li><a href="#"><i class="far fa-address-card"></i>&nbsp;&nbsp;Dados Básicos</a></li>
+                            <li><a href="#"><i class="fas fa-cog"></i>&nbsp;&nbsp;Configurações da Conta</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Logout</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,6 +12,11 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
 
             HasKey(x => x.IDStatus);
 
+            //AUTOINCREMENTO
+            HasKey(x => x.IDStatus)
+                .Property(x => x.IDStatus)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
             Property(x => x.Descricao)
                 .IsRequired()
                 .HasMaxLength(50)

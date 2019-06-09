@@ -4,12 +4,7 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
 {
     public class Feriado
     {
-        public Feriado()
-        {
-            IDFeriado = Guid.NewGuid();
-        }
-
-        public Guid IDFeriado { get; set; }
+        public long IDFeriado { get; set; }
 
         public string Descricao { get; set; }
 

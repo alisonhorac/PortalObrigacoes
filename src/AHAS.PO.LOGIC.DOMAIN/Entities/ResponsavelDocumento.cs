@@ -17,10 +17,10 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
         public DateTime DataAtualizacao { get; set; }
 
         //RELACIONAMENTO
-        public Guid IDUnidade { get; set; }
+        public long IDUnidade { get; set; }
         public virtual Unidade Unidade { get; set; }
 
-        public Guid IDDocumento { get; set; }
+        public long IDDocumento { get; set; }
         public virtual Documento Documento { get; set; }
 
         public virtual Usuario Usuario { get; set; }

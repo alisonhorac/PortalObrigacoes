@@ -1,4 +1,5 @@
 ﻿using AHAS.PO.LOGIC.DOMAIN.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 
 namespace AHAS.PO.INFRA.DATA.EntityConfig
@@ -10,6 +11,11 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
             ToTable("tbFeriado");
 
             HasKey(x => x.IDFeriado);
+
+            //AUTOINCREMENTO
+            HasKey(x => x.IDFeriado)
+                .Property(x => x.IDFeriado)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(x => x.Descricao)
                 .IsRequired()

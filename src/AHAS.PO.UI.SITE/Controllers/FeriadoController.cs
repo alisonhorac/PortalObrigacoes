@@ -8,11 +8,11 @@ using System.Web.Mvc;
 
 namespace AHAS.PO.UI.SITE.Controllers
 {
-    public class FeriadosController : Controller
+    public class FeriadoController : Controller
     {
         private readonly IFeriadoAppService _feriadoAppService;
 
-        public FeriadosController(IFeriadoAppService feriadoAppService)
+        public FeriadoController(IFeriadoAppService feriadoAppService)
         {
             _feriadoAppService = feriadoAppService;
         }

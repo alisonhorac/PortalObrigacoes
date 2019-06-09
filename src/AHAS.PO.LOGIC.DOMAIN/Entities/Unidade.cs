@@ -5,14 +5,12 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
 {
     public class Unidade
     {
-
         public Unidade()
         {
-            IDUnidade = Guid.NewGuid();
             ResponsaveisDocumentos = new HashSet<ResponsavelDocumento>();
         }
 
-        public Guid IDUnidade { get; set; }
+        public long IDUnidade { get; set; }
 
         public string CNPJ { get; set; }
 

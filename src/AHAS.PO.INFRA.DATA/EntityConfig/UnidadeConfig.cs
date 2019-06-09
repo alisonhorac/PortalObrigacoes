@@ -1,4 +1,5 @@
 ﻿using AHAS.PO.LOGIC.DOMAIN.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 
 namespace AHAS.PO.INFRA.DATA.EntityConfig
@@ -10,6 +11,11 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
             ToTable("tbUnidade");
 
             HasKey(x => x.IDUnidade);
+
+            //AUTOINCREMENTO
+            HasKey(x => x.IDUnidade)
+                .Property(x => x.IDUnidade)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(x => x.CNPJ)
                 .IsRequired()
