@@ -4,10 +4,13 @@
 }
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
 
 <div class="module">
+    <div class="navbutton">
+        <a href="#" class="btn btn-primary btn-xs"><span class="fas fa-plus-circle"></span> Adicionar Novo Feriado</a>
+    </div>
     <div class="module-head">
         <h3>@ViewBag.Title</h3>
     </div>
@@ -16,8 +19,8 @@
             <thead>
                 <tr>
                     <th>@Html.DisplayNameFor(model => model.Descricao)</th>
-                    <th>@Html.DisplayNameFor(model => model.FlagFeriadoFixo)</th>
-                    <th>@Html.DisplayNameFor(model => model.IDAbrangencia)</th>
+                    <th>@Html.DisplayNameFor(model => model.DescricaoFlagFeriadoFixo)</th>
+                    <th>@Html.DisplayNameFor(model => model.DescricaoAbrangencia)</th>
                     <th>Opções</th>
                 </tr>
             </thead>
@@ -29,10 +32,10 @@
                             @Html.DisplayFor(modelItem => item.Descricao)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.FlagFeriadoFixo)
+                            @Html.DisplayFor(modelItem => item.DescricaoFlagFeriadoFixo)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.IDAbrangencia)
+                            @Html.DisplayFor(modelItem => item.DescricaoAbrangencia)
                         </td>
                         <td>
                             <a href="@Url.Action("Edit", "Feriado", new { id = item.IDFeriado })" class="btn btn-info btn-xs"><span class="fas fa-pen-square"></span> Editar</a>
@@ -45,8 +48,8 @@
             <tfoot>
                 <tr>
                     <th>@Html.DisplayNameFor(model => model.Descricao)</th>
-                    <th>@Html.DisplayNameFor(model => model.FlagFeriadoFixo)</th>
-                    <th>@Html.DisplayNameFor(model => model.IDAbrangencia)</th>
+                    <th>@Html.DisplayNameFor(model => model.DescricaoFlagFeriadoFixo)</th>
+                    <th>@Html.DisplayNameFor(model => model.DescricaoAbrangencia)</th>
                     <th>Opções</th>
                 </tr>
             </tfoot>

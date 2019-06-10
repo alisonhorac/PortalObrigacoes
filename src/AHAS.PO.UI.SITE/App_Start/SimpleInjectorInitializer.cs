@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
-using AHAS.PO.INFRA.CROSS.DIP;
+using AHAS.PO.INFRA.CROSS.DIPCFG;
 using Microsoft.Owin;
 using SimpleInjector;
 using SimpleInjector.Integration.Web;

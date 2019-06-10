@@ -14,6 +14,8 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
 
         public DateTime DataAte { get; set; }
 
+        //RELACIONAMENTO
+        public int IDAbrangencia { get; set; }
         public virtual Abrangencia Abrangencia { get; set; }
     }
 }

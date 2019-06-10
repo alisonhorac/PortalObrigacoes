@@ -214,9 +214,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\AHAS.PO.INFRA.CROSS.DIP\AHAS.PO.INFRA.CROSS.DIP.csproj">
+    <ProjectReference Include="..\AHAS.PO.INFRA.CROSS.DIPCFG\AHAS.PO.INFRA.CROSS.DIPCFG.csproj">
       <Project>{96B09789-CC1C-44FF-9BBC-790901C0F14A}</Project>
-      <Name>AHAS.PO.INFRA.CROSS.DIP</Name>
+      <Name>AHAS.PO.INFRA.CROSS.DIPCFG</Name>
     </ProjectReference>
     <ProjectReference Include="..\AHAS.PO.INFRA.CROSS.IDENTITY\AHAS.PO.INFRA.CROSS.IDENTITY.csproj">
       <Project>{D63F35A1-9B91-407C-922B-3A47DD8CB383}</Project>

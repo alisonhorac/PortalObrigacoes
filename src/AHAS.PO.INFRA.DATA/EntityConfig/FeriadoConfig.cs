@@ -30,6 +30,15 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
 
             Property(x => x.FlagFeriadoFixo)
                 .IsRequired();
+
+            //FK - N : 1
+            Property(x => x.IDAbrangencia)
+                .HasColumnName("IDAbrangencia")
+                .IsRequired();
+
+            HasRequired(x => x.Abrangencia)
+                .WithMany(x => x.Feriados)
+                .HasForeignKey(c => c.IDAbrangencia);
         }
     }
 }

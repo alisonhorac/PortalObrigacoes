@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AHAS.PO.LOGIC.DOMAIN.Entities
 {
@@ -9,6 +10,6 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
         public string Descricao { get; set; }
 
         //RELACIONAMENTO
-        public virtual Feriado Feriado { get; set; }
+        public virtual ICollection<Feriado> Feriados { get; set; }
     }
 }

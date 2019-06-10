@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Optimization;
 
-namespace AHAS.PO.INFRA.CROSS.DIP
+namespace AHAS.PO.INFRA.CROSS.DIPCFG
 {
     public static class BundlesJS
     {

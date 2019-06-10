@@ -23,8 +23,14 @@ namespace AHAS.PO.SERVICE.APPLICATION.ViewModel
         [DisplayName("Feriado Fixo")]
         public bool FlagFeriadoFixo { get; set; }
 
+        [DisplayName("Feriado Fixo")]
+        public string DescricaoFlagFeriadoFixo { get; set; }
+
         [Required(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Global_Required")]
         [DisplayName("Abrangência")]
         public int IDAbrangencia { get; set; }
+
+        [DisplayName("Abrangência")]
+        public string DescricaoAbrangencia { get; set; }
     }
 }

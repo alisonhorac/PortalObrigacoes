@@ -22,10 +22,10 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
                 .HasMaxLength(150)
                 .HasColumnType("VARCHAR");
 
-            //FK - 1 : 1
-            HasRequired(x => x.Feriado)
-                .WithRequiredPrincipal(x => x.Abrangencia)
-                .Map(m => m.MapKey("IDAbrangencia"));
+            //FK - 1 : N
+            HasMany(c => c.Feriados)
+                .WithRequired(c => c.Abrangencia)
+                .HasForeignKey(c => c.IDAbrangencia);
         }
     }
 }

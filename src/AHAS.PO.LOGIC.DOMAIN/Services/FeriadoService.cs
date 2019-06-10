@@ -37,7 +37,7 @@ namespace AHAS.PO.LOGIC.DOMAIN.Services
 
         public IEnumerable<Feriado> Listar()
         {
-            return repository.Listar();
+            return repository.ListarFeriado();
         }
 
         public void Dispose()
