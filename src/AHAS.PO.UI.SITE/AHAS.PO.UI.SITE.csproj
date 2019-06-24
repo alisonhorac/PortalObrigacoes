@@ -161,7 +161,8 @@
     <Content Include="Content\img\noun_User_17241.png" />
     <Content Include="Content\scripts\account\register\page.js" />
     <Content Include="Content\scripts\feriado\jquery.dataTables.js" />
-    <Content Include="Content\scripts\feriado\page.js" />
+    <Content Include="Content\scripts\feriado\page.adicionar.js" />
+    <Content Include="Content\scripts\feriado\page.index.js" />
     <Content Include="Content\scripts\shared\page.js" />
     <Content Include="Content\templates\confirmation.html" />
     <Content Include="Content\templates\recover.html" />
@@ -205,6 +206,7 @@
     <Content Include="Views\Shared\_MenuSuperior.cshtml" />
     <Content Include="Views\Shared\_MenuLateral.cshtml" />
     <Content Include="Views\Shared\_MenuInferior.cshtml" />
+    <Content Include="Views\Feriado\Adicionar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

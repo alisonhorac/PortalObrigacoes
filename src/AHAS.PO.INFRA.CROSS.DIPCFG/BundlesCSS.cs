@@ -31,7 +31,7 @@ namespace AHAS.PO.INFRA.CROSS.DIPCFG
 
         public static void TwitterBootstrap(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/bundles/cdn/css/twitter-bootstrap", "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.css"));
+            bundles.Add(new StyleBundle("~/bundles/cdn/css/twitter-bootstrap", "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css"));
         }
 
         public static void TwitterBootstrapNew(BundleCollection bundles)
@@ -42,6 +42,11 @@ namespace AHAS.PO.INFRA.CROSS.DIPCFG
         public static void FontAwersomeOld(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/bundles/cdn/css/font-awesome-old", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.0.2/css/font-awesome.min.css"));
+        }
+
+        public static void JqueryUI(BundleCollection bundles)
+        {
+            bundles.Add(new StyleBundle("~/bundles/cdn/css/jquery-ui", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"));
         }
     }
 }

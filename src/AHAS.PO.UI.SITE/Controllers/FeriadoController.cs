@@ -18,26 +18,29 @@ namespace AHAS.PO.UI.SITE.Controllers
         }
 
         // GET: Feriados
+        [HttpGet]
         public ActionResult Index()
         {
             return View(_feriadoAppService.Listar());
         }
 
         // GET: Feriados/Details/5
-        public ActionResult Details(int id)
+        [HttpGet]
+        public ActionResult Detalhar(int id)
         {
             return View();
         }
 
         // GET: Feriados/Create
-        public ActionResult Create()
+        [HttpGet]
+        public ActionResult Adicionar()
         {
             return View();
         }
 
         // POST: Feriados/Create
         [HttpPost]
-        public ActionResult Create(FeriadoViewModel feriadoViewModel)
+        public ActionResult Adicionar(FeriadoViewModel feriadoViewModel)
         {
             try
             {
@@ -57,14 +60,15 @@ namespace AHAS.PO.UI.SITE.Controllers
         }
 
         // GET: Feriados/Edit/5
-        public ActionResult Edit(Guid? id)
+        [HttpGet]
+        public ActionResult Editar(Guid? id)
         {
             return View();
         }
 
         // POST: Feriados/Edit/5
         [HttpPost]
-        public ActionResult Edit(FeriadoViewModel feriadoViewModel)
+        public ActionResult Editar(FeriadoViewModel feriadoViewModel)
         {
             try
             {
@@ -79,14 +83,15 @@ namespace AHAS.PO.UI.SITE.Controllers
         }
 
         // GET: Feriados/Delete/5
-        public ActionResult Delete(Guid? id)
+        [HttpGet]
+        public ActionResult Excluir(Guid? id)
         {
             return View();
         }
 
         // POST: Feriados/Delete/5
         [HttpPost]
-        public ActionResult Delete(Guid id)
+        public ActionResult Excluir(Guid id)
         {
             try
             {

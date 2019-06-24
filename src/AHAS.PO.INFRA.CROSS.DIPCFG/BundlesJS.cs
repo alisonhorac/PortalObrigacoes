@@ -30,5 +30,10 @@ namespace AHAS.PO.INFRA.CROSS.DIPCFG
         {
             bundles.Add(new ScriptBundle("~/bundles/cdn/js/twitter-bootstrap", "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"));
         }
+
+        public static void JqueryUI(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/bundles/cdn/js/jquery-ui", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"));
+        }
     }
 }

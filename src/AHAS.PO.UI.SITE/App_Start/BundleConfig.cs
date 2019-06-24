@@ -45,7 +45,9 @@ namespace AHAS.PO.UI.SITE.App_Start
         private static void RegisterFeriado(BundleCollection bundles)
         {
             BundlesCSS.FontAwersomeOld(bundles);
+            BundlesCSS.JqueryUI(bundles);
             BundlesJS.JqueryDataTable(bundles);
+            BundlesJS.JqueryUI(bundles);
         }
     }
 }
