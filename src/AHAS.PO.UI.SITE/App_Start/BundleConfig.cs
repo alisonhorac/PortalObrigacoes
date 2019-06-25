@@ -14,11 +14,18 @@ namespace AHAS.PO.UI.SITE.App_Start
             bundles.UseCdn = true;
 
             RegisterShared(bundles);
+            RegisterLoading(bundles);
             RegisterFeriado(bundles);
             RegisterError(bundles);
             RegisterAccount(bundles);
 
             BundleTable.EnableOptimizations = true;
+        }
+
+        private static void RegisterLoading(BundleCollection bundles)
+        {
+            BundlesCSS.LoadPage(bundles);
+            BundlesJS.LoadPage(bundles);
         }
 
         private static void RegisterError(BundleCollection bundles)
@@ -45,9 +52,11 @@ namespace AHAS.PO.UI.SITE.App_Start
         private static void RegisterFeriado(BundleCollection bundles)
         {
             BundlesCSS.FontAwersomeOld(bundles);
-            BundlesCSS.JqueryUI(bundles);
+            BundlesCSS.DateRangePicker(bundles);
             BundlesJS.JqueryDataTable(bundles);
-            BundlesJS.JqueryUI(bundles);
+            BundlesJS.JQueryV3(bundles);
+            BundlesJS.Moment(bundles);
+            BundlesJS.DateRangePicker(bundles);
         }
     }
 }

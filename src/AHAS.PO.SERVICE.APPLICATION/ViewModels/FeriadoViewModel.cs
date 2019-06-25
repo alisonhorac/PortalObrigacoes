@@ -20,6 +20,10 @@ namespace AHAS.PO.SERVICE.APPLICATION.ViewModel
         [DisplayName("Descrição")]
         public string Descricao { get; set; }
 
+        [Required(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Global_Required")]
+        [DisplayName("Período do Feriado")]
+        public string PeriodoDeAte { get; set; }
+
         [DisplayName("Feriado Fixo")]
         public bool FlagFeriadoFixo { get; set; }
 

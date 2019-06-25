@@ -45,13 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapper\Profiles\AbrangenciaProfile.cs" />
     <Compile Include="AutoMapper\Profiles\FeriadoProfile.cs" />
+    <Compile Include="Interfaces\IAbrangenciaAppService.cs" />
+    <Compile Include="Services\AbrangenciaAppService.cs" />
     <Compile Include="Services\FeriadoAppService.cs" />
     <Compile Include="Interfaces\IFeriadoAppService.cs" />
     <Compile Include="Services\UsuarioAppService.cs" />
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="Interfaces\IUsuarioAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AbrangenciaViewModel.cs" />
     <Compile Include="ViewModels\DocumentoViewModel.cs" />
     <Compile Include="ViewModels\FeriadoViewModel.cs" />
     <Compile Include="ViewModels\UnidadeViewModel.cs" />

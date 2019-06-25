@@ -10,18 +10,20 @@ namespace AHAS.PO.UI.SITE.Controllers
 {
     public class FeriadoController : Controller
     {
-        private readonly IFeriadoAppService _feriadoAppService;
+        private readonly IFeriadoAppService _FeriadoAppService;
+        private readonly IAbrangenciaAppService _AbrangenciaAppService;
 
-        public FeriadoController(IFeriadoAppService feriadoAppService)
+        public FeriadoController(IFeriadoAppService feriadoAppService, IAbrangenciaAppService abrangenciaAppService)
         {
-            _feriadoAppService = feriadoAppService;
+            _FeriadoAppService = feriadoAppService;
+            _AbrangenciaAppService = abrangenciaAppService;
         }
 
         // GET: Feriados
         [HttpGet]
         public ActionResult Index()
         {
-            return View(_feriadoAppService.Listar());
+            return View(_FeriadoAppService.Listar());
         }
 
         // GET: Feriados/Details/5
@@ -35,6 +37,7 @@ namespace AHAS.PO.UI.SITE.Controllers
         [HttpGet]
         public ActionResult Adicionar()
         {
+            ViewBag.ListaAbrangencia = new SelectList(_AbrangenciaAppService.Listar(), "IDAbrangencia", "Descricao");
             return View();
         }
 
@@ -46,7 +49,7 @@ namespace AHAS.PO.UI.SITE.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    feriadoViewModel = _feriadoAppService.Inserir(feriadoViewModel);
+                    feriadoViewModel = _FeriadoAppService.Inserir(feriadoViewModel);
 
                     return RedirectToAction("Index");
                 }
@@ -109,7 +112,7 @@ namespace AHAS.PO.UI.SITE.Controllers
         {
             if (disposing)
             {
-                _feriadoAppService.Dispose();
+                _FeriadoAppService.Dispose();
             }
             base.Dispose(disposing);
         }

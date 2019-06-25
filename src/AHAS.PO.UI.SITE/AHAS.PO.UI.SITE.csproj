@@ -152,10 +152,12 @@
     <Content Include="Content\css\account\emailPassword\page.css" />
     <Content Include="Content\css\account\register\page.css" />
     <Content Include="Content\css\account\verifyCode\page.css" />
-    <Content Include="Content\css\feriado\page.css" />
+    <Content Include="Content\css\feriado\page.adicionar.css" />
+    <Content Include="Content\css\feriado\page.index.css" />
     <Content Include="Content\css\shared\error\page.css" />
     <Content Include="Content\css\shared\layout\black-menu.css" />
     <Content Include="Content\css\shared\layout\gray-menu.css" />
+    <Content Include="Content\css\shared\load\page.load.css" />
     <Content Include="Content\css\theme\theme.css" />
     <Content Include="Content\img\cbimage.jpg" />
     <Content Include="Content\img\noun_User_17241.png" />
@@ -163,6 +165,7 @@
     <Content Include="Content\scripts\feriado\jquery.dataTables.js" />
     <Content Include="Content\scripts\feriado\page.adicionar.js" />
     <Content Include="Content\scripts\feriado\page.index.js" />
+    <Content Include="Content\scripts\shared\load\page.load.js" />
     <Content Include="Content\scripts\shared\page.js" />
     <Content Include="Content\templates\confirmation.html" />
     <Content Include="Content\templates\recover.html" />

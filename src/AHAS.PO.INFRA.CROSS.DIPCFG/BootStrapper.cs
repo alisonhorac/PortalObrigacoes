@@ -33,6 +33,7 @@ namespace AHAS.PO.INFRA.CROSS.DIPCFG
             container.Register<ApplicationSignInManager>(Lifestyle.Scoped);
 
             //APPLICATION
+            container.Register<IAbrangenciaAppService, AbrangenciaAppService>(Lifestyle.Scoped);
             container.Register<IFeriadoAppService, FeriadoAppService>(Lifestyle.Scoped);
             container.Register<IUsuarioAppService, UsuarioAppService>(Lifestyle.Scoped);
 

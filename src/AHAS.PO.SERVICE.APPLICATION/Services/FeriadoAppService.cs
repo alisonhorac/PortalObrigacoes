@@ -10,38 +10,38 @@ namespace AHAS.PO.SERVICE.APPLICATION.Services
 {
     public class FeriadoAppService : IFeriadoAppService
     {
-        private readonly IFeriadoService _feriadoService;
+        private readonly IFeriadoService _FeriadoService;
 
         public FeriadoAppService(IFeriadoService feriadoService)
         {
-            _feriadoService = feriadoService;
+            _FeriadoService = feriadoService;
         }
 
         public FeriadoViewModel Alterar(FeriadoViewModel feriadoViewModel)
         {
             var feriado = AutoMapperConfig.Mapper.Map<FeriadoViewModel, Feriado>(feriadoViewModel);
-            return AutoMapperConfig.Mapper.Map<Feriado, FeriadoViewModel>(_feriadoService.Alterar(feriado));
+            return AutoMapperConfig.Mapper.Map<Feriado, FeriadoViewModel>(_FeriadoService.Alterar(feriado));
         }
 
         public bool Excluir(Guid id)
         {
-            return _feriadoService.Excluir(id);
+            return _FeriadoService.Excluir(id);
         }
 
         public FeriadoViewModel Inserir(FeriadoViewModel feriadoViewModel)
         {
             var feriado = AutoMapperConfig.Mapper.Map<FeriadoViewModel, Feriado>(feriadoViewModel);
-            return AutoMapperConfig.Mapper.Map<Feriado, FeriadoViewModel>(_feriadoService.Inserir(feriado));
+            return AutoMapperConfig.Mapper.Map<Feriado, FeriadoViewModel>(_FeriadoService.Inserir(feriado));
         }
 
         public IEnumerable<FeriadoViewModel> Listar()
         {
-            return AutoMapperConfig.Mapper.Map<IEnumerable<Feriado>, IEnumerable<FeriadoViewModel>>(_feriadoService.Listar());
+            return AutoMapperConfig.Mapper.Map<IEnumerable<Feriado>, IEnumerable<FeriadoViewModel>>(_FeriadoService.Listar());
         }
 
         public void Dispose()
         {
-            _feriadoService.Dispose();
+            _FeriadoService.Dispose();
             GC.SuppressFinalize(this);
         }
     }
