@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using AHAS.PO.SERVICE.APPLICATION.ViewModel;
+using AHAS.PO.SERVICE.APPLICATION.ViewModels;
 
 namespace AHAS.PO.SERVICE.APPLICATION.Interfaces
 {

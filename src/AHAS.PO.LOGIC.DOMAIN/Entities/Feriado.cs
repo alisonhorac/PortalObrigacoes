@@ -17,5 +17,7 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
         //RELACIONAMENTO
         public int IDAbrangencia { get; set; }
         public virtual Abrangencia Abrangencia { get; set; }
+        public int? IDEstado { get; set; }
+        public virtual Estado Estado { get; set; }
     }
 }

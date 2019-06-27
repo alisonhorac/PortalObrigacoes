@@ -1,6 +1,6 @@
 ﻿using AHAS.PO.LOGIC.DOMAIN.Entities;
 using AHAS.PO.LOGIC.DOMAIN.Enum;
-using AHAS.PO.SERVICE.APPLICATION.ViewModel;
+using AHAS.PO.SERVICE.APPLICATION.ViewModels;
 using AutoMapper;
 
 namespace AHAS.PO.SERVICE.APPLICATION.AutoMapper.Profiles

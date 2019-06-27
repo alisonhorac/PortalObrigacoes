@@ -19,6 +19,7 @@ namespace AHAS.PO.INFRA.DATA.Context
         public DbSet<Origem> TbOrigem { get; set; }
         public DbSet<Status> TbStatus { get; set; }
         public DbSet<Abrangencia> TbAbrangencia { get; set; }
+        public DbSet<Estado> TbEstado { get; set; }
         public DbSet<Periodicidade> TbPeriodicidade { get; set; }
         public DbSet<ResponsavelDocumento> TbResponsavelDocumento { get; set; }
 
@@ -46,6 +47,7 @@ namespace AHAS.PO.INFRA.DATA.Context
             modelBuilder.Configurations.Add(new AgendamentoConfig());
             modelBuilder.Configurations.Add(new StatusConfig());
             modelBuilder.Configurations.Add(new AbrangeciaConfig());
+            modelBuilder.Configurations.Add(new EstadoConfig());
             modelBuilder.Configurations.Add(new PeriodicidadeConfig());
             modelBuilder.Configurations.Add(new OrigemConfig());
             modelBuilder.Configurations.Add(new ResponsavelDocumentoConfig());

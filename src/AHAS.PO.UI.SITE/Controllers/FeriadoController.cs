@@ -1,9 +1,7 @@
 ﻿using AHAS.PO.SERVICE.APPLICATION.Interfaces;
-using AHAS.PO.SERVICE.APPLICATION.ViewModel;
+using AHAS.PO.SERVICE.APPLICATION.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace AHAS.PO.UI.SITE.Controllers
@@ -11,11 +9,13 @@ namespace AHAS.PO.UI.SITE.Controllers
     public class FeriadoController : Controller
     {
         private readonly IFeriadoAppService _FeriadoAppService;
+        private readonly IEstadoAppService _EstadoAppService;
         private readonly IAbrangenciaAppService _AbrangenciaAppService;
 
-        public FeriadoController(IFeriadoAppService feriadoAppService, IAbrangenciaAppService abrangenciaAppService)
+        public FeriadoController(IFeriadoAppService feriadoAppService, IAbrangenciaAppService abrangenciaAppService, IEstadoAppService estadoAppService)
         {
             _FeriadoAppService = feriadoAppService;
+            _EstadoAppService = estadoAppService;
             _AbrangenciaAppService = abrangenciaAppService;
         }
 
@@ -37,29 +37,30 @@ namespace AHAS.PO.UI.SITE.Controllers
         [HttpGet]
         public ActionResult Adicionar()
         {
-            ViewBag.ListaAbrangencia = new SelectList(_AbrangenciaAppService.Listar(), "IDAbrangencia", "Descricao");
-            return View();
+            FeriadoViewModel viewModel = new FeriadoViewModel
+            {
+                ListaAbrangencia = _AbrangenciaAppService.Listar(),
+                ListaEstado = _EstadoAppService.Listar()
+            };
+
+            return View(viewModel);
         }
 
         // POST: Feriados/Create
         [HttpPost]
         public ActionResult Adicionar(FeriadoViewModel feriadoViewModel)
         {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    feriadoViewModel = _FeriadoAppService.Inserir(feriadoViewModel);
+            feriadoViewModel.ListaAbrangencia = _AbrangenciaAppService.Listar();
+            feriadoViewModel.ListaEstado = _EstadoAppService.Listar();
 
-                    return RedirectToAction("Index");
-                }
-
-                return View(feriadoViewModel);
-            }
-            catch
+            if (ModelState.IsValid)
             {
-                return View();
+                feriadoViewModel = _FeriadoAppService.Inserir(feriadoViewModel);
+
+                return RedirectToAction("Index");
             }
+
+            return View(feriadoViewModel);
         }
 
         // GET: Feriados/Edit/5

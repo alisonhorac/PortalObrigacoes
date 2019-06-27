@@ -15,7 +15,7 @@ namespace AHAS.PO.INFRA.DATA.Repository
 
         public IEnumerable<Feriado> ListarFeriado()
         {
-            return DataBase.TbFeriado.Include("Abrangencia").ToList();
+            return DataBase.TbFeriado.Include("Abrangencia").Include("Estado").ToList();
         }
     }
 }

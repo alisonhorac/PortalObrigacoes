@@ -1,7 +1,7 @@
 ﻿using AHAS.PO.LOGIC.DOMAIN.Entities;
 using System;
 
-namespace AHAS.PO.SERVICE.APPLICATION.ViewModels
+namespace AHAS.PO.SERVICE.APPLICATION.ViewModel
 {
     public class DocumentoViewModel
     {

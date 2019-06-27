@@ -34,6 +34,7 @@ namespace AHAS.PO.INFRA.CROSS.DIPCFG
 
             //APPLICATION
             container.Register<IAbrangenciaAppService, AbrangenciaAppService>(Lifestyle.Scoped);
+            container.Register<IEstadoAppService, EstadoAppService>(Lifestyle.Scoped);
             container.Register<IFeriadoAppService, FeriadoAppService>(Lifestyle.Scoped);
             container.Register<IUsuarioAppService, UsuarioAppService>(Lifestyle.Scoped);
 
@@ -47,6 +48,7 @@ namespace AHAS.PO.INFRA.CROSS.DIPCFG
             container.Register<IDocumentoService, DocumentoService>(Lifestyle.Scoped);
             container.Register<IAgendamentoService, AgendamentoService>(Lifestyle.Scoped);
             container.Register<IAbrangenciaService, AbrangenciaService>(Lifestyle.Scoped);
+            container.Register<IEstadoService, EstadoService>(Lifestyle.Scoped);
             container.Register<IUnitOfWorkService, UnitOfWorkService>(Lifestyle.Scoped);
             container.Register<IUsuarioService, UsuarioService>(Lifestyle.Scoped);
 
@@ -61,6 +63,7 @@ namespace AHAS.PO.INFRA.CROSS.DIPCFG
             container.Register<IDocumentoRepository, DocumentoRepository>(Lifestyle.Scoped);
             container.Register<IAgendamentoRepository, AgendamentoRepository>(Lifestyle.Scoped);
             container.Register<IAbrangenciaRepository, AbrangenciaRepository>(Lifestyle.Scoped);
+            container.Register<IEstadoRepository, EstadoRepository>(Lifestyle.Scoped);
             container.Register<IUnitOfWorkRepository, UnitOfWork>(Lifestyle.Scoped);
 
             //Context

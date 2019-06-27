@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 namespace AHAS.PO.SERVICE.APPLICATION.Interfaces
 {
-    public interface IAbrangenciaAppService : IDisposable
+    public interface IEstadoAppService : IDisposable
     {
-        IEnumerable<AbrangenciaViewModel> Listar();
+        IEnumerable<EstadoViewModel> Listar();
     }
 }

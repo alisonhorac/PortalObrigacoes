@@ -39,6 +39,15 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
             HasRequired(x => x.Abrangencia)
                 .WithMany(x => x.Feriados)
                 .HasForeignKey(c => c.IDAbrangencia);
+
+            //FK - N : 1
+            Property(x => x.IDEstado)
+                .HasColumnName("IDEstado")
+                .IsOptional();
+
+            HasOptional(x => x.Estado)
+                .WithMany(x => x.Feriados)
+                .HasForeignKey(c => c.IDEstado);
         }
     }
 }

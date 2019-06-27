@@ -2,7 +2,7 @@
 using AHAS.PO.LOGIC.DOMAIN.Interfaces.Service;
 using AHAS.PO.SERVICE.APPLICATION.AutoMapper;
 using AHAS.PO.SERVICE.APPLICATION.Interfaces;
-using AHAS.PO.SERVICE.APPLICATION.ViewModel;
+using AHAS.PO.SERVICE.APPLICATION.ViewModels;
 using System;
 using System.Collections.Generic;
 

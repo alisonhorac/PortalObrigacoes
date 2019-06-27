@@ -51,6 +51,7 @@
     <Compile Include="EntityConfig\AbrangeciaConfig.cs" />
     <Compile Include="EntityConfig\AgendamentoConfig.cs" />
     <Compile Include="Context\DataBaseContext.cs" />
+    <Compile Include="EntityConfig\EstadoConfig.cs" />
     <Compile Include="EntityConfig\StatusConfig.cs" />
     <Compile Include="EntityConfig\FeriadoConfig.cs" />
     <Compile Include="EntityConfig\OrigemConfig.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="EntityConfig\UsuarioConfig.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\EstadoRepository.cs" />
     <Compile Include="Repository\AbrangenciaRepository.cs" />
     <Compile Include="Repository\AgendamentoRepository.cs" />
     <Compile Include="Repository\DocumentoRepository.cs" />

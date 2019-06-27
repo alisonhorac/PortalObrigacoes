@@ -45,6 +45,7 @@
     <Compile Include="Entities\Abrangencia.cs" />
     <Compile Include="Entities\Agendamento.cs" />
     <Compile Include="Entities\Documento.cs" />
+    <Compile Include="Entities\Estado.cs" />
     <Compile Include="Entities\Feriado.cs" />
     <Compile Include="Entities\Origem.cs" />
     <Compile Include="Entities\Periodicidade.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Entities\Unidade.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Enum\Enum.cs" />
+    <Compile Include="Interfaces\Repository\IEstadoRepository.cs" />
     <Compile Include="Interfaces\Repository\IAbrangenciaRepository.cs" />
     <Compile Include="Interfaces\Repository\IAgendamentoRepository.cs" />
     <Compile Include="Interfaces\Repository\IDocumentoRepository.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="Interfaces\Repository\IStatusRepository.cs" />
     <Compile Include="Interfaces\Repository\IUnidadeRepository.cs" />
     <Compile Include="Interfaces\Repository\IUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Service\IEstadoService.cs" />
     <Compile Include="Interfaces\Service\IAbrangenciaService.cs" />
     <Compile Include="Interfaces\Service\IAgendamentoService.cs" />
     <Compile Include="Interfaces\Service\IDocumentoService.cs" />
@@ -77,6 +80,7 @@
     <Compile Include="Interfaces\UnitOfWork\IUnitOfWorkRepository.cs" />
     <Compile Include="Interfaces\UnitOfWork\IUnitOfWorkService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EstadoService.cs" />
     <Compile Include="Services\AbrangenciaService.cs" />
     <Compile Include="Services\AgendamentoService.cs" />
     <Compile Include="Services\DocumentoService.cs" />
