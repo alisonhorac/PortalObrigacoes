@@ -1,4 +1,4 @@
-﻿using AHAS.PO.INFRA.CROSS.DIPCFG;
+﻿using AHAS.PO.INFRA.CROSS.DIP;
 using System;
 using System.Collections.Generic;
 using System.Linq;

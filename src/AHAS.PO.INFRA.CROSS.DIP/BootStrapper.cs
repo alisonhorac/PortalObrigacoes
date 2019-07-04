@@ -18,7 +18,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using SimpleInjector;
 
-namespace AHAS.PO.INFRA.CROSS.DIPCFG
+namespace AHAS.PO.INFRA.CROSS.DIP
 {
     public static class BootStrapper
     {

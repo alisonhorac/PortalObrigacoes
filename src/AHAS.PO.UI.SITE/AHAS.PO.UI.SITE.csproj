@@ -176,7 +176,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\Bundle\BundleConfig.cs" />
+    <Compile Include="App_Start\Bundle\BundlesCSS.cs" />
+    <Compile Include="App_Start\Bundle\BundlesJS.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
@@ -219,9 +221,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\AHAS.PO.INFRA.CROSS.DIPCFG\AHAS.PO.INFRA.CROSS.DIPCFG.csproj">
+    <ProjectReference Include="..\AHAS.PO.INFRA.CROSS.DIP\AHAS.PO.INFRA.CROSS.DIP.csproj">
       <Project>{96B09789-CC1C-44FF-9BBC-790901C0F14A}</Project>
-      <Name>AHAS.PO.INFRA.CROSS.DIPCFG</Name>
+      <Name>AHAS.PO.INFRA.CROSS.DIP</Name>
     </ProjectReference>
     <ProjectReference Include="..\AHAS.PO.INFRA.CROSS.IDENTITY\AHAS.PO.INFRA.CROSS.IDENTITY.csproj">
       <Project>{D63F35A1-9B91-407C-922B-3A47DD8CB383}</Project>
