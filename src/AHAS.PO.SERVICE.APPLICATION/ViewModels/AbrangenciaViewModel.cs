@@ -10,5 +10,7 @@ namespace AHAS.PO.SERVICE.APPLICATION.ViewModels
 
         [DisplayName("Descrição")]
         public string Descricao { get; set; }
+
+        public int HabilitaEstado { get; set; }
     }
 }

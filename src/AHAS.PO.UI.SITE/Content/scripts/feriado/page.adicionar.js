@@ -34,3 +34,22 @@ $(function () {
         }
     });
 });
+
+$('#calendar-datapicker').click(function () {
+    $("#PeriodoDeAte").data("daterangepicker").show();
+})
+
+$(document).ready(function () {
+    $(".select-hidden").change(function () {
+        $("select option:selected").each(function () {
+            if ($(this).attr("habilitaestado") == "1") {
+                divEstado.style.visibility = 'visible';
+                divEstado.style.display = 'block';
+            }
+            else if ($(this).attr("habilitaestado") == "0") {
+                divEstado.style.visibility = 'hidden';
+                divEstado.style.display = 'none';
+            }
+        });
+    }).change();
+});

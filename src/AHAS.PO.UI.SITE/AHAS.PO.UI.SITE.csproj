@@ -176,9 +176,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\Bundle\BundleConfig.cs" />
-    <Compile Include="App_Start\Bundle\BundlesCSS.cs" />
-    <Compile Include="App_Start\Bundle\BundlesJS.cs" />
+    <Compile Include="App_Start\Bundles\BundleConfig.cs" />
+    <Compile Include="App_Start\Bundles\BundlesCSS.cs" />
+    <Compile Include="App_Start\Bundles\BundlesJS.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />

@@ -23,12 +23,17 @@
             <div class="control-group">
                 <label class="control-label" for="basicinput">Abrangência</label>
                 <div class="controls">
-                    @Html.DropDownListFor(model => model.IDAbrangencia, new SelectList(Model.ListaAbrangencia, "IDAbrangencia", "Descricao"), "Selecione...", htmlAttributes: new { @class = "span5" })
+                    <select class="span5 select-hidden" id="IDAbrangencia">
+                        @foreach (var abrangencia in Model.ListaAbrangencia)
+                        {
+                            <option value="@abrangencia.IDAbrangencia" habilitaestado="@abrangencia.HabilitaEstado">@abrangencia.Descricao</option>
+                        }
+                    </select>
                 </div>
                 <div class="controls">@Html.ValidationMessageFor(m => m.IDAbrangencia)</div>
             </div>
 
-            <div class="control-group">
+            <div id='divEstado' class="control-group" style="visibility: hidden; display: none;">
                 <label class="control-label" for="basicinput">Estado</label>
                 <div class="controls">
                     @Html.DropDownListFor(model => model.IDEstado, new SelectList(Model.ListaEstado, "IDEstado", "Sigla"), "Selecione...", htmlAttributes: new { @class = "span3" })
@@ -54,7 +59,7 @@
                 <div class="controls">
                     <div class="input-append">
                         @Html.TextBoxFor(model => model.PeriodoDeAte, new { id = "PeriodoDeAte", @class = "date-range" })
-                        <span class="add-on"><i class="far fa-calendar-alt"></i></span>
+                        <span id="calendar-datapicker" class="btn add-on"><i class="far fa-calendar-alt"></i></span>
                     </div>
                 </div>
                 <div class="controls">@Html.ValidationMessageFor(m => m.PeriodoDeAte)</div>

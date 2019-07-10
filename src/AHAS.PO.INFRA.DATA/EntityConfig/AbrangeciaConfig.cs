@@ -22,6 +22,9 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
                 .HasMaxLength(150)
                 .HasColumnType("VARCHAR");
 
+            Property(x => x.HabilitaEstado)
+                .IsRequired();
+
             //FK - 1 : N
             HasMany(c => c.Feriados)
                 .WithRequired(c => c.Abrangencia)

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace AHAS.PO.INFRA.CROSS.DIP
+namespace AHAS.PO.UI.SITE.App_Start.Bundles
 {
     public static class BundlesJS
     {
-        
-        
         public static void JquerySlim(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/cdn/js/jquery-slim", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"));

@@ -1,5 +1,7 @@
 ﻿using AHAS.PO.INFRA.CROSS.GLOBALIZING;
+using AHAS.PO.LOGIC.DOMAIN.Entities;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -36,11 +38,12 @@ namespace AHAS.PO.SERVICE.APPLICATION.ViewModels
         [DisplayName("Estado")]
         public int? IDEstado { get; set; }
 
-        [DisplayName("Estado")]
         public string DescricaoEstado { get; set; }
 
-        public IEnumerable ListaAbrangencia { get; set; }
+        public bool HabilitaEstado { get; set; }
 
-        public IEnumerable ListaEstado { get; set; }
+        public IEnumerable<AbrangenciaViewModel> ListaAbrangencia { get; set; }
+
+        public IEnumerable<EstadoViewModel> ListaEstado { get; set; }
     }
 }

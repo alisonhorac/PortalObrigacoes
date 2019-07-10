@@ -1,11 +1,6 @@
-﻿using AHAS.PO.INFRA.CROSS.DIP;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace AHAS.PO.UI.SITE.App_Start
+namespace AHAS.PO.UI.SITE.App_Start.Bundles
 {
     public class BundleConfig
     {

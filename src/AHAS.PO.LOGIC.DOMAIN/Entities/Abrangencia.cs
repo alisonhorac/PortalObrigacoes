@@ -9,6 +9,8 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
 
         public string Descricao { get; set; }
 
+        public bool HabilitaEstado { get; set; }
+
         //RELACIONAMENTO
         public virtual ICollection<Feriado> Feriados { get; set; }
     }
