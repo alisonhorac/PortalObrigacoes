@@ -14,7 +14,7 @@
             <div class="control-group">
                 @Html.LabelFor(model => model.Descricao, new { @class = "control-label" })
                 <div class="controls">
-                    @Html.TextBoxFor(model => model.Descricao, new { id = "Descricao", @class = "span8", @placeholder = "Nome do feriado...", @autocomplete = "off" })
+                    @Html.TextBoxFor(model => model.Descricao, new { id = "Descricao", @class = "span8", @placeholder = "Nome do feriado...", @autocomplete = "off", @required = "true" })
                     <span class="help-inline">Máximo 200 caracteres</span>
                 </div>
                 <div class="controls">@Html.ValidationMessageFor(m => m.Descricao)</div>
@@ -23,10 +23,10 @@
             <div class="control-group">
                 <label class="control-label" for="basicinput">Abrangência</label>
                 <div class="controls">
-                    <select class="span5 select-hidden" id="IDAbrangencia">
+                    <select class="span5 select-hidden" id="IDAbrangencia" name="IDAbrangencia">
                         @foreach (var abrangencia in Model.ListaAbrangencia)
                         {
-                            <option value="@abrangencia.IDAbrangencia" habilitaestado="@abrangencia.HabilitaEstado">@abrangencia.Descricao</option>
+                            <option value="@abrangencia.IDAbrangencia" habilitaestado="@abrangencia.HabilitaEstado" @(abrangencia.IDAbrangencia == Model.IDAbrangencia ? "selected" : "")>@abrangencia.Descricao</option>
                         }
                     </select>
                 </div>

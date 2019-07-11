@@ -45,10 +45,13 @@ $(document).ready(function () {
             if ($(this).attr("habilitaestado") == "1") {
                 divEstado.style.visibility = 'visible';
                 divEstado.style.display = 'block';
+                $('#IDEstado').prop('required', true);
             }
             else if ($(this).attr("habilitaestado") == "0") {
                 divEstado.style.visibility = 'hidden';
                 divEstado.style.display = 'none';
+                $('#IDEstado').val(null);
+                $('#IDEstado').prop('required', false);
             }
         });
     }).change();

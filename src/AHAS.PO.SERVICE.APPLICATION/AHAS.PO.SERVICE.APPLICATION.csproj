@@ -50,6 +50,7 @@
     <Compile Include="AutoMapper\Profiles\FeriadoProfile.cs" />
     <Compile Include="Interfaces\IEstadoAppService.cs" />
     <Compile Include="Interfaces\IAbrangenciaAppService.cs" />
+    <Compile Include="Services\AppService.cs" />
     <Compile Include="Services\EstadoAppService.cs" />
     <Compile Include="Services\AbrangenciaAppService.cs" />
     <Compile Include="Services\FeriadoAppService.cs" />

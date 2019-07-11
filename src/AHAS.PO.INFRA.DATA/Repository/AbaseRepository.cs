@@ -21,7 +21,16 @@ namespace AHAS.PO.INFRA.DATA.Repository
 
         public virtual TEntity Inserir(TEntity obj)
         {
-            return DbSet.Add(obj);
+            try
+            {
+                return DbSet.Add(obj);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public virtual TEntity Alterar(TEntity obj)
