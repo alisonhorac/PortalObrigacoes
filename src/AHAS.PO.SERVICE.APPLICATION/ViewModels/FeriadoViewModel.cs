@@ -45,5 +45,7 @@ namespace AHAS.PO.SERVICE.APPLICATION.ViewModels
         public IEnumerable<AbrangenciaViewModel> ListaAbrangencia { get; set; }
 
         public IEnumerable<EstadoViewModel> ListaEstado { get; set; }
+
+        public List<string> MensagemValidacao { get; set; }
     }
 }

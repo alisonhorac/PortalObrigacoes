@@ -1,6 +1,7 @@
 ﻿using AHAS.PO.LOGIC.DOMAIN.Entities;
 using AHAS.PO.LOGIC.DOMAIN.Interfaces.Repository;
 using AHAS.PO.LOGIC.DOMAIN.Interfaces.Service;
+using AHAS.PO.LOGIC.DOMAIN.Validator.Feriado;
 using System;
 using System.Collections.Generic;
 
@@ -32,6 +33,13 @@ namespace AHAS.PO.LOGIC.DOMAIN.Services
 
         public Feriado Inserir(Feriado obj)
         {
+            var validate = new FeriadoValidate(repository, obj);
+
+            if (validate.IsNotValidate())
+            {
+                return obj;
+            }
+
             return repository.Inserir(obj);
         }
 

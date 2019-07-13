@@ -48,6 +48,11 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
             HasOptional(x => x.Estado)
                 .WithMany(x => x.Feriados)
                 .HasForeignKey(c => c.IDEstado);
+
+            //IGNORE
+            Ignore(x => x.MensagemValidacao);
+            Ignore(x => x.ListaAbrangencia);
+            Ignore(x => x.ListaEstado);
         }
     }
 }

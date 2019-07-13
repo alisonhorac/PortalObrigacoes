@@ -77,6 +77,7 @@
     <Compile Include="Interfaces\Service\IStatusService.cs" />
     <Compile Include="Interfaces\Service\IUnidadeService.cs" />
     <Compile Include="Interfaces\Service\IUsuarioService.cs" />
+    <Compile Include="Interfaces\Specification\ISpecification.cs" />
     <Compile Include="Interfaces\UnitOfWork\IUnitOfWorkRepository.cs" />
     <Compile Include="Interfaces\UnitOfWork\IUnitOfWorkService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,7 +93,14 @@
     <Compile Include="Services\UnidadeService.cs" />
     <Compile Include="Services\UnitOfWorkService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
+    <Compile Include="Specification\Feriado\FeriadoUnicoSpecification.cs" />
+    <Compile Include="Validator\Feriado\FeriadoValidate.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AHAS.PO.INFRA.CROSS.GLOBALIZING\AHAS.PO.INFRA.CROSS.GLOBALIZING.csproj">
+      <Project>{AEF00C4D-945F-4F65-9505-71B58B5D53D3}</Project>
+      <Name>AHAS.PO.INFRA.CROSS.GLOBALIZING</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

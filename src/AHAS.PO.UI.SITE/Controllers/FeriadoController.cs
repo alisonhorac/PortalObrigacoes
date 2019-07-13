@@ -58,6 +58,16 @@ namespace AHAS.PO.UI.SITE.Controllers
             {
                 feriadoViewModel = _FeriadoAppService.Inserir(feriadoViewModel);
 
+                if (feriadoViewModel.MensagemValidacao.Count > 0)
+                {
+                    foreach (var item in feriadoViewModel.MensagemValidacao)
+                    {
+                        ModelState.AddModelError(string.Empty, item);
+                    }
+
+                    return View(feriadoViewModel);
+                }
+
                 return RedirectToAction("Index");
             }
 

@@ -212,6 +212,7 @@
     <Content Include="Views\Shared\_MenuLateral.cshtml" />
     <Content Include="Views\Shared\_MenuInferior.cshtml" />
     <Content Include="Views\Feriado\Adicionar.cshtml" />
+    <Content Include="Views\Shared\_MensagemValidacao.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

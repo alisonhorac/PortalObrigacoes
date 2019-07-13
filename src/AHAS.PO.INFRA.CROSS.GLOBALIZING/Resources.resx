@@ -144,4 +144,7 @@
   <data name="Global_Required" xml:space="preserve">
     <value>Campo {0} é de preenchimento obrigatório.</value>
   </data>
+  <data name="Validacao_Feriado_Repetido" xml:space="preserve">
+    <value>A data escolhida para o feriado já existe e não há necessidade de cadastrar novamente.</value>
+  </data>
 </root>

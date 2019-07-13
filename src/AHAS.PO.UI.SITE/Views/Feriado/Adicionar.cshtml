@@ -8,9 +8,9 @@
         <h3><i class="fas fa-gifts"></i> @ViewBag.Title</h3>
     </div>
     <div class="module-body">
-
         @using (Html.BeginForm("Adicionar", "Feriado", FormMethod.Post, new { @class = "form-horizontal row-fluid", role = "form" }))
         {
+            @Html.Partial("_MensagemValidacao")
             <div class="control-group">
                 @Html.LabelFor(model => model.Descricao, new { @class = "control-label" })
                 <div class="controls">

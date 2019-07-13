@@ -140,5 +140,14 @@ namespace AHAS.PO.INFRA.CROSS.GLOBALIZING {
                 return ResourceManager.GetString("Global_Required", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A data escolhida para o feriado já existe e não há necessidade de cadastrar novamente..
+        /// </summary>
+        public static string Validacao_Feriado_Repetido {
+            get {
+                return ResourceManager.GetString("Validacao_Feriado_Repetido", resourceCulture);
+            }
+        }
     }
 }
