@@ -1,18 +1,19 @@
-﻿
+﻿@using AHAS.PO.INFRA.CROSS.GLOBALIZING;
+
 @if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Any())
 {
     <div class="alert alert-error">
         <button type="button" class="close" data-dismiss="alert">×</button>
-        <strong>Ops!</strong>
+        <strong>@Resources.Global_Validacao_Erro</strong>
         @Html.ValidationSummary(true)
     </div>
 }
 
-@if (!string.IsNullOrEmpty(ViewBag.Sucesso))
+@if (TempData["sucesso"] != null)
 {
     <div class="alert alert-success">
         <button type="button" class="close" data-dismiss="alert">×</button>
-        <strong>Sucesso!</strong> 
-        @ViewBag.Sucesso
+        <strong>@Resources.Global_Validacao_Sucesso</strong>
+        @TempData["sucesso"].ToString()
     </div>
 }

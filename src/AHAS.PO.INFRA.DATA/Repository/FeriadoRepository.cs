@@ -19,10 +19,12 @@ namespace AHAS.PO.INFRA.DATA.Repository
             return DataBase.TbFeriado.Include("Abrangencia").Include("Estado").ToList();
         }
 
-        public Feriado ValidarFeriadoExiste(DateTime dataDe, DateTime dataAte, bool feriadoFixo)
+        public Feriado ValidarFeriadoExiste(DateTime dataDe, DateTime dataAte, bool feriadoFixo, int idAbrangencia, int? idEstado)
         {
-            return base.Consultar(feriado => feriado.FlagFeriadoFixo == feriadoFixo && 
-                                             feriado.DataDe == dataDe && 
+            return base.Consultar(feriado => feriado.FlagFeriadoFixo == feriadoFixo &&
+                                             feriado.IDAbrangencia == idAbrangencia &&
+                                             feriado.IDEstado == idEstado &&
+                                             feriado.DataDe == dataDe &&
                                              feriado.DataAte == dataAte).FirstOrDefault();
         }
     }

@@ -32,5 +32,6 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
 
         //Mensagens de validação
         public List<String> MensagemValidacao { get; set; }
+        public bool Sucesso { get; set; }
     }
 }

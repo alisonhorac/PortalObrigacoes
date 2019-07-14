@@ -35,7 +35,7 @@ namespace AHAS.PO.SERVICE.APPLICATION.Services
             var feriado = AutoMapperConfig.Mapper.Map<FeriadoViewModel, Feriado>(feriadoViewModel);
             var result = AutoMapperConfig.Mapper.Map<Feriado, FeriadoViewModel>(_FeriadoService.Inserir(feriado));
 
-            if (result.MensagemValidacao.Count() == 0)
+            if (result.Sucesso)
                 Commit();
 
             return result;

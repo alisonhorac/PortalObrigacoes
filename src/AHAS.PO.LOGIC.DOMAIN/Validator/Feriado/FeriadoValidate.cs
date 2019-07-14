@@ -24,9 +24,13 @@ namespace AHAS.PO.LOGIC.DOMAIN.Validator.Feriado
         {
             if (!new FeriadoUnicoSpecification(repository).IsSatisfied(feriado))
             {
+                feriado.Sucesso = false;
                 feriado.MensagemValidacao.Add(Resources.Validacao_Feriado_Repetido);
                 return true;
             }
+
+            feriado.Sucesso = true;
+            feriado.MensagemValidacao.Add(Resources.Validacao_Feriado_Sucesso);
 
             return false;
         }

@@ -8,6 +8,6 @@ namespace AHAS.PO.LOGIC.DOMAIN.Interfaces.Repository
     {
         IEnumerable<Feriado> ListarFeriado();
 
-        Feriado ValidarFeriadoExiste(DateTime dataDe, DateTime dataAte, bool feriadoFixo);
+        Feriado ValidarFeriadoExiste(DateTime dataDe, DateTime dataAte, bool feriadoFixo, int idAbrangencia, int? idEstado);
     }
 }

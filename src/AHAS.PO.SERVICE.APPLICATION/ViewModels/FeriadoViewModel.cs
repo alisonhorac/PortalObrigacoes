@@ -42,10 +42,12 @@ namespace AHAS.PO.SERVICE.APPLICATION.ViewModels
 
         public bool HabilitaEstado { get; set; }
 
+        public List<string> MensagemValidacao { get; set; }
+
+        public bool Sucesso { get; set; }
+
         public IEnumerable<AbrangenciaViewModel> ListaAbrangencia { get; set; }
 
         public IEnumerable<EstadoViewModel> ListaEstado { get; set; }
-
-        public List<string> MensagemValidacao { get; set; }
     }
 }

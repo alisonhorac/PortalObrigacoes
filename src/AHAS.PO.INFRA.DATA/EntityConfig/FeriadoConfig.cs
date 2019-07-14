@@ -50,6 +50,7 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
                 .HasForeignKey(c => c.IDEstado);
 
             //IGNORE
+            Ignore(x => x.Sucesso);
             Ignore(x => x.MensagemValidacao);
             Ignore(x => x.ListaAbrangencia);
             Ignore(x => x.ListaEstado);

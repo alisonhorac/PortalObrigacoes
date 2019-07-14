@@ -1,4 +1,5 @@
-﻿using AHAS.PO.SERVICE.APPLICATION.Interfaces;
+﻿using AHAS.PO.INFRA.CROSS.GLOBALIZING;
+using AHAS.PO.SERVICE.APPLICATION.Interfaces;
 using AHAS.PO.SERVICE.APPLICATION.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -58,7 +59,7 @@ namespace AHAS.PO.UI.SITE.Controllers
             {
                 feriadoViewModel = _FeriadoAppService.Inserir(feriadoViewModel);
 
-                if (feriadoViewModel.MensagemValidacao.Count > 0)
+                if (!feriadoViewModel.Sucesso)
                 {
                     foreach (var item in feriadoViewModel.MensagemValidacao)
                     {
@@ -66,6 +67,11 @@ namespace AHAS.PO.UI.SITE.Controllers
                     }
 
                     return View(feriadoViewModel);
+                }
+
+                foreach (var item in feriadoViewModel.MensagemValidacao)
+                {
+                    TempData["sucesso"] = item;
                 }
 
                 return RedirectToAction("Index");

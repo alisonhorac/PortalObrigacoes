@@ -21,7 +21,7 @@ namespace AHAS.PO.LOGIC.DOMAIN.Specification.Feriado
 
         public bool IsSatisfied(Entities.Feriado entity)
         {
-            return _feriadoRepository.ValidarFeriadoExiste(entity.DataDe, entity.DataAte, entity.FlagFeriadoFixo) == null;
+            return _feriadoRepository.ValidarFeriadoExiste(entity.DataDe, entity.DataAte, entity.FlagFeriadoFixo, entity.IDAbrangencia, entity.IDEstado) == null;
         }
     }
 }

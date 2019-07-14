@@ -226,6 +226,10 @@
       <Project>{96B09789-CC1C-44FF-9BBC-790901C0F14A}</Project>
       <Name>AHAS.PO.INFRA.CROSS.DIP</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AHAS.PO.INFRA.CROSS.GLOBALIZING\AHAS.PO.INFRA.CROSS.GLOBALIZING.csproj">
+      <Project>{aef00c4d-945f-4f65-9505-71b58b5d53d3}</Project>
+      <Name>AHAS.PO.INFRA.CROSS.GLOBALIZING</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AHAS.PO.INFRA.CROSS.IDENTITY\AHAS.PO.INFRA.CROSS.IDENTITY.csproj">
       <Project>{D63F35A1-9B91-407C-922B-3A47DD8CB383}</Project>
       <Name>AHAS.PO.INFRA.CROSS.IDENTITY</Name>
