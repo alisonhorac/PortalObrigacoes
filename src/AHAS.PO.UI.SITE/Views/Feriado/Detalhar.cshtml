@@ -1,0 +1,65 @@
+﻿@model AHAS.PO.SERVICE.APPLICATION.ViewModels.FeriadoViewModel
+@{
+    ViewBag.Title = "Detalhes do Feriado - ";
+}
+
+<div class="module">
+    <div class="module-head">
+        <h3><i class="fas fa-gifts"></i> @ViewBag.Title @Model.Descricao</h3>
+    </div>
+
+    <div class="module-body">
+        <div class="form-horizontal row-fluid">
+            <div class="control-group">
+                @Html.LabelFor(model => model.Descricao, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.TextBoxFor(model => model.Descricao, new { id = "Descricao", @class = "span12", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.IDAbrangencia, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.TextBoxFor(model => model.DescricaoAbrangencia, new { id = "DescricaoAbrangencia", @class = "span12", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div id='divEstado' class="control-group" style="@(Model.HabilitaEstado ? "visibility: visible; display: block;" : "visibility: hidden; display: none;")">
+                @Html.LabelFor(model => model.IDEstado, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.TextBoxFor(model => model.DescricaoEstado, new { id = "DescricaoEstado", @class = "span12", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.FlagFeriadoFixo, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.TextBoxFor(model => model.DescricaoFlagFeriadoFixo, new { id = "FeriadoFixo", @class = "span12", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.PeriodoDeAte, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.TextBoxFor(model => model.PeriodoDeAte, new { id = "Periodo", @class = "span12", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="control-group">
+                <a href="@Url.Action("Index", "Feriado")" class="btn"><i class="fas fa-arrow-circle-left"></i> Voltar</a>
+                <div class="controls pull-right">
+                    <button class="btn btn-danger"><i class="fas fa-eraser"></i> Excluir</button>
+                    <button class="btn btn-info"><i class="fas fa-pen-square"></i> Editar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Styles {
+    <link type="text/css" href="~/Content/css/feriado/page.detalhar.css" rel="stylesheet">
+}
+
+@section    Scripts {
+    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/jquery-v3")
+}

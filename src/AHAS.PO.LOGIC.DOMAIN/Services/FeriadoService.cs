@@ -21,7 +21,7 @@ namespace AHAS.PO.LOGIC.DOMAIN.Services
             return repository.Alterar(obj);
         }
 
-        public Feriado Consultar(Guid id)
+        public Feriado Consultar(int id)
         {
             return repository.Consultar(id);
         }

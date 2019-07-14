@@ -9,6 +9,7 @@ namespace AHAS.PO.SERVICE.APPLICATION.Interfaces
         FeriadoViewModel Alterar(FeriadoViewModel feriadoViewModel);
         bool Excluir(int id);
         FeriadoViewModel Inserir(FeriadoViewModel feriadoViewModel);
+        FeriadoViewModel Consultar(int id);
         IEnumerable<FeriadoViewModel> Listar();
     }
 }

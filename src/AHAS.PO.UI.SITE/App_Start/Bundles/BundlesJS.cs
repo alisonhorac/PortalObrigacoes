@@ -53,5 +53,11 @@ namespace AHAS.PO.UI.SITE.App_Start.Bundles
         {
             bundles.Add(new ScriptBundle("~/bundles/cdn/js/daterangepicker", "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.js"));
         }
+
+        //Utilizado no popup de exclusão
+        public static void SweetAlert(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/bundles/cdn/js/sweetalert", "https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"));
+        }
     }
 }

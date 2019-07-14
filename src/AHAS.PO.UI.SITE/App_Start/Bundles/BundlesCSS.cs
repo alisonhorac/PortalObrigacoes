@@ -55,5 +55,10 @@ namespace AHAS.PO.UI.SITE.App_Start.Bundles
         {
             bundles.Add(new StyleBundle("~/bundles/cdn/css/daterangepicker", "https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"));
         }
+
+        public static void SweetAlert(BundleCollection bundles)
+        {
+            bundles.Add(new StyleBundle("~/bundles/cdn/css/sweetalert", "https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"));
+        }
     }
 }

@@ -56,6 +56,11 @@ namespace AHAS.PO.INFRA.DATA.Repository
             return true;
         }
 
+        public virtual TEntity Consultar(int id)
+        {
+            return DbSet.Find(id);
+        }
+
         public virtual TEntity Consultar(Guid id)
         {
             return DbSet.Find(id);

@@ -33,7 +33,13 @@ namespace AHAS.PO.UI.SITE.Controllers
         [HttpGet]
         public ActionResult Detalhar(int id)
         {
-            return View();
+            FeriadoViewModel feriadoViewModel = _FeriadoAppService.Consultar(id);
+
+            if (feriadoViewModel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(feriadoViewModel);
         }
 
         // GET: Feriado/Adicionar

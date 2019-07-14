@@ -12,7 +12,7 @@ namespace AHAS.PO.LOGIC.DOMAIN.Interfaces.Service
 
         bool Excluir(int id);
 
-        Feriado Consultar(Guid id);
+        Feriado Consultar(int id);
 
         IEnumerable<Feriado> Listar();
     }

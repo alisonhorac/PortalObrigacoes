@@ -37,6 +37,13 @@ namespace AHAS.PO.LOGIC.DOMAIN.Interfaces.Repository
         /// </summary>
         /// <param name="id">Identificador único da entidade</param>
         /// <returns>Retorna a entidade consultada</returns>
+        TEntidade Consultar(int id);
+
+        /// <summary>
+        /// Consulta uma entidade através do identificador único
+        /// </summary>
+        /// <param name="id">Identificador único da entidade</param>
+        /// <returns>Retorna a entidade consultada</returns>
         TEntidade Consultar(Guid id);
 
         /// <summary>

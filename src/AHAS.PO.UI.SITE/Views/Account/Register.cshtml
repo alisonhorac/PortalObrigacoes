@@ -71,14 +71,14 @@
                             </div>
 
                             <div class="control-group">
-                                <div class="form-inline">
+                                <div class="form-row">
                                     @Html.DropDownListFor(model => model.DDIPhone, new SelectList(new List<SelectListItem> {
                                                                                               new SelectListItem { Text = "+55", Value = "+55"} }, "Value", "Text", "True"),
-                                                                                              new { id = "DDI", @class = "span8", @style = "max-width: 70px; margin-bottom: 0px" })
-                                    <span class="input-group-addon">-</span>
-                                    @Html.TextBoxFor(model => model.DDDPhone, new { id = "DDD", @class = "span12", @style = "max-width: 60px;", @placeholder = "DDD", @autocomplete = "off" })
-                                    <span class="input-group-addon">-</span>
-                                    @Html.TextBoxFor(model => model.Phone, new { id = "Fone", @class = "span12", @style = "max-width: 160px;", @placeholder = "Celular", @autocomplete = "off" })
+                                                                                              new { id = "DDI", @class = "span8 col", @style = "max-width: 70px; margin-bottom: 0px" })
+                                    <span class="input-group-text border-right-0 border-left-0 rounded-0">-</span>
+                                    @Html.TextBoxFor(model => model.DDDPhone, new { id = "DDD", @class = "span12 col", @style = "max-width: 60px;", @placeholder = "DDD", @autocomplete = "off" })
+                                    <span class="input-group-text border-right-0 border-left-0 rounded-0">-</span>
+                                    @Html.TextBoxFor(model => model.Phone, new { id = "Fone", @class = "span12 col", @placeholder = "Celular", @autocomplete = "off" })
                                 </div>
                                 @Html.ValidationMessageFor(model => model.DDDPhone, null, new { @style = "font-style: italic; font-size:11px" })
                                 @Html.ValidationMessageFor(model => model.Phone, null, new { @style = "font-style: italic; font-size:11px" })

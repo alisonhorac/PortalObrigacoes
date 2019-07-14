@@ -38,8 +38,8 @@
                         </td>
                         <td>
                             <a href="@Url.Action("Edit", "Feriado", new { id = item.IDFeriado })" class="btn btn-info btn-xs"><span class="fas fa-pen-square"></span> Editar</a>
-                            <a href="@Url.Action("Details", "Feriado", new { id = item.IDFeriado })" class="btn btn-info btn-xs"><span class="fas fa-info-circle"></span> Detalhar</a>
-                            <a data-id="@item.IDFeriado" descricao="@item.Descricao" class="btn btn-danger btn-xs"><span class="fas fa-eraser"></span> Apagar</a>
+                            <a href="@Url.Action("Detalhar", "Feriado", new { id = item.IDFeriado })" class="btn btn-info btn-xs"><span class="fas fa-info-circle"></span> Detalhar</a>
+                            <a data-id="@item.IDFeriado" descricao="@item.Descricao" class="btn btn-danger btn-xs"><span class="fas fa-eraser"></span> Excluir</a>
                         </td>
                     </tr>
                 }
@@ -62,14 +62,14 @@
 @section Styles {
     @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/font-awesome-old")
     @System.Web.Optimization.Styles.Render("~/bundles/content/css/pageload")
+    @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/sweetalert")
     <link type="text/css" href="~/Content/css/feriado/page.index.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css" rel="stylesheet">
 }
 
 @section Scripts {
     @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/jquery")
     @System.Web.Optimization.Scripts.Render("~/bundles/content/js/jquery-dataTables")
     @System.Web.Optimization.Scripts.Render("~/bundles/content/js/pageload")
+    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/sweetalert")
     <script src="~/Content/scripts/feriado/page.index.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 }

@@ -48,10 +48,12 @@ namespace AHAS.PO.UI.SITE.App_Start.Bundles
         {
             BundlesCSS.FontAwersomeOld(bundles);
             BundlesCSS.DateRangePicker(bundles);
+            BundlesCSS.SweetAlert(bundles);
             BundlesJS.JqueryDataTable(bundles);
             BundlesJS.JQueryV3(bundles);
             BundlesJS.Moment(bundles);
             BundlesJS.DateRangePicker(bundles);
+            BundlesJS.SweetAlert(bundles);
         }
     }
 }

@@ -16,7 +16,10 @@ namespace AHAS.PO.SERVICE.APPLICATION.AutoMapper.Profiles
 
             CreateMap<Feriado, FeriadoViewModel>()
                     .ForMember(dest => dest.DescricaoAbrangencia, origem => origem.MapFrom(src => src.Abrangencia.Descricao))
-                    .ForMember(dest => dest.DescricaoFlagFeriadoFixo, origem => origem.MapFrom(src => src.FlagFeriadoFixo == true ? SimNao.Sim : SimNao.Nao));
+                    .ForMember(dest => dest.DescricaoFlagFeriadoFixo, origem => origem.MapFrom(src => src.FlagFeriadoFixo == true ? SimNao.Sim : SimNao.Nao))
+                    .ForMember(dest => dest.HabilitaEstado, origem => origem.MapFrom(src => src.IDEstado != null))
+                    .ForMember(dest => dest.DescricaoEstado, origem => origem.MapFrom(src => src.Estado.Descricao))
+                    .ForMember(dest => dest.PeriodoDeAte, origem => origem.MapFrom(src => string.Format("{0} - {1}",src.DataDe.ToString("dd/MM/yyyy"), src.DataAte.ToString("dd/MM/yyyy"))));
         }
     }
 }

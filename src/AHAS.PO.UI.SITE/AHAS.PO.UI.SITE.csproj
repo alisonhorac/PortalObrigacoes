@@ -153,6 +153,7 @@
     <Content Include="Content\css\account\register\page.css" />
     <Content Include="Content\css\account\verifyCode\page.css" />
     <Content Include="Content\css\feriado\page.adicionar.css" />
+    <Content Include="Content\css\feriado\page.detalhar.css" />
     <Content Include="Content\css\feriado\page.index.css" />
     <Content Include="Content\css\shared\error\page.css" />
     <Content Include="Content\css\shared\layout\black-menu.css" />
@@ -214,6 +215,7 @@
     <Content Include="Views\Shared\_MenuInferior.cshtml" />
     <Content Include="Views\Feriado\Adicionar.cshtml" />
     <Content Include="Views\Shared\_MensagemValidacao.cshtml" />
+    <Content Include="Views\Feriado\Detalhar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

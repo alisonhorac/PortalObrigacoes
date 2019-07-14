@@ -21,7 +21,7 @@
             </div>
 
             <div class="control-group">
-                <label class="control-label" for="basicinput">Abrangência</label>
+                @Html.LabelFor(model => model.IDAbrangencia, new { @class = "control-label" })
                 <div class="controls">
                     <select class="span5 select-hidden" id="IDAbrangencia" name="IDAbrangencia">
                         @foreach (var abrangencia in Model.ListaAbrangencia)
@@ -34,7 +34,7 @@
             </div>
 
             <div id='divEstado' class="control-group" style="visibility: hidden; display: none;">
-                <label class="control-label" for="basicinput">Estado</label>
+                @Html.LabelFor(model => model.IDEstado, new { @class = "control-label" })
                 <div class="controls">
                     @Html.DropDownListFor(model => model.IDEstado, new SelectList(Model.ListaEstado, "IDEstado", "Sigla"), "Selecione...", htmlAttributes: new { @class = "span3" })
                 </div>
@@ -76,13 +76,11 @@
 </div>
 
 @section Styles {
-    @*@System.Web.Optimization.Styles.Render("~/bundles/cdn/css/jquery-ui")*@
     @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/daterangepicker")
     <link type="text/css" href="~/Content/css/feriado/page.adicionar.css" rel="stylesheet">
 }
 
 @section    Scripts {
-    @*@System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/jquery-ui")*@
     @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/jquery-v3")
     @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/moment")
     @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/daterangepicker")

@@ -47,6 +47,11 @@ namespace AHAS.PO.SERVICE.APPLICATION.Services
             return result;
         }
 
+        public FeriadoViewModel Consultar(int id)
+        {
+            return AutoMapperConfig.Mapper.Map<Feriado, FeriadoViewModel>(_FeriadoService.Consultar(id));
+        }
+
         public IEnumerable<FeriadoViewModel> Listar()
         {
             return AutoMapperConfig.Mapper.Map<IEnumerable<Feriado>, IEnumerable<FeriadoViewModel>>(_FeriadoService.Listar());
