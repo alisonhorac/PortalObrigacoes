@@ -49,6 +49,13 @@ namespace AHAS.PO.INFRA.DATA.Repository
             return true;
         }
 
+        public virtual bool Excluir(int id)
+        {
+            DbSet.Remove(DbSet.Find(id));
+
+            return true;
+        }
+
         public virtual TEntity Consultar(Guid id)
         {
             return DbSet.Find(id);

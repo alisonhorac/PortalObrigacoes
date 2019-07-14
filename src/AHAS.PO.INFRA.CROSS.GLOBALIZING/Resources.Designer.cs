@@ -151,7 +151,7 @@ namespace AHAS.PO.INFRA.CROSS.GLOBALIZING {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sucesso!.
+        ///   Looks up a localized string similar to Cadastrado!.
         /// </summary>
         public static string Global_Validacao_Sucesso {
             get {
@@ -169,7 +169,7 @@ namespace AHAS.PO.INFRA.CROSS.GLOBALIZING {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Feriado criado e salva na base de dados..
+        ///   Looks up a localized string similar to Feriado criado com sucesso..
         /// </summary>
         public static string Validacao_Feriado_Sucesso {
             get {

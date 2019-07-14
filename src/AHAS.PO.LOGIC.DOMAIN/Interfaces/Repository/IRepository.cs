@@ -27,6 +27,12 @@ namespace AHAS.PO.LOGIC.DOMAIN.Interfaces.Repository
         bool Excluir(Guid id);
 
         /// <summary>
+        /// Exclui a entidade através do Identificador único
+        /// </summary>
+        /// <param name="id">Identificador único da entidade</param>
+        bool Excluir(int id);
+
+        /// <summary>
         /// Consulta uma entidade através do identificador único
         /// </summary>
         /// <param name="id">Identificador único da entidade</param>

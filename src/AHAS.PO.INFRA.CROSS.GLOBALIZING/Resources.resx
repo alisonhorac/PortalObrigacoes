@@ -148,12 +148,12 @@
     <value>Ops!</value>
   </data>
   <data name="Global_Validacao_Sucesso" xml:space="preserve">
-    <value>Sucesso!</value>
+    <value>Cadastrado!</value>
   </data>
   <data name="Validacao_Feriado_Repetido" xml:space="preserve">
     <value>A data escolhida para o feriado já existe e não há necessidade de cadastrar novamente.</value>
   </data>
   <data name="Validacao_Feriado_Sucesso" xml:space="preserve">
-    <value>Feriado criado e salva na base de dados.</value>
+    <value>Feriado criado com sucesso.</value>
   </data>
 </root>

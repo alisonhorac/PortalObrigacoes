@@ -1,6 +1,7 @@
 ﻿using AHAS.PO.INFRA.CROSS.GLOBALIZING;
 using AHAS.PO.SERVICE.APPLICATION.Interfaces;
 using AHAS.PO.SERVICE.APPLICATION.ViewModels;
+using AHAS.PO.UI.SITE.Helper;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -21,21 +22,21 @@ namespace AHAS.PO.UI.SITE.Controllers
             _AbrangenciaAppService = abrangenciaAppService;
         }
 
-        // GET: Feriados
+        // GET: Feriado
         [HttpGet]
         public ActionResult Index()
         {
             return View(_FeriadoAppService.Listar());
         }
 
-        // GET: Feriados/Details/5
+        // GET: Feriado/Detalhar/5
         [HttpGet]
         public ActionResult Detalhar(int id)
         {
             return View();
         }
 
-        // GET: Feriados/Create
+        // GET: Feriado/Adicionar
         [HttpGet]
         public ActionResult Adicionar()
         {
@@ -48,7 +49,7 @@ namespace AHAS.PO.UI.SITE.Controllers
             return View(viewModel);
         }
 
-        // POST: Feriados/Create
+        // POST: Feriado/Adicionar
         [HttpPost]
         public ActionResult Adicionar(FeriadoViewModel feriadoViewModel)
         {
@@ -80,14 +81,14 @@ namespace AHAS.PO.UI.SITE.Controllers
             return View(feriadoViewModel);
         }
 
-        // GET: Feriados/Edit/5
+        // GET: Feriado/Editar/5
         [HttpGet]
-        public ActionResult Editar(Guid? id)
+        public ActionResult Editar(int id)
         {
             return View();
         }
 
-        // POST: Feriados/Edit/5
+        // POST: Feriado/Editar
         [HttpPost]
         public ActionResult Editar(FeriadoViewModel feriadoViewModel)
         {
@@ -103,27 +104,16 @@ namespace AHAS.PO.UI.SITE.Controllers
             }
         }
 
-        // GET: Feriados/Delete/5
-        [HttpGet]
-        public ActionResult Excluir(Guid? id)
-        {
-            return View();
-        }
-
-        // POST: Feriados/Delete/5
+        // POST: Feriado/Excluir/5
         [HttpPost]
-        public ActionResult Excluir(Guid id)
+        public ActionResult Excluir(int id)
         {
-            try
+            var resultado = new ResultHelper
             {
-                // TODO: Add delete logic here
+                Sucess = _FeriadoAppService.Excluir(id)
+            };
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return Json(resultado);
         }
 
         protected override void Dispose(bool disposing)

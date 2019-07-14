@@ -26,7 +26,7 @@ namespace AHAS.PO.LOGIC.DOMAIN.Services
             return repository.Consultar(id);
         }
 
-        public bool Excluir(Guid id)
+        public bool Excluir(int id)
         {
             return repository.Excluir(id);
         }
