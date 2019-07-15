@@ -1,16 +1,9 @@
-﻿$(document).ready(function () {
-    $('.datatable-1').dataTable();
-    $('.dataTables_paginate').addClass("btn-group datatable-pagination");
-    $('.dataTables_paginate > a').wrapInner('<span />');
-    $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
-    $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
-});
-
-$(".module-body").on("click", ".btn-danger", null, (e) => {
+﻿$(".module-body").on("click", ".btn-danger", null, (e) => {
     e.preventDefault();
+
     var model = {
-        id: e.target.attributes["data-id"].value,
-        descricao: e.target.attributes["descricao"].value
+        id: $('input[id="IDFeriado"]').val(),
+        descricao: $('input[id="IDFeriado"]').attr("descricao")
     }
 
     swal({
@@ -31,7 +24,7 @@ $(".module-body").on("click", ".btn-danger", null, (e) => {
                                 icon: "success",
                             }).then((result) => {
                                 if (result) {
-                                    window.location.href = "index";
+                                    window.location.href = '/Feriado/Index'; 
                                 }
                             })
                         }

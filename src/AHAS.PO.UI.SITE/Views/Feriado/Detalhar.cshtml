@@ -10,6 +10,8 @@
 
     <div class="module-body">
         <div class="form-horizontal row-fluid">
+            @Html.HiddenFor(model => model.IDFeriado, new { @descricao = Model.Descricao })
+
             <div class="control-group">
                 @Html.LabelFor(model => model.Descricao, new { @class = "control-label" })
                 <div class="controls">
@@ -57,9 +59,11 @@
 </div>
 
 @section Styles {
+    @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/sweetalert")
     <link type="text/css" href="~/Content/css/feriado/page.detalhar.css" rel="stylesheet">
 }
 
 @section    Scripts {
-    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/jquery-v3")
+    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/sweetalert")
+    <script src="~/Content/scripts/feriado/page.detalhar.js"></script>
 }

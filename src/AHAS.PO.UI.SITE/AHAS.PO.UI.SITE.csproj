@@ -165,6 +165,7 @@
     <Content Include="Content\scripts\account\register\page.js" />
     <Content Include="Content\scripts\feriado\jquery.dataTables.js" />
     <Content Include="Content\scripts\feriado\page.adicionar.js" />
+    <Content Include="Content\scripts\feriado\page.detalhar.js" />
     <Content Include="Content\scripts\feriado\page.index.js" />
     <Content Include="Content\scripts\shared\load\page.load.js" />
     <Content Include="Content\scripts\shared\page.js" />
