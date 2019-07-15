@@ -58,7 +58,7 @@ namespace AHAS.PO.UI.SITE.App_Start.Bundles
 
         public static void SweetAlert(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/bundles/cdn/css/sweetalert", "https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"));
+            bundles.Add(new StyleBundle("~/bundles/cdn/css/sweetalert", "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css"));
         }
     }
 }
