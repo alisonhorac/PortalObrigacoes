@@ -37,8 +37,8 @@
                             @Html.DisplayFor(modelItem => item.DescricaoAbrangencia)
                         </td>
                         <td>
-                            <a href="@Url.Action("Edit", "Feriado", new { id = item.IDFeriado })" class="btn btn-info btn-xs"><span class="fas fa-pen-square"></span> Editar</a>
                             <a href="@Url.Action("Detalhar", "Feriado", new { id = item.IDFeriado })" class="btn btn-info btn-xs"><span class="fas fa-info-circle"></span> Detalhar</a>
+                            <a href="@Url.Action("Editar", "Feriado", new { id = item.IDFeriado })" class="btn btn-info btn-xs"><span class="fas fa-pen-square"></span> Editar</a>
                             <a data-id="@item.IDFeriado" descricao="@item.Descricao" class="btn btn-danger btn-xs"><span class="fas fa-eraser"></span> Excluir</a>
                         </td>
                     </tr>

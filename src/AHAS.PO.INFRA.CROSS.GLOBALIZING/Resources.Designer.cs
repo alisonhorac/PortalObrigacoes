@@ -160,20 +160,29 @@ namespace AHAS.PO.INFRA.CROSS.GLOBALIZING {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A data escolhida para o feriado já existe e não há necessidade de cadastrar novamente..
+        ///   Looks up a localized string similar to Feriado alterado com sucesso..
         /// </summary>
-        public static string Validacao_Feriado_Repetido {
+        public static string Validacao_Feriado_Editar_Sucesso {
             get {
-                return ResourceManager.GetString("Validacao_Feriado_Repetido", resourceCulture);
+                return ResourceManager.GetString("Validacao_Feriado_Editar_Sucesso", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Feriado criado com sucesso..
         /// </summary>
-        public static string Validacao_Feriado_Sucesso {
+        public static string Validacao_Feriado_Novo_Sucesso {
             get {
-                return ResourceManager.GetString("Validacao_Feriado_Sucesso", resourceCulture);
+                return ResourceManager.GetString("Validacao_Feriado_Novo_Sucesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A data escolhida para o feriado já existe e não há necessidade de cadastrar novamente..
+        /// </summary>
+        public static string Validacao_Feriado_Repetido {
+            get {
+                return ResourceManager.GetString("Validacao_Feriado_Repetido", resourceCulture);
             }
         }
     }

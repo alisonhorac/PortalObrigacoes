@@ -22,7 +22,12 @@ namespace AHAS.PO.SERVICE.APPLICATION.Services
         public FeriadoViewModel Alterar(FeriadoViewModel feriadoViewModel)
         {
             var feriado = AutoMapperConfig.Mapper.Map<FeriadoViewModel, Feriado>(feriadoViewModel);
-            return AutoMapperConfig.Mapper.Map<Feriado, FeriadoViewModel>(_FeriadoService.Alterar(feriado));
+            var result = AutoMapperConfig.Mapper.Map<Feriado, FeriadoViewModel>(_FeriadoService.Alterar(feriado));
+
+            if (result.Sucesso)
+                Commit();
+
+            return result;
         }
 
         public bool Excluir(int id)

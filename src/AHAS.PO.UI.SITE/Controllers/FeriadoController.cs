@@ -39,6 +39,7 @@ namespace AHAS.PO.UI.SITE.Controllers
             {
                 return HttpNotFound();
             }
+
             return View(feriadoViewModel);
         }
 
@@ -91,23 +92,49 @@ namespace AHAS.PO.UI.SITE.Controllers
         [HttpGet]
         public ActionResult Editar(int id)
         {
-            return View();
+            FeriadoViewModel feriadoViewModel = _FeriadoAppService.Consultar(id);
+
+            if (feriadoViewModel == null)
+            {
+                return HttpNotFound();
+            }
+
+            feriadoViewModel.ListaAbrangencia = _AbrangenciaAppService.Listar();
+            feriadoViewModel.ListaEstado = _EstadoAppService.Listar();
+            
+            return View(feriadoViewModel);
         }
 
         // POST: Feriado/Editar
         [HttpPost]
         public ActionResult Editar(FeriadoViewModel feriadoViewModel)
         {
-            try
+            feriadoViewModel.ListaAbrangencia = _AbrangenciaAppService.Listar();
+            feriadoViewModel.ListaEstado = _EstadoAppService.Listar();
+
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                feriadoViewModel = _FeriadoAppService.Alterar(feriadoViewModel);
+
+                if (!feriadoViewModel.Sucesso)
+                {
+                    foreach (var item in feriadoViewModel.MensagemValidacao)
+                    {
+                        ModelState.AddModelError(string.Empty, item);
+                    }
+
+                    return View(feriadoViewModel);
+                }
+
+                foreach (var item in feriadoViewModel.MensagemValidacao)
+                {
+                    TempData["sucesso"] = item;
+                }
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(feriadoViewModel);
         }
 
         // POST: Feriado/Excluir/5

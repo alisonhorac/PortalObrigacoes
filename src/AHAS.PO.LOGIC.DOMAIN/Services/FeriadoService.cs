@@ -1,4 +1,5 @@
-﻿using AHAS.PO.LOGIC.DOMAIN.Entities;
+﻿using AHAS.PO.INFRA.CROSS.GLOBALIZING;
+using AHAS.PO.LOGIC.DOMAIN.Entities;
 using AHAS.PO.LOGIC.DOMAIN.Interfaces.Repository;
 using AHAS.PO.LOGIC.DOMAIN.Interfaces.Service;
 using AHAS.PO.LOGIC.DOMAIN.Validator.Feriado;
@@ -18,6 +19,13 @@ namespace AHAS.PO.LOGIC.DOMAIN.Services
 
         public Feriado Alterar(Feriado obj)
         {
+            var validate = new FeriadoValidate(repository, obj);
+
+            if (validate.AlterarFeriadoNaoValido())
+            {
+                return obj;
+            }
+
             return repository.Alterar(obj);
         }
 
@@ -35,7 +43,7 @@ namespace AHAS.PO.LOGIC.DOMAIN.Services
         {
             var validate = new FeriadoValidate(repository, obj);
 
-            if (validate.IsNotValidate())
+            if (validate.NovoFeriadoNaoValido())
             {
                 return obj;
             }

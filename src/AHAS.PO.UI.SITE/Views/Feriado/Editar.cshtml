@@ -1,0 +1,90 @@
+﻿@model AHAS.PO.SERVICE.APPLICATION.ViewModels.FeriadoViewModel
+@{
+    ViewBag.Title = "Editar o Feriado - ";
+}
+
+<div class="module">
+    <div class="module-head">
+        <h3><i class="fas fa-gifts"></i> @ViewBag.Title @Model.Descricao</h3>
+    </div>
+    <div class="module-body">
+        @using (Html.BeginForm("Editar", "Feriado", FormMethod.Post, new { @class = "form-horizontal row-fluid", role = "form" }))
+        {
+            @Html.HiddenFor(model => model.IDFeriado)
+
+            @Html.Partial("_MensagemValidacao")
+            <div class="control-group">
+                @Html.LabelFor(model => model.Descricao, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.TextBoxFor(model => model.Descricao, new { id = "Descricao", @class = "span8", @placeholder = "Nome do feriado...", @autocomplete = "off", @required = "true" })
+                    <span class="help-inline">Máximo 200 caracteres</span>
+                </div>
+                <div class="controls">@Html.ValidationMessageFor(m => m.Descricao)</div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.IDAbrangencia, new { @class = "control-label" })
+                <div class="controls">
+                    <select class="span5 select-hidden" id="IDAbrangencia" name="IDAbrangencia">
+                        @foreach (var abrangencia in Model.ListaAbrangencia)
+                        {
+                            <option value="@abrangencia.IDAbrangencia" habilitaestado="@abrangencia.HabilitaEstado" @(abrangencia.IDAbrangencia == Model.IDAbrangencia ? "selected" : "")>@abrangencia.Descricao</option>
+                        }
+                    </select>
+                </div>
+                <div class="controls">@Html.ValidationMessageFor(m => m.IDAbrangencia)</div>
+            </div>
+
+            <div id='divEstado' class="control-group" style="visibility: hidden; display: none;">
+                @Html.LabelFor(model => model.IDEstado, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.DropDownListFor(model => model.IDEstado, new SelectList(Model.ListaEstado, "IDEstado", "Sigla"), "Selecione...", htmlAttributes: new { @class = "span3" })
+                </div>
+                <div class="controls">@Html.ValidationMessageFor(m => m.IDEstado)</div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.FlagFeriadoFixo, new { @class = "control-label" })
+                <div class="controls">
+                    <label class="radio">
+                        @Html.RadioButtonFor(model => model.FlagFeriadoFixo, true, new { @checked = "" }) Sim
+                    </label>
+                    <label class="radio">
+                        @Html.RadioButtonFor(model => model.FlagFeriadoFixo, false) Não
+                    </label>
+                </div>
+                <div class="controls">@Html.ValidationMessageFor(m => m.FlagFeriadoFixo)</div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.PeriodoDeAte, new { @class = "control-label" })
+                <div class="controls">
+                    <div class="input-append">
+                        @Html.TextBoxFor(model => model.PeriodoDeAte, new { id = "PeriodoDeAte", @class = "date-range" })
+                        <span id="calendar-datapicker" class="btn add-on"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                </div>
+                <div class="controls">@Html.ValidationMessageFor(m => m.PeriodoDeAte)</div>
+            </div>
+
+            <div class="control-group">
+                <a href="@Url.Action("Index", "Feriado")" class="btn"><i class="fas fa-arrow-circle-left"></i> Voltar</a>
+                <div class="controls pull-right">
+                    <button class="btn btn-primary"><i class="fas fa-check-circle"></i> Confirmar</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Styles {
+    @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/daterangepicker")
+    <link type="text/css" href="~/Content/css/feriado/page.editar.css" rel="stylesheet">
+}
+
+@section    Scripts {
+    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/jquery-v3")
+    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/moment")
+    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/daterangepicker")
+    <script src="~/Content/scripts/feriado/page.editar.js"></script>
+}

@@ -154,6 +154,7 @@
     <Content Include="Content\css\account\verifyCode\page.css" />
     <Content Include="Content\css\feriado\page.adicionar.css" />
     <Content Include="Content\css\feriado\page.detalhar.css" />
+    <Content Include="Content\css\feriado\page.editar.css" />
     <Content Include="Content\css\feriado\page.index.css" />
     <Content Include="Content\css\shared\error\page.css" />
     <Content Include="Content\css\shared\layout\black-menu.css" />
@@ -166,6 +167,7 @@
     <Content Include="Content\scripts\feriado\jquery.dataTables.js" />
     <Content Include="Content\scripts\feriado\page.adicionar.js" />
     <Content Include="Content\scripts\feriado\page.detalhar.js" />
+    <Content Include="Content\scripts\feriado\page.editar.js" />
     <Content Include="Content\scripts\feriado\page.index.js" />
     <Content Include="Content\scripts\shared\load\page.load.js" />
     <Content Include="Content\scripts\shared\page.js" />
@@ -217,6 +219,7 @@
     <Content Include="Views\Feriado\Adicionar.cshtml" />
     <Content Include="Views\Shared\_MensagemValidacao.cshtml" />
     <Content Include="Views\Feriado\Detalhar.cshtml" />
+    <Content Include="Views\Feriado\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

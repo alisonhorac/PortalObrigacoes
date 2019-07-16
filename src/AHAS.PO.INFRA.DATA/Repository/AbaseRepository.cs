@@ -28,16 +28,22 @@ namespace AHAS.PO.INFRA.DATA.Repository
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
 
         public virtual TEntity Alterar(TEntity obj)
         {
-            var entry = DataBase.Entry(obj);
-            DbSet.Attach(obj);
-            entry.State = EntityState.Modified;
+            try
+            {
+                var entry = DataBase.Entry(obj);
+                DbSet.Attach(obj);
+                entry.State = EntityState.Modified;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
             return obj;
         }

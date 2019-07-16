@@ -20,7 +20,15 @@ namespace AHAS.PO.LOGIC.DOMAIN.Validator.Feriado
             feriado = _feriado;
         }
 
-        public bool IsNotValidate()
+        public bool AlterarFeriadoNaoValido()
+        {
+            feriado.Sucesso = true;
+            feriado.MensagemValidacao.Add(Resources.Validacao_Feriado_Editar_Sucesso);
+
+            return false;
+        }
+
+        public bool NovoFeriadoNaoValido()
         {
             if (!new FeriadoUnicoSpecification(repository).IsSatisfied(feriado))
             {
@@ -30,7 +38,7 @@ namespace AHAS.PO.LOGIC.DOMAIN.Validator.Feriado
             }
 
             feriado.Sucesso = true;
-            feriado.MensagemValidacao.Add(Resources.Validacao_Feriado_Sucesso);
+            feriado.MensagemValidacao.Add(Resources.Validacao_Feriado_Novo_Sucesso);
 
             return false;
         }

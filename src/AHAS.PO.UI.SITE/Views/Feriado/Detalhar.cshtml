@@ -50,7 +50,7 @@
                 <a href="@Url.Action("Index", "Feriado")" class="btn"><i class="fas fa-arrow-circle-left"></i> Voltar</a>
                 <div class="controls pull-right">
                     <button class="btn btn-danger"><i class="fas fa-eraser"></i> Excluir</button>
-                    <button class="btn btn-info"><i class="fas fa-pen-square"></i> Editar</button>
+                    <a href="@Url.Action("Editar", "Feriado", new { id = Model.IDFeriado })" class="btn btn-info"><span class="fas fa-pen-square"></span> Editar</a>
                 </div>
             </div>
         </div>
