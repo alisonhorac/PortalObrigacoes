@@ -15,9 +15,6 @@
         background: #000000;
         transition: 1s;
     }
-    .preloader.complete:before {
-        left: -50%;
-    }
     .preloader:after {
         content: '';
         position: absolute;
@@ -26,9 +23,6 @@
         height: 100%;
         background: #000000;
         transition: 1s;
-    }
-    .preloader.complete:after {
-        right: -50%;
     }
     .preloader.complete {
         opacity: 0;
@@ -40,6 +34,19 @@
     position: absolute;
     top: 45%;
     left: 48%;
+    border: 3px solid rgba(128, 128, 128, 0.3);
+    border-left-color: #22a6b3;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    z-index: 10000;
+}
+
+#preloader .loader {
+    position: absolute;
+    top: 45%;
+    left: 60%;
     border: 3px solid rgba(128, 128, 128, 0.3);
     border-left-color: #22a6b3;
     border-radius: 50%;

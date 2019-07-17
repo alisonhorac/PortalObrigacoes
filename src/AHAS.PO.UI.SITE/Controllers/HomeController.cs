@@ -6,7 +6,7 @@ namespace AHAS.PO.UI.SITE.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Theme = "black-theme";
+            ViewBag.Theme = "gray-theme";
             return View();
         }
     }

@@ -3,18 +3,18 @@
     ViewBag.Title = "Feriados";
 }
 
-<div class="preloader">
+<div id="preloader">
     <div class="loader"></div>
 </div>
 
 @Html.Partial("_MensagemValidacao")
 
-<div class="module">
+<div id="gridtable" hidden class="module">
     <div class="module-head">
         <h3><i class="fas fa-gifts"></i> @ViewBag.Title</h3>
     </div>
     <div class="module-body table">
-        <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display">
+        <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped display">
             <thead>
                 <tr>
                     <th>@Html.DisplayNameFor(model => model.Descricao)</th>

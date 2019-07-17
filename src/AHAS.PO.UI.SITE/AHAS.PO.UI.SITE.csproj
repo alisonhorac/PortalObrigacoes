@@ -170,7 +170,7 @@
     <Content Include="Content\scripts\feriado\page.editar.js" />
     <Content Include="Content\scripts\feriado\page.index.js" />
     <Content Include="Content\scripts\shared\load\page.load.js" />
-    <Content Include="Content\scripts\shared\page.js" />
+    <Content Include="Content\scripts\shared\theme\page.js" />
     <Content Include="Content\templates\confirmation.html" />
     <Content Include="Content\templates\recover.html" />
     <Content Include="favicon.ico" />
