@@ -165,14 +165,14 @@
 		 * sZeroRecords - assuming that is given.
 		 */
 		if ( !oLanguage.sEmptyTable && oLanguage.sZeroRecords &&
-			oDefaults.sEmptyTable === "No data available in table" )
+			oDefaults.sEmptyTable === "Não há registros disponíveis" )
 		{
 			_fnMap( oLanguage, oLanguage, 'sZeroRecords', 'sEmptyTable' );
 		}
 	
 		/* Likewise with loading records */
 		if ( !oLanguage.sLoadingRecords && oLanguage.sZeroRecords &&
-			oDefaults.sLoadingRecords === "Loading..." )
+			oDefaults.sLoadingRecords === "Carregando..." )
 		{
 			_fnMap( oLanguage, oLanguage, 'sZeroRecords', 'sLoadingRecords' );
 		}
@@ -9305,7 +9305,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+			"sEmptyTable": "N&atilde;o h&aacute; registros dispon&iacute;veis",
 		
 		
 			/**
@@ -9349,7 +9349,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "N&atilde;o h&aacute; registros a serem exibidos",
+			"sInfoEmpty": "N&atilde;o h&aacute; registros para paginar",
 		
 		
 			/**

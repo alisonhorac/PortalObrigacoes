@@ -37,6 +37,7 @@ namespace AHAS.PO.INFRA.CROSS.DIP
             container.Register<IEstadoAppService, EstadoAppService>(Lifestyle.Scoped);
             container.Register<IFeriadoAppService, FeriadoAppService>(Lifestyle.Scoped);
             container.Register<IUsuarioAppService, UsuarioAppService>(Lifestyle.Scoped);
+            container.Register<IUnidadeAppService, UnidadeAppService>(Lifestyle.Scoped);
 
             //DOMAIN
             container.Register<IUnidadeService, UnidadeService>(Lifestyle.Scoped);

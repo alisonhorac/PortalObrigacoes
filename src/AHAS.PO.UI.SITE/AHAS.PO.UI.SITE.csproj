@@ -164,13 +164,17 @@
     <Content Include="Content\img\cbimage.jpg" />
     <Content Include="Content\img\noun_User_17241.png" />
     <Content Include="Content\scripts\account\register\page.js" />
-    <Content Include="Content\scripts\feriado\jquery.dataTables.js" />
+    <Content Include="Content\scripts\shared\grid\jquery.dataTables.js" />
     <Content Include="Content\scripts\feriado\page.adicionar.js" />
     <Content Include="Content\scripts\feriado\page.detalhar.js" />
     <Content Include="Content\scripts\feriado\page.editar.js" />
     <Content Include="Content\scripts\feriado\page.index.js" />
     <Content Include="Content\scripts\shared\load\page.load.js" />
     <Content Include="Content\scripts\shared\theme\page.js" />
+    <Content Include="Content\scripts\unidade\page.adicionar.js" />
+    <Content Include="Content\scripts\unidade\page.detalhar.js" />
+    <Content Include="Content\scripts\unidade\page.editar.js" />
+    <Content Include="Content\scripts\unidade\page.index.js" />
     <Content Include="Content\templates\confirmation.html" />
     <Content Include="Content\templates\recover.html" />
     <Content Include="favicon.ico" />
@@ -190,6 +194,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FeriadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UnidadeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,6 +225,10 @@
     <Content Include="Views\Shared\_MensagemValidacao.cshtml" />
     <Content Include="Views\Feriado\Detalhar.cshtml" />
     <Content Include="Views\Feriado\Editar.cshtml" />
+    <Content Include="Views\Unidade\Adicionar.cshtml" />
+    <Content Include="Views\Unidade\Detalhar.cshtml" />
+    <Content Include="Views\Unidade\Editar.cshtml" />
+    <Content Include="Views\Unidade\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -227,7 +236,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\css\unidade\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AHAS.PO.INFRA.CROSS.DIP\AHAS.PO.INFRA.CROSS.DIP.csproj">
       <Project>{96B09789-CC1C-44FF-9BBC-790901C0F14A}</Project>

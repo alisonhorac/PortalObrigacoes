@@ -13,6 +13,7 @@ namespace AHAS.PO.SERVICE.APPLICATION.AutoMapper
                 cfg.AddProfile<FeriadoProfile>();
                 cfg.AddProfile<AbrangenciaProfile>();
                 cfg.AddProfile<EstadoProfile>();
+                cfg.AddProfile<UnidadeProfile>();
             });
 
             Mapper = config.CreateMapper();

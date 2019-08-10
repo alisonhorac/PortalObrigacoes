@@ -5,6 +5,6 @@ namespace AHAS.PO.LOGIC.DOMAIN.Interfaces.Repository
 {
     public interface IUnidadeRepository : IRepository<Unidade>
     {
-        bool Desativar(Guid id);
+        bool Desativar(long id);
     }
 }

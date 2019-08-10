@@ -10,7 +10,7 @@ namespace AHAS.PO.SERVICE.APPLICATION.ViewModels
     public class FeriadoViewModel
     {
         [Key]
-        public int IDFeriado { get; set; }
+        public long IDFeriado { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Global_Required")]
         [MaxLength(200, ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Global_MaxLenght")]

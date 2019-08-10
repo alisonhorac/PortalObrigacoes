@@ -6,10 +6,10 @@ namespace AHAS.PO.SERVICE.APPLICATION.Interfaces
 {
     public interface IFeriadoAppService : IDisposable
     {
-        FeriadoViewModel Alterar(FeriadoViewModel feriadoViewModel);
-        bool Excluir(int id);
-        FeriadoViewModel Inserir(FeriadoViewModel feriadoViewModel);
-        FeriadoViewModel Consultar(int id);
+        FeriadoViewModel Alterar(FeriadoViewModel obj);
+        bool Excluir(long id);
+        FeriadoViewModel Inserir(FeriadoViewModel obj);
+        FeriadoViewModel Consultar(long id);
         IEnumerable<FeriadoViewModel> Listar();
     }
 }

@@ -1,0 +1,42 @@
+﻿@model AHAS.PO.SERVICE.APPLICATION.ViewModels.UnidadeViewModel
+@{
+    ViewBag.Title = "Detalhes da Unidade - ";
+}
+
+<div class="module">
+    <div class="module-head">
+        <h3><i class="fas fa-gifts"></i> @ViewBag.Title @Model.Nome</h3>
+    </div>
+
+    <div class="module-body">
+        <div class="form-horizontal row-fluid">
+            @Html.HiddenFor(model => model.IDUnidade, new { @descricao = Model.Nome })
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Nome, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.TextBoxFor(model => model.Nome, new { id = "Descricao", @class = "span12", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                <a href="@Url.Action("Index", "Unidade")" class="btn"><i class="fas fa-arrow-circle-left"></i> Voltar</a>
+                <div class="controls pull-right">
+                    <button class="btn btn-danger"><i class="fas fa-eraser"></i> Excluir</button>
+                    <a href="@Url.Action("Editar", "Unidade", new { id = Model.IDUnidade })" class="btn btn-info"><span class="fas fa-pen-square"></span> Editar</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Styles {
+    @System.Web.Optimization.Styles.Render("~/bundles/cdn/css/sweetalert")
+    <link type="text/css" href="~/Content/css/unidade/page.detalhar.css" rel="stylesheet">
+}
+
+@section    Scripts {
+    @System.Web.Optimization.Scripts.Render("~/bundles/cdn/js/sweetalert")
+    <script src="~/Content/scripts/unidade/page.detalhar.js"></script>
+}

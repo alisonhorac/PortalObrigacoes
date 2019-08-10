@@ -30,14 +30,14 @@ namespace AHAS.PO.LOGIC.DOMAIN.Interfaces.Repository
         /// Exclui a entidade através do Identificador único
         /// </summary>
         /// <param name="id">Identificador único da entidade</param>
-        bool Excluir(int id);
+        bool Excluir(long id);
 
         /// <summary>
         /// Consulta uma entidade através do identificador único
         /// </summary>
         /// <param name="id">Identificador único da entidade</param>
         /// <returns>Retorna a entidade consultada</returns>
-        TEntidade Consultar(int id);
+        TEntidade Consultar(long id);
 
         /// <summary>
         /// Consulta uma entidade através do identificador único

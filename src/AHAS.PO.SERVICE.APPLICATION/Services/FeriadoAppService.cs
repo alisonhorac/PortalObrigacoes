@@ -30,7 +30,7 @@ namespace AHAS.PO.SERVICE.APPLICATION.Services
             return result;
         }
 
-        public bool Excluir(int id)
+        public bool Excluir(long id)
         {
             if (_FeriadoService.Excluir(id))
             { 
@@ -52,7 +52,7 @@ namespace AHAS.PO.SERVICE.APPLICATION.Services
             return result;
         }
 
-        public FeriadoViewModel Consultar(int id)
+        public FeriadoViewModel Consultar(long id)
         {
             return AutoMapperConfig.Mapper.Map<Feriado, FeriadoViewModel>(_FeriadoService.Consultar(id));
         }

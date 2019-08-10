@@ -10,9 +10,9 @@ namespace AHAS.PO.LOGIC.DOMAIN.Interfaces.Service
 
         Feriado Alterar(Feriado obj);
 
-        bool Excluir(int id);
+        bool Excluir(long id);
 
-        Feriado Consultar(int id);
+        Feriado Consultar(long id);
 
         IEnumerable<Feriado> Listar();
     }

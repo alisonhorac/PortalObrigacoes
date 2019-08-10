@@ -25,12 +25,12 @@ namespace AHAS.PO.LOGIC.DOMAIN.Services
             return repository.Alterar(obj);
         }
 
-        public Unidade Consultar(Guid id)
+        public Unidade Consultar(long id)
         {
             return repository.Consultar(id);
         }
 
-        public bool Desativar(Guid id)
+        public bool Desativar(long id)
         {
             return repository.Desativar(id);
         }

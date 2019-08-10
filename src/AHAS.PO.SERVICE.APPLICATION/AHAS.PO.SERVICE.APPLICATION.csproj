@@ -48,13 +48,16 @@
     <Compile Include="AutoMapper\Profiles\EstadoProfile.cs" />
     <Compile Include="AutoMapper\Profiles\AbrangenciaProfile.cs" />
     <Compile Include="AutoMapper\Profiles\FeriadoProfile.cs" />
+    <Compile Include="AutoMapper\Profiles\UnidadeProfile.cs" />
     <Compile Include="Interfaces\IEstadoAppService.cs" />
     <Compile Include="Interfaces\IAbrangenciaAppService.cs" />
+    <Compile Include="Interfaces\IUnidadeAppService.cs" />
     <Compile Include="Services\AppService.cs" />
     <Compile Include="Services\EstadoAppService.cs" />
     <Compile Include="Services\AbrangenciaAppService.cs" />
     <Compile Include="Services\FeriadoAppService.cs" />
     <Compile Include="Interfaces\IFeriadoAppService.cs" />
+    <Compile Include="Services\UnidadeAppService.cs" />
     <Compile Include="Services\UsuarioAppService.cs" />
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="Interfaces\IUsuarioAppService.cs" />

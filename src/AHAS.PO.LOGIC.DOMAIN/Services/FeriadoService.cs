@@ -29,12 +29,12 @@ namespace AHAS.PO.LOGIC.DOMAIN.Services
             return repository.Alterar(obj);
         }
 
-        public Feriado Consultar(int id)
+        public Feriado Consultar(long id)
         {
             return repository.Consultar(id);
         }
 
-        public bool Excluir(int id)
+        public bool Excluir(long id)
         {
             return repository.Excluir(id);
         }

@@ -10,9 +10,9 @@ namespace AHAS.PO.LOGIC.DOMAIN.Interfaces.Service
 
         Unidade Alterar(Unidade obj);
 
-        bool Desativar(Guid id);
+        bool Desativar(long id);
 
-        Unidade Consultar(Guid id);
+        Unidade Consultar(long id);
 
         IEnumerable<Unidade> Listar();
     }

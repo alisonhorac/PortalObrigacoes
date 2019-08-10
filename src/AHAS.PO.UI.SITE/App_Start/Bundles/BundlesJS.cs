@@ -17,7 +17,7 @@ namespace AHAS.PO.UI.SITE.App_Start.Bundles
         //Utilizado no grid
         public static void JqueryDataTable(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/content/js/jquery-dataTables").Include("~/Content/scripts/feriado/jquery.dataTables.js"));
+            bundles.Add(new ScriptBundle("~/bundles/content/js/jquery-dataTables").Include("~/Content/scripts/shared/grid/jquery.dataTables.js"));
         }
 
         public static void LoadPage(BundleCollection bundles)

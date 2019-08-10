@@ -7,6 +7,7 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
     {
         public Unidade()
         {
+            MensagemValidacao = new List<string>();
             ResponsaveisDocumentos = new HashSet<ResponsavelDocumento>();
         }
 
@@ -28,5 +29,9 @@ namespace AHAS.PO.LOGIC.DOMAIN.Entities
         public virtual ICollection<ResponsavelDocumento> ResponsaveisDocumentos { get; set; }
 
         public virtual Agendamento Agendamento { get; set; }
+
+        //Mensagens de validação
+        public List<String> MensagemValidacao { get; set; }
+        public bool Sucesso { get; set; }
     }
 }

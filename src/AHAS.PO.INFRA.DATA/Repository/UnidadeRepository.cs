@@ -11,7 +11,7 @@ namespace AHAS.PO.INFRA.DATA.Repository
         {
         }
 
-        public bool Desativar(Guid id)
+        public bool Desativar(long id)
         {
             DataBase.TbUnidade.Find(id).FlagAtivo = false;
             DataBase.SaveChanges();

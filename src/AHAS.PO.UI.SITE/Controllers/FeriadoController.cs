@@ -1,10 +1,6 @@
-﻿using AHAS.PO.INFRA.CROSS.GLOBALIZING;
-using AHAS.PO.SERVICE.APPLICATION.Interfaces;
+﻿using AHAS.PO.SERVICE.APPLICATION.Interfaces;
 using AHAS.PO.SERVICE.APPLICATION.ViewModels;
 using AHAS.PO.UI.SITE.Helper;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace AHAS.PO.UI.SITE.Controllers
@@ -31,16 +27,16 @@ namespace AHAS.PO.UI.SITE.Controllers
 
         // GET: Feriado/Detalhar/5
         [HttpGet]
-        public ActionResult Detalhar(int id)
+        public ActionResult Detalhar(long id)
         {
-            FeriadoViewModel feriadoViewModel = _FeriadoAppService.Consultar(id);
+            FeriadoViewModel viewModel = _FeriadoAppService.Consultar(id);
 
-            if (feriadoViewModel == null)
+            if (viewModel == null)
             {
                 return HttpNotFound();
             }
 
-            return View(feriadoViewModel);
+            return View(viewModel);
         }
 
         // GET: Feriado/Adicionar
@@ -58,26 +54,26 @@ namespace AHAS.PO.UI.SITE.Controllers
 
         // POST: Feriado/Adicionar
         [HttpPost]
-        public ActionResult Adicionar(FeriadoViewModel feriadoViewModel)
+        public ActionResult Adicionar(FeriadoViewModel viewModel)
         {
-            feriadoViewModel.ListaAbrangencia = _AbrangenciaAppService.Listar();
-            feriadoViewModel.ListaEstado = _EstadoAppService.Listar();
+            viewModel.ListaAbrangencia = _AbrangenciaAppService.Listar();
+            viewModel.ListaEstado = _EstadoAppService.Listar();
 
             if (ModelState.IsValid)
             {
-                feriadoViewModel = _FeriadoAppService.Inserir(feriadoViewModel);
+                viewModel = _FeriadoAppService.Inserir(viewModel);
 
-                if (!feriadoViewModel.Sucesso)
+                if (!viewModel.Sucesso)
                 {
-                    foreach (var item in feriadoViewModel.MensagemValidacao)
+                    foreach (var item in viewModel.MensagemValidacao)
                     {
                         ModelState.AddModelError(string.Empty, item);
                     }
 
-                    return View(feriadoViewModel);
+                    return View(viewModel);
                 }
 
-                foreach (var item in feriadoViewModel.MensagemValidacao)
+                foreach (var item in viewModel.MensagemValidacao)
                 {
                     TempData["sucesso"] = item;
                 }
@@ -85,12 +81,12 @@ namespace AHAS.PO.UI.SITE.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(feriadoViewModel);
+            return View(viewModel);
         }
 
         // GET: Feriado/Editar/5
         [HttpGet]
-        public ActionResult Editar(int id)
+        public ActionResult Editar(long id)
         {
             FeriadoViewModel feriadoViewModel = _FeriadoAppService.Consultar(id);
 
@@ -107,26 +103,26 @@ namespace AHAS.PO.UI.SITE.Controllers
 
         // POST: Feriado/Editar
         [HttpPost]
-        public ActionResult Editar(FeriadoViewModel feriadoViewModel)
+        public ActionResult Editar(FeriadoViewModel viewModel)
         {
-            feriadoViewModel.ListaAbrangencia = _AbrangenciaAppService.Listar();
-            feriadoViewModel.ListaEstado = _EstadoAppService.Listar();
+            viewModel.ListaAbrangencia = _AbrangenciaAppService.Listar();
+            viewModel.ListaEstado = _EstadoAppService.Listar();
 
             if (ModelState.IsValid)
             {
-                feriadoViewModel = _FeriadoAppService.Alterar(feriadoViewModel);
+                viewModel = _FeriadoAppService.Alterar(viewModel);
 
-                if (!feriadoViewModel.Sucesso)
+                if (!viewModel.Sucesso)
                 {
-                    foreach (var item in feriadoViewModel.MensagemValidacao)
+                    foreach (var item in viewModel.MensagemValidacao)
                     {
                         ModelState.AddModelError(string.Empty, item);
                     }
 
-                    return View(feriadoViewModel);
+                    return View(viewModel);
                 }
 
-                foreach (var item in feriadoViewModel.MensagemValidacao)
+                foreach (var item in viewModel.MensagemValidacao)
                 {
                     TempData["sucesso"] = item;
                 }
@@ -134,12 +130,12 @@ namespace AHAS.PO.UI.SITE.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(feriadoViewModel);
+            return View(viewModel);
         }
 
         // POST: Feriado/Excluir/5
         [HttpPost]
-        public ActionResult Excluir(int id)
+        public ActionResult Excluir(long id)
         {
             var resultado = new ResultHelper
             {

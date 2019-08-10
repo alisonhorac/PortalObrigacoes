@@ -43,6 +43,10 @@ namespace AHAS.PO.INFRA.DATA.EntityConfig
             HasRequired(x => x.Agendamento)
                 .WithRequiredPrincipal(x => x.Unidade)
                 .Map(m => m.MapKey("IDUnidade"));
+
+            //IGNORE
+            Ignore(x => x.Sucesso);
+            Ignore(x => x.MensagemValidacao);
         }
     }
 }
